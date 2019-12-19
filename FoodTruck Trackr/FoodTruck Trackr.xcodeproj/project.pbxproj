@@ -14,6 +14,10 @@
 		5D680A1F23A9E06D004F42EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D680A1D23A9E06D004F42EC /* Main.storyboard */; };
 		5D680A2123A9E06F004F42EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D680A2023A9E06F004F42EC /* Assets.xcassets */; };
 		5D680A2423A9E06F004F42EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */; };
+		5D88D73323AB267400116489 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73223AB267400116489 /* Schedule.storyboard */; };
+		5D88D73523AB269C00116489 /* Truck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73423AB269C00116489 /* Truck.storyboard */; };
+		5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73623AB26AB00116489 /* Menu.storyboard */; };
+		5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73823AB26BF00116489 /* Auth.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		5D680A2023A9E06F004F42EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D680A2323A9E06F004F42EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D680A2523A9E06F004F42EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D88D73223AB267400116489 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+		5D88D73423AB269C00116489 /* Truck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Truck.storyboard; sourceTree = "<group>"; };
+		5D88D73623AB26AB00116489 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		5D88D73823AB26BF00116489 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		7E7197CD5B0F82D1E85FC710 /* Pods_FoodTruck_Trackr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTruck_Trackr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		872B0EAE2072C85B5A9E8D25 /* Pods-FoodTruck Trackr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTruck Trackr.debug.xcconfig"; path = "Target Support Files/Pods-FoodTruck Trackr/Pods-FoodTruck Trackr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,15 +88,27 @@
 		5D680A1623A9E06D004F42EC /* FoodTruck Trackr */ = {
 			isa = PBXGroup;
 			children = (
+				5D88D73123AB265000116489 /* Storyboards */,
 				5D680A1723A9E06D004F42EC /* AppDelegate.swift */,
 				5D680A1923A9E06D004F42EC /* SceneDelegate.swift */,
 				5D680A1B23A9E06D004F42EC /* ViewController.swift */,
-				5D680A1D23A9E06D004F42EC /* Main.storyboard */,
 				5D680A2023A9E06F004F42EC /* Assets.xcassets */,
-				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				5D680A2523A9E06F004F42EC /* Info.plist */,
 			);
 			path = "FoodTruck Trackr";
+			sourceTree = "<group>";
+		};
+		5D88D73123AB265000116489 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5D88D73823AB26BF00116489 /* Auth.storyboard */,
+				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
+				5D680A1D23A9E06D004F42EC /* Main.storyboard */,
+				5D88D73623AB26AB00116489 /* Menu.storyboard */,
+				5D88D73223AB267400116489 /* Schedule.storyboard */,
+				5D88D73423AB269C00116489 /* Truck.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +174,11 @@
 			files = (
 				5D680A2423A9E06F004F42EC /* LaunchScreen.storyboard in Resources */,
 				5D680A2123A9E06F004F42EC /* Assets.xcassets in Resources */,
+				5D88D73523AB269C00116489 /* Truck.storyboard in Resources */,
+				5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */,
 				5D680A1F23A9E06D004F42EC /* Main.storyboard in Resources */,
+				5D88D73323AB267400116489 /* Schedule.storyboard in Resources */,
+				5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
