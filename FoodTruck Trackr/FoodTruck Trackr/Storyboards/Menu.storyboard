@@ -23,6 +23,18 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fDm-VD-6Vg" id="fmP-ba-2ud">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-U3-JRg">
+                                            <rect key="frame" x="140" y="32.5" width="134.5" height="41"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gfc-U3-JRg" firstAttribute="centerY" secondItem="fmP-ba-2ud" secondAttribute="centerY" id="0i8-0X-Sl1"/>
+                                        <constraint firstItem="gfc-U3-JRg" firstAttribute="centerX" secondItem="fmP-ba-2ud" secondAttribute="centerX" id="FbC-ZP-aX9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -178,6 +190,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
                                         <state key="normal" title="Appetizers"/>
                                         <connections>
+                                            <action selector="addAppButtonPressed:" destination="e4d-18-caG" eventType="touchUpInside" id="ga7-7t-dzu"/>
                                             <segue destination="8Vt-4d-WDk" kind="show" identifier="ShowAppetizer" id="cPv-sq-c27"/>
                                         </connections>
                                     </button>
@@ -185,6 +198,7 @@
                                         <rect key="frame" x="0.0" y="42" width="288" height="34"/>
                                         <state key="normal" title="Entrees"/>
                                         <connections>
+                                            <action selector="addEntreeButtonPressed:" destination="e4d-18-caG" eventType="touchUpInside" id="mCE-yI-KIn"/>
                                             <segue destination="8Vt-4d-WDk" kind="show" identifier="ShowEntree" id="pla-4a-2bf"/>
                                         </connections>
                                     </button>
@@ -192,6 +206,7 @@
                                         <rect key="frame" x="0.0" y="84" width="288" height="34"/>
                                         <state key="normal" title="Sides"/>
                                         <connections>
+                                            <action selector="addSideButtonPressed:" destination="e4d-18-caG" eventType="touchUpInside" id="3WH-Uk-gdm"/>
                                             <segue destination="8Vt-4d-WDk" kind="show" identifier="ShowSide" id="EwY-jD-ok8"/>
                                         </connections>
                                     </button>
@@ -199,6 +214,7 @@
                                         <rect key="frame" x="0.0" y="126" width="288" height="34"/>
                                         <state key="normal" title="Drinks"/>
                                         <connections>
+                                            <action selector="addDrinkButtonPressed:" destination="e4d-18-caG" eventType="touchUpInside" id="gsv-m2-RrH"/>
                                             <segue destination="8Vt-4d-WDk" kind="show" identifier="ShowDrink" id="eE9-dy-BXs"/>
                                         </connections>
                                     </button>
@@ -218,6 +234,12 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="240"/>
+                    <connections>
+                        <outlet property="AddAppetizer" destination="BHh-U2-lZf" id="Zqi-1Y-Q3X"/>
+                        <outlet property="AddDrink" destination="UAd-eI-LkR" id="pt8-8D-aFw"/>
+                        <outlet property="AddEntree" destination="02P-nT-3wL" id="16d-Eo-fmQ"/>
+                        <outlet property="AddSide" destination="43b-WL-DpC" id="8O4-HX-CZp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxd-Fn-e1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
