@@ -21,6 +21,7 @@
 		5D88D75423AB299900116489 /* FoodTruck_TrackrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D75323AB299900116489 /* FoodTruck_TrackrUITests.swift */; };
 		955A7D9323AB37FF00310EBC /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */; };
 		955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9423AB389300310EBC /* MenuItemTableViewCell.swift */; };
+		955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9623AC645400310EBC /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		872B0EAE2072C85B5A9E8D25 /* Pods-FoodTruck Trackr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTruck Trackr.debug.xcconfig"; path = "Target Support Files/Pods-FoodTruck Trackr/Pods-FoodTruck Trackr.debug.xcconfig"; sourceTree = "<group>"; };
 		955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		955A7D9423AB389300310EBC /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuItemTableViewCell.swift; path = "FoodTruck Trackr/MenuItemTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		955A7D9623AC645400310EBC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = "FoodTruck Trackr/CoreDataStack.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		5D88D73A23AB288100116489 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				955A7D9623AC645400310EBC /* CoreDataStack.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */,
 				5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */,
 				955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,
