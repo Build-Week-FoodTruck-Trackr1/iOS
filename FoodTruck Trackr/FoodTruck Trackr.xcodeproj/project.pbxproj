@@ -19,6 +19,7 @@
 		5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73823AB26BF00116489 /* Auth.storyboard */; };
 		5D88D74623AB298000116489 /* FoodTruck_TrackrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D74523AB298000116489 /* FoodTruck_TrackrTests.swift */; };
 		5D88D75423AB299900116489 /* FoodTruck_TrackrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D75323AB299900116489 /* FoodTruck_TrackrUITests.swift */; };
+		951AFCFF23AC666E00A06F13 /* FoodTruck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 951AFCFD23AC666E00A06F13 /* FoodTruck.xcdatamodeld */; };
 		955A7D9323AB37FF00310EBC /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */; };
 		955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9423AB389300310EBC /* MenuItemTableViewCell.swift */; };
 		955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9623AC645400310EBC /* CoreDataStack.swift */; };
@@ -62,6 +63,7 @@
 		5D88D75523AB299900116489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E7197CD5B0F82D1E85FC710 /* Pods_FoodTruck_Trackr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTruck_Trackr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		872B0EAE2072C85B5A9E8D25 /* Pods-FoodTruck Trackr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTruck Trackr.debug.xcconfig"; path = "Target Support Files/Pods-FoodTruck Trackr/Pods-FoodTruck Trackr.debug.xcconfig"; sourceTree = "<group>"; };
+		951AFCFE23AC666E00A06F13 /* FoodTruck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodTruck.xcdatamodel; sourceTree = "<group>"; };
 		955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		955A7D9423AB389300310EBC /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuItemTableViewCell.swift; path = "FoodTruck Trackr/MenuItemTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		955A7D9623AC645400310EBC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = "FoodTruck Trackr/CoreDataStack.swift"; sourceTree = SOURCE_ROOT; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				955A7D9623AC645400310EBC /* CoreDataStack.swift */,
+				951AFCFD23AC666E00A06F13 /* FoodTruck.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,
 				955A7D9323AB37FF00310EBC /* MenuTableViewController.swift in Sources */,
+				951AFCFF23AC666E00A06F13 /* FoodTruck.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +748,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		951AFCFD23AC666E00A06F13 /* FoodTruck.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				951AFCFE23AC666E00A06F13 /* FoodTruck.xcdatamodel */,
+			);
+			currentVersion = 951AFCFE23AC666E00A06F13 /* FoodTruck.xcdatamodel */;
+			path = FoodTruck.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5D680A0C23A9E06D004F42EC /* Project object */;
 }
