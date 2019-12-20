@@ -5,6 +5,7 @@
         <attribute name="customerRating" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="customerRatingAvg" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="imageOfTruck" optional="YES" attributeType="String"/>
+        <attribute name="menu" optional="YES"/>
         <attribute name="truckTitle" optional="YES" attributeType="String"/>
     </entity>
     <entity name="MenuItem" representedClassName="MenuItem" syncable="YES" codeGenerationType="class">
@@ -16,7 +17,7 @@
         <attribute name="itemPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="FoodTruck" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="MenuItem" positionX="-45" positionY="36" width="128" height="133"/>
+        <element name="FoodTruck" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="MenuItem" positionX="111.171875" positionY="109.984375" width="128" height="133"/>
     </elements>
 </model>
