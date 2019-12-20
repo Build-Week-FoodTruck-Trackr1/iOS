@@ -10,7 +10,6 @@
         <!--Menu-->
         <scene sceneID="lxg-La-pa0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cIS-6H-sca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="bpT-nx-TTy" customClass="MenuTableViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j78-H3-hfO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -36,6 +35,9 @@
                                         <constraint firstItem="gfc-U3-JRg" firstAttribute="centerX" secondItem="fmP-ba-2ud" secondAttribute="centerX" id="FbC-ZP-aX9"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryLabel" destination="gfc-U3-JRg" id="qOy-FL-i47"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -53,13 +55,13 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cIS-6H-sca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="211.59420289855075" y="171.42857142857142"/>
         </scene>
         <!--Menu Item View Controller-->
         <scene sceneID="UDC-23-e3Y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wBj-VU-LMU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="8Vt-4d-WDk" customClass="MenuItemViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SSW-5P-cmy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -166,6 +168,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="NZb-ER-raI"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBj-VU-LMU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="170.75892857142856"/>
         </scene>
@@ -248,7 +251,6 @@
         <!--Navigation Controller-->
         <scene sceneID="xFg-hr-wLG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g9O-SO-1YH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="fYg-1O-HZe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="CFl-Gt-Jcq">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -258,6 +260,7 @@
                         <segue destination="bpT-nx-TTy" kind="relationship" relationship="rootViewController" id="E3d-O1-xpD"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9O-SO-1YH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-707" y="172"/>
         </scene>
