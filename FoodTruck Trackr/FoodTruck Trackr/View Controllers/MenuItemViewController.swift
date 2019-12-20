@@ -10,6 +10,58 @@ import UIKit
 
 class MenuSectionPopover: UIViewController {
     
+    @IBOutlet weak var AddAppetizer: UIButton!
+    @IBOutlet weak var AddEntree: UIButton!
+    @IBOutlet weak var AddSide: UIButton!
+    @IBOutlet weak var AddDrink: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    
+//    @IBAction func addAppButtonPressed(_ sender: UIButton) {
+//    }
+//
+//    @IBAction func addEntreeButtonPressed(_ sender: UIButton) {
+//    }
+//
+//    @IBAction func addSideButtonPressed(_ sender: UIButton) {
+//    }
+//
+//    @IBAction func addDrinkButtonPressed(_ sender: UIButton) {
+//    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ShowAppetizer":
+            if let detailVC = segue.destination as? MenuItemViewController {
+                title = "Add Appetizer"
+                
+            }
+        case "ShowEntree":
+            if let detailVC = segue.destination as? MenuItemViewController {
+                title = "Add Entree"
+
+            }
+        case "ShowSide":
+            if let detailVC = segue.destination as? MenuItemViewController {
+                title = "Add Side Dish"
+
+            }
+        case "ShowDrink":
+            if let detailVC = segue.destination as? MenuItemViewController {
+                title = "Add a Drink"
+
+            }
+        default:
+            break
+            
+        }
+    }
 }
 
 class MenuItemViewController: UIViewController {
