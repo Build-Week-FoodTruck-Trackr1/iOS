@@ -8,13 +8,7 @@
 
 import UIKit
 
-class MenuSectionPopover: UIViewController {
-    
-    @IBOutlet weak var AddAppetizer: UIButton!
-    @IBOutlet weak var AddEntree: UIButton!
-    @IBOutlet weak var AddSide: UIButton!
-    @IBOutlet weak var AddDrink: UIButton!
-    
+class MenuSectionPopover: UIViewController {    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,24 +32,14 @@ class MenuSectionPopover: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "ShowAppetizer":
+        case "AddItem":
             if let detailVC = segue.destination as? MenuItemViewController {
-                title = "Add Appetizer"
+                title = "Add Item"
                 
             }
-        case "ShowEntree":
+        case "ShowItemDetail":
             if let detailVC = segue.destination as? MenuItemViewController {
-                title = "Add Entree"
-
-            }
-        case "ShowSide":
-            if let detailVC = segue.destination as? MenuItemViewController {
-                title = "Add Side Dish"
-
-            }
-        case "ShowDrink":
-            if let detailVC = segue.destination as? MenuItemViewController {
-                title = "Add a Drink"
+                title =
 
             }
         default:
