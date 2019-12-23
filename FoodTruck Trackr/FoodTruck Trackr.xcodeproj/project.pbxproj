@@ -28,6 +28,7 @@
 		955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9423AB389300310EBC /* MenuItemTableViewCell.swift */; };
 		955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9623AC645400310EBC /* CoreDataStack.swift */; };
 		9579894723B05C1800414C22 /* FoodTruckRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */; };
+		9579894923B0619300414C22 /* MenuItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894823B0619300414C22 /* MenuItemRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		955A7D9623AC645400310EBC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = "FoodTruck Trackr/CoreDataStack.swift"; sourceTree = SOURCE_ROOT; };
 		9579894523B05A8100414C22 /* FoodTruck 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FoodTruck 2.xcdatamodel"; sourceTree = "<group>"; };
 		9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckRepresentation.swift; sourceTree = "<group>"; };
+		9579894823B0619300414C22 /* MenuItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				9534169323AC81CE001728CF /* FoodTruck+Convenience.swift */,
 				9534169523AC81F6001728CF /* MenuItem+Convenience.swift */,
 				9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */,
+				9579894823B0619300414C22 /* MenuItemRepresentation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,
 				9534169023AC7670001728CF /* MenuItemViewController.swift in Sources */,
+				9579894923B0619300414C22 /* MenuItemRepresentation.swift in Sources */,
 				9579894723B05C1800414C22 /* FoodTruckRepresentation.swift in Sources */,
 				955A7D9323AB37FF00310EBC /* MenuTableViewController.swift in Sources */,
 				9534169423AC81CE001728CF /* FoodTruck+Convenience.swift in Sources */,
