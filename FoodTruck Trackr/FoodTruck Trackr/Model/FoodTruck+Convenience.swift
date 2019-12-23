@@ -17,8 +17,8 @@ extension FoodTruck {
         imageOfTruck: String? = nil,
         cuisineType: String,
         identifier: UUID = UUID(),
-        customerRating: Int32?,
-        customerRatingAvg: Double?,
+        customerRating: Int32? = 0,
+        customerRatingAvg: Double? = 0.0,
         context: NSManagedObjectContext = CoreDataStack.shared.mainContext)
     {
         self.init(context: context)

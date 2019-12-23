@@ -60,16 +60,25 @@ class MenuTableViewController: UITableViewController {
         
         return categories.count
     }
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        switch segue.identifier {
+        case "AddItem":
+            if let detailVC = segue.destination as? MenuItemViewController {
+                title = "Add Item"
+                
+            }
+        case "ShowItemDetail":
+            if let detailVC = segue.destination as? MenuItemViewController {
+                title =
+                
+            }
+        default:
+            break
+            
+        }
+       }
 
 }
 

@@ -9,17 +9,14 @@
 import Foundation
 import CoreData
 
-enum Category: CaseIterable {
-    case appetizer
-    case entree
-    case side
-    case drink
-}
+
 
 class MenuController {
     
     var menuItems: [MenuItem]?
     var categories: [Category]?
     
-    
+    func put(item: MenuItem) {
+        
+    }
 }

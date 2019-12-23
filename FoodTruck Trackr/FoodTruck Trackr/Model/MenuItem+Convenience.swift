@@ -9,14 +9,55 @@
 import Foundation
 import CoreData
 
+enum Category: Int16, CaseIterable {
+    case appetizer = 0
+    case entree = 1
+    case side = 2
+    case drink = 3
+    case dessert = 4
+    
+    var type: String {
+        switch self {
+        case .appetizer:
+            return "Appetizer"
+        case .entree:
+            return "Entree"
+        case .side:
+            return "Side"
+        case .drink:
+            return "Drink"
+        case .dessert:
+            return "Dessert"
+        }
+    }
+    
+    init?(typeName: String) {
+        switch typeName {
+        case "appetizer":
+            self = .appetizer
+        case "entree":
+            self = .entree
+        case "side":
+            self = .side
+        case "drink":
+            self = .drink
+        case "dessert":
+            self = .dessert
+        default:
+            return nil
+        }
+    }
+}
+
 extension MenuItem {
     convenience init(
         itemName: String,
-        itemPrice: Double,
+        itemPrice: String,
         itemPhoto: String?,
-        itemDescription: String,
-        customerRating: Int32?,
-        customerRatingAvg: Double?,
+        itemDescription: String?,
+        category: Category = .appetizer,
+        customerRating: Int32? = 0,
+        customerRatingAvg: Double? = 0.0,
         context: NSManagedObjectContext = CoreDataStack.shared.mainContext)
     {
         self.init(context: context)
@@ -24,6 +65,7 @@ extension MenuItem {
         self.itemPrice = itemPrice
         self.itemPhoto = itemPhoto
         self.itemDescription = itemDescription
+        self.category = category.type
         if let customerRating = customerRating, let customerRatingAvg = customerRatingAvg
         {
             self.customerRating = customerRating
@@ -34,10 +76,13 @@ extension MenuItem {
     convenience init?(menuItemRepresentation: MenuItemRepresentation,
                       context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
+        guard let category = Category(typeName: menuItemRepresentation.category) else { return nil }
+        
         self.init(itemName: menuItemRepresentation.itemName,
                   itemPrice: menuItemRepresentation.itemPrice,
                   itemPhoto: menuItemRepresentation.itemPhoto,
                   itemDescription: menuItemRepresentation.itemDescription,
+                  category: category,
                   customerRating: menuItemRepresentation.customerRating,
                   customerRatingAvg: menuItemRepresentation.customerRatingAvg,
                   context: context)
@@ -45,12 +90,15 @@ extension MenuItem {
     
     var menuItemRepresentation: MenuItemRepresentation? {
         guard let itemName = itemName,
-            let itemDescription = itemDescription else { return nil }
+            let itemDescription = itemDescription,
+            let category = Category(typeName: category!),
+            let itemPrice = itemPrice else { return nil }
         
         return MenuItemRepresentation(itemName: itemName,
                                        itemPrice: itemPrice,
                                        itemPhoto: itemPhoto,
                                        itemDescription: itemDescription,
+                                       category: category.type,
                                        customerRating: customerRating,
                                        customerRatingAvg: customerRatingAvg)
     }

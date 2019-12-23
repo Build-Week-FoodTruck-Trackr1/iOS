@@ -8,64 +8,68 @@
 
 import UIKit
 
-class MenuSectionPopover: UIViewController {    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    
-//    @IBAction func addAppButtonPressed(_ sender: UIButton) {
-//    }
-//
-//    @IBAction func addEntreeButtonPressed(_ sender: UIButton) {
-//    }
-//
-//    @IBAction func addSideButtonPressed(_ sender: UIButton) {
-//    }
-//
-//    @IBAction func addDrinkButtonPressed(_ sender: UIButton) {
-//    }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "AddItem":
-            if let detailVC = segue.destination as? MenuItemViewController {
-                title = "Add Item"
-                
-            }
-        case "ShowItemDetail":
-            if let detailVC = segue.destination as? MenuItemViewController {
-                title =
-
-            }
-        default:
-            break
-            
-        }
-    }
-}
-
 class MenuItemViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var categorySegControl: UISegmentedControl!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var decriptionTextView: UITextView!
+    @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var menuItem: MenuItem? {
+        didSet {
+            updateViews()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    var menuController: MenuController?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
     }
-    */
-
+    
+    @IBAction func saveItem(_ sender: UIBarButtonItem) {
+        guard let name = nameTextField.text, !name.isEmpty,
+            let price = priceTextField.text, !price.isEmpty,
+            let image = imageView.image else { return }
+                
+        let description = decriptionTextView.text
+        let categoryIndex = categorySegControl.selectedSegmentIndex
+        let category = Category.allCases[categoryIndex]
+                        
+        let imageData: Data? = image
+        
+        if let menuItem = menuItem {
+            // editing/updating an existing task
+            menuItem.itemName = name
+            menuItem.itemPrice = price
+            menuItem.category = category.type
+            menuItem.itemDescription = description
+            menuController?.put(item: menuItem)
+        } else {
+            let menuItem = MenuItem(itemName: name,
+                                    itemPrice: price,
+                                    itemPhoto: String(from: image,
+                                    itemDescription: description,
+                                    category: category.type)
+            menuController?.put(menuItem: menuItem)
+        }
+        
+        do {
+            let moc = CoreDataStack.shared.mainContext
+            try moc.save()
+        } catch {
+            print("Error saving managed object context: \(error)")
+        }
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func updateViews() {
+        
+    }
+    
+   
 }

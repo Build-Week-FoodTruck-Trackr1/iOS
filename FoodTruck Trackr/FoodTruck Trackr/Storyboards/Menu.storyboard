@@ -109,7 +109,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a price..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rk4-gs-j5t">
                                                 <rect key="frame" x="55.5" y="0.0" width="310.5" height="33"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                         </subviews>
@@ -173,7 +173,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ip7-Q3-1yG"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NZb-ER-raI"/>
+                    <navigationItem key="navigationItem" id="NZb-ER-raI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OO2-hl-qt6">
+                            <connections>
+                                <action selector="saveItem:" destination="8Vt-4d-WDk" id="5jS-Yb-lS5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="Rfe-rc-7Xn" id="Zey-tM-Sip"/>
+                        <outlet property="categorySegControl" destination="KEI-mF-jZR" id="9sj-OM-7OA"/>
+                        <outlet property="decriptionTextView" destination="PpH-r8-8Ba" id="62A-00-Nh6"/>
+                        <outlet property="imageView" destination="VJS-4k-kcb" id="qJR-T5-po9"/>
+                        <outlet property="nameTextField" destination="Pc8-Zq-55g" id="J5J-Zh-oj9"/>
+                        <outlet property="priceTextField" destination="Rk4-gs-j5t" id="39w-CA-ue1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBj-VU-LMU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

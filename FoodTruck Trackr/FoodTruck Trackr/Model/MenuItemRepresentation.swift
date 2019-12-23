@@ -15,9 +15,10 @@ import Foundation
 struct MenuItemRepresentation {
     
     var itemName: String
-    var itemPrice: Double
+    var itemPrice: String
     var itemPhoto: String?
-    var itemDescription: String
+    var itemDescription: String?
+    var category: String
     var customerRating: Int32?
     var customerRatingAvg: Double?
 
