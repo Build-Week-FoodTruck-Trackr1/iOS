@@ -53,7 +53,7 @@ class APIController {
     
     let baseURL = URL(string: "https://build-foodtruck-trackr1.herokuapp.com/")!
     
-    func put(truck: FoodTruck, completion: @escaping () -> Void = { }) {
+    func put(foodTruck: FoodTruck, completion: @escaping () -> Void = { }) {
         let name = truck.name
         let requestURL = baseURL.appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
@@ -71,7 +71,7 @@ class APIController {
         }
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             guard error == nil else {
-                print("Error putting task to server: \(error)")
+                print(NSError())
                 completion()
                 return
             }
@@ -84,11 +84,11 @@ class APIController {
     try moc.save()
     }
     
-    func performFetch(truck: [FoodTruckRepresentation] completion: @escaping (Error?) -> Void) {
-        guard let baseURL = baseURL else { return }
-        let searchURL = baseURL.appendingPathComponent("\(blah)")
+    func performFetch(truck: [FoodTruckRepresentation], completion: @escaping (Error?) -> Void) {
+        // guard let baseURL = baseURL else { return }
+        let searchURL = baseURL.appendingPathComponent("json")
         
-        var request = URLRequest(url:searchURL)
+        let request = URLRequest(url:searchURL)
         
         URLSession.shared.dataTask(with: request) {data, _, error in
             if let error = error {
@@ -101,9 +101,9 @@ class APIController {
                 print("No Data returned")
                 return
             }
-            let jsonDecoder = jsonDecoder()
+            let decoder = JSONDecoder()
             do {
-                let searchResults = try jsonDecoder.decode([FoodTruckRepresentation].self, from: data)
+                let searchResults = try decoder.decode([FoodTruckRepresentation].self, from: data)
                 print(searchResults)
             } catch {
                 print("Unable to decode data: \(error)")
@@ -115,7 +115,7 @@ class APIController {
     func performSearch(searchTerm: FoodType, resultType: FoodTruckRepresentation, completion: @escaping (Error?) -> Void) {
         var urlComponents = urlComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let resultsTermQueryItem = URLQueryItem(name: "entity", value: resultType:rawValue)
+        let resultsTermQueryItem = URLQueryItem(name: "entity", value: resultType.name)
         urlComponents?.queryItems = [searchTermQueryItem, resultsTermQueryItem]
         
         guard let requestURL = urlComponents.url else {
