@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 
 
-extension Truck {
-    var truckRepresentation: TruckRepresentation? {
-        guard let name = name else { return nil }
+extension FoodTruck {
+    var foodTruckRepresentation: FoodTruckRepresentation? {
+        // guard let name = name else { return nil }
     }
-    return truckRepresentation(
+    return 
 }
