@@ -23,6 +23,7 @@
 		D7E1D98723AC78FF00B499A9 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1D98623AC78FF00B499A9 /* APIController.swift */; };
 		D7E1D98C23AD58EF00B499A9 /* Truck+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1D98B23AD58EF00B499A9 /* Truck+Convenience.swift */; };
 		D7E7F47A23BF65C9000E4168 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E7F47923BF65C9000E4168 /* CoreDataStack.swift */; };
+		D7E7F47C23BF7042000E4168 /* TruckLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E7F47B23BF7042000E4168 /* TruckLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D7E1D98623AC78FF00B499A9 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		D7E1D98B23AD58EF00B499A9 /* Truck+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Truck+Convenience.swift"; sourceTree = "<group>"; };
 		D7E7F47923BF65C9000E4168 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D7E7F47B23BF7042000E4168 /* TruckLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TruckLoginViewController.swift; path = "FoodTruck Trackr/Model/TruckLoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		5D88D73B23AB288C00116489 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7E7F47B23BF7042000E4168 /* TruckLoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E7F47C23BF7042000E4168 /* TruckLoginViewController.swift in Sources */,
 				D7E1D98C23AD58EF00B499A9 /* Truck+Convenience.swift in Sources */,
 				5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,

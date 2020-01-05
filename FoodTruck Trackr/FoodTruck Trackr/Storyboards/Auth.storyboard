@@ -17,10 +17,10 @@
             </objects>
             <point key="canvasLocation" x="927" y="153"/>
         </scene>
-        <!--View Controller-->
+        <!--Truck Login View Controller-->
         <scene sceneID="XTh-45-uPc">
             <objects>
-                <viewController id="aK9-X9-DPD" sceneMemberID="viewController">
+                <viewController id="aK9-X9-DPD" customClass="TruckLoginViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3jb-64-wz3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,6 +70,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUpLogInButtonPressed:" destination="aK9-X9-DPD" eventType="touchUpInside" id="jVf-fJ-Mvk"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frI-EV-BXQ">
                                         <rect key="frame" x="0.0" y="384.5" width="374" height="31"/>
@@ -82,6 +85,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-GQ-VRw">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="userOperatorToggleTapped:" destination="aK9-X9-DPD" eventType="valueChanged" id="nzl-Kt-Bj7"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -98,6 +104,11 @@
                         <viewLayoutGuide key="safeArea" id="nNZ-Bx-lgW"/>
                     </view>
                     <connections>
+                        <outlet property="modeSegControl" destination="ecY-Q4-hBX" id="oe8-Xd-h6e"/>
+                        <outlet property="passwordFieldText" destination="WGa-ER-Ao3" id="CE2-PT-e1s"/>
+                        <outlet property="signUpLogInButton" destination="wce-iR-UL6" id="muE-0L-FL3"/>
+                        <outlet property="userOperatorToggle" destination="7i3-GQ-VRw" id="eVb-Z6-OUx"/>
+                        <outlet property="usernameFieldText" destination="zBt-ut-mCE" id="B8O-D3-X8t"/>
                         <segue destination="rhh-og-0Go" kind="show" id="3fm-sL-DJP"/>
                     </connections>
                 </viewController>
