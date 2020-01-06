@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="6ao-Il-5lP">
-                                <rect key="frame" x="20" y="245.5" width="374" height="415.5"/>
+                                <rect key="frame" x="20" y="111.5" width="374" height="683.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Truck Finder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jm0-X9-mxA">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="33.5"/>
@@ -40,6 +40,9 @@
                                             <segment title="Sign In"/>
                                             <segment title="Sign Up"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentControlToggled:" destination="aK9-X9-DPD" eventType="valueChanged" id="GM8-NK-Hfl"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwa-ST-yhh">
                                         <rect key="frame" x="0.0" y="114.5" width="374" height="20.5"/>
@@ -58,13 +61,51 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WGa-ER-Ao3">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-Op-AwY">
                                         <rect key="frame" x="0.0" y="264.5" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truck Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYh-JH-vx9">
+                                        <rect key="frame" x="0.0" y="323.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Truck Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OlG-Fa-ACo">
+                                        <rect key="frame" x="0.0" y="369" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r7-TY-SFS">
+                                        <rect key="frame" x="0.0" y="428" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pn8-33-0mf">
+                                        <rect key="frame" x="0.0" y="473.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1FQ-r5-Ow4">
+                                        <rect key="frame" x="0.0" y="532.5" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-4p-VV1">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pWQ-ug-ESt">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wce-iR-UL6">
-                                        <rect key="frame" x="0.0" y="323.5" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="591.5" width="374" height="36"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Sign In">
@@ -75,7 +116,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frI-EV-BXQ">
-                                        <rect key="frame" x="0.0" y="384.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="652.5" width="374" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you own a food truck?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwS-i8-NEf">
                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
@@ -86,7 +127,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-GQ-VRw">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="userOperatorToggleTapped:" destination="aK9-X9-DPD" eventType="valueChanged" id="nzl-Kt-Bj7"/>
+                                                    <action selector="operatorValueChanged:" destination="aK9-X9-DPD" eventType="valueChanged" id="l3S-k1-hHl"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -104,12 +145,17 @@
                         <viewLayoutGuide key="safeArea" id="nNZ-Bx-lgW"/>
                     </view>
                     <connections>
+                        <outlet property="currentLocationTextField" destination="pWQ-ug-ESt" id="wfa-Rc-OA6"/>
+                        <outlet property="emailTextField" destination="pn8-33-0mf" id="DXp-rv-E6t"/>
+                        <outlet property="isOperatorSwitch" destination="7i3-GQ-VRw" id="cEz-bF-A1q"/>
                         <outlet property="modeSegControl" destination="ecY-Q4-hBX" id="oe8-Xd-h6e"/>
-                        <outlet property="passwordFieldText" destination="WGa-ER-Ao3" id="CE2-PT-e1s"/>
+                        <outlet property="nameStackView" destination="1FQ-r5-Ow4" id="uKP-Bh-Fp4"/>
+                        <outlet property="passwordTextField" destination="qlU-Op-AwY" id="WsE-lG-IMc"/>
                         <outlet property="signUpLogInButton" destination="wce-iR-UL6" id="muE-0L-FL3"/>
+                        <outlet property="truckNameTextField" destination="OlG-Fa-ACo" id="fFl-dW-vNS"/>
+                        <outlet property="userNameTextField" destination="zBt-ut-mCE" id="TX6-cO-Kg7"/>
                         <outlet property="userOperatorToggle" destination="7i3-GQ-VRw" id="eVb-Z6-OUx"/>
-                        <outlet property="usernameFieldText" destination="zBt-ut-mCE" id="B8O-D3-X8t"/>
-                        <segue destination="rhh-og-0Go" kind="show" id="3fm-sL-DJP"/>
+                        <segue destination="rhh-og-0Go" kind="show" identifier="ToMain" id="3fm-sL-DJP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIU-yE-BeD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

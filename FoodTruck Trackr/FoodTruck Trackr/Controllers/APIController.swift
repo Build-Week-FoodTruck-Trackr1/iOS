@@ -153,8 +153,8 @@ class APIController {
       // MARK: - Sign up / Log In Methods
      
      //create fucntion for sign up
-        func signUp(with username: String, password: String, completion: @escaping (Error?) -> ()) {
-            let signUpUrl = baseURL.appendingPathComponent("auth/register")
+    func signUp(with user: User, completion: @escaping (Error?) -> Void = { }) {
+            let signUpUrl = baseURL.appendingPathComponent("api/register")
             var request = URLRequest(url: signUpUrl)
             request.httpMethod = HTTPMethod.post.rawValue
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -185,8 +185,7 @@ class APIController {
         }
         // MARK: - Sign IN
         // create function for sign in
-        func LogIn(with username: String, password: String, completion: @escaping (Error?) -> ()) {
-            let loginUser = Login(username: username, password: password)
+    func LogIn(with user: User, completion: @escaping (Error?) -> Void = { }) {
             let signInURL = baseURL.appendingPathComponent("auth/login")
             var request = URLRequest(url: signInURL)
             request.httpMethod = "POST"
@@ -221,6 +220,7 @@ class APIController {
                 do {
                     let decoder = JSONDecoder()
                     let user = try decoder.decode(User.self, from: data)
+                    self.user = user
                 } catch {
                     print("Error encoding user object: \(error)")
                     completion(error)

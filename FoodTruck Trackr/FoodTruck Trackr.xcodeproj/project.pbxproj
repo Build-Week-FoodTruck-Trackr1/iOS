@@ -19,6 +19,7 @@
 		5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73823AB26BF00116489 /* Auth.storyboard */; };
 		5D88D74623AB298000116489 /* FoodTruck_TrackrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D74523AB298000116489 /* FoodTruck_TrackrTests.swift */; };
 		5D88D75423AB299900116489 /* FoodTruck_TrackrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D75323AB299900116489 /* FoodTruck_TrackrUITests.swift */; };
+		D749A64E23C2B3E2003BE342 /* TruckMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749A64D23C2B3E2003BE342 /* TruckMainViewController.swift */; };
 		D77607FC23BF5A9D00AE4F61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77607FB23BF5A9D00AE4F61 /* User.swift */; };
 		D7E1D98723AC78FF00B499A9 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1D98623AC78FF00B499A9 /* APIController.swift */; };
 		D7E1D98C23AD58EF00B499A9 /* Truck+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1D98B23AD58EF00B499A9 /* Truck+Convenience.swift */; };
@@ -64,6 +65,7 @@
 		5D88D75523AB299900116489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E7197CD5B0F82D1E85FC710 /* Pods_FoodTruck_Trackr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTruck_Trackr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		872B0EAE2072C85B5A9E8D25 /* Pods-FoodTruck Trackr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTruck Trackr.debug.xcconfig"; path = "Target Support Files/Pods-FoodTruck Trackr/Pods-FoodTruck Trackr.debug.xcconfig"; sourceTree = "<group>"; };
+		D749A64D23C2B3E2003BE342 /* TruckMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckMainViewController.swift; sourceTree = "<group>"; };
 		D77607FB23BF5A9D00AE4F61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D7E1D98623AC78FF00B499A9 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		D7E1D98B23AD58EF00B499A9 /* Truck+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Truck+Convenience.swift"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				D7E1D98623AC78FF00B499A9 /* APIController.swift */,
+				D749A64D23C2B3E2003BE342 /* TruckMainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,
 				D7E7F47A23BF65C9000E4168 /* CoreDataStack.swift in Sources */,
+				D749A64E23C2B3E2003BE342 /* TruckMainViewController.swift in Sources */,
 				D77607FC23BF5A9D00AE4F61 /* User.swift in Sources */,
 				D7E1D98723AC78FF00B499A9 /* APIController.swift in Sources */,
 			);
