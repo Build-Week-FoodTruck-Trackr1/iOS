@@ -8,10 +8,6 @@
 
 import Foundation
 
-//class Menu {
-//    var menuItems: [MenuItemRepresentation]?
-//}
-
 struct MenuItemRepresentation {
     
     var itemName: String

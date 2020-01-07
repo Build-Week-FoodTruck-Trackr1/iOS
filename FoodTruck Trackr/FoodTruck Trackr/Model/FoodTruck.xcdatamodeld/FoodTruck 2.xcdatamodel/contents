@@ -7,11 +7,7 @@
         <attribute name="identifier" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="imageOfTruck" optional="YES" attributeType="String"/>
         <attribute name="truckTitle" optional="YES" attributeType="String"/>
-        <relationship name="menu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="foodtruck" inverseEntity="Menu"/>
-    </entity>
-    <entity name="Menu" representedClassName="Menu" syncable="YES" codeGenerationType="class">
-        <relationship name="foodtruck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FoodTruck" inverseName="menu" inverseEntity="FoodTruck"/>
-        <relationship name="menuitems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuItem" inverseName="menu" inverseEntity="MenuItem"/>
+        <relationship name="menu" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuItem" inverseName="menuItems" inverseEntity="MenuItem"/>
     </entity>
     <entity name="MenuItem" representedClassName="MenuItem" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String"/>
@@ -21,11 +17,10 @@
         <attribute name="itemName" attributeType="String"/>
         <attribute name="itemPhoto" optional="YES" attributeType="Binary"/>
         <attribute name="itemPrice" attributeType="String"/>
-        <relationship name="menu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="menuitems" inverseEntity="Menu"/>
+        <relationship name="menuItems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FoodTruck" inverseName="menu" inverseEntity="FoodTruck"/>
     </entity>
     <elements>
         <element name="FoodTruck" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="Menu" positionX="141.87109375" positionY="98.7265625" width="128" height="58"/>
         <element name="MenuItem" positionX="106.5234375" positionY="222.26171875" width="128" height="163"/>
     </elements>
 </model>
