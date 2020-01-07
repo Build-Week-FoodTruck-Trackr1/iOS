@@ -10,9 +10,7 @@ import Foundation
 import CoreData
 
 
-extension FoodTruck {
-    var foodTruckRepresentation: FoodTruckRepresentation? {
-        // guard let name = name else { return nil }
-    }
-    return 
-}
+//extension FoodTruck {
+//
+//    return
+//}

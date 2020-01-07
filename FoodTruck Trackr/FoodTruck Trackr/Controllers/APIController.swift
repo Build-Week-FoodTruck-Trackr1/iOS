@@ -8,7 +8,7 @@
 
 import Foundation
 
-let truck: foodTruck = FoodTruck()
+
 
 enum ResultType: String {
     case software
@@ -36,7 +36,7 @@ struct FoodTruck {
 struct FoodTruckRepresentation: Codable {
     var name: String
     var location: String
-    var foodType: FoodType
+//    var foodType: FoodType
 }
 
 struct SearchResult: Codable {
@@ -48,36 +48,35 @@ struct SearchResult: Codable {
 class APIController {
     
     var user: User?
-    var loginUser: Login?
-    var registerUser: Login?
     
     let baseURL = URL(string: "https://build-foodtruck-trackr1.herokuapp.com/")!
     
-    func put(foodTruck: FoodTruck, completion: @escaping () -> Void = { }) {
-        let name = truck.name
-        let requestURL = baseURL.appendingPathExtension("json")
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = "PUT"
-        
-        do {
-            guard var representation = foodTruck.FoodTruckRepresentation else {
-                completion()
-                return
-            }
-            representation.id
-        } catch {
-            print("Error encoding task \(error)")
-            return
-        }
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-            guard error == nil else {
-                print(NSError())
-                completion()
-                return
-            }
-            completion()
-        }.resume()
-    }
+//    func put(foodTruck: FoodTruck, completion: @escaping () -> Void = { }) {
+//        let name = foodTruck.name
+//        let requestURL = baseURL.appendingPathExtension("json")
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = "PUT"
+//
+//        do {
+//            //Put FoodTruckRepresentation Here
+//            guard var representation = foodTruck.FoodTruckRepresentation else {
+//                completion()
+//                return
+//            }
+//            representation.id
+//        } catch {
+//            print("Error encoding task \(error)")
+//            return
+//        }
+//        URLSession.shared.dataTask(with: request) { (data, _, error) in
+//            guard error == nil else {
+//                print(NSError())
+//                completion()
+//                return
+//            }
+//            completion()
+//        }.resume()
+//    }
     
     private func saveToPersistence() throws {
     let moc = CoreDataStack.shared.mainContext
@@ -113,12 +112,12 @@ class APIController {
     }
     
     func performSearch(searchTerm: FoodType, resultType: FoodTruckRepresentation, completion: @escaping (Error?) -> Void) {
-        var urlComponents = urlComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm.rawValue)
         let resultsTermQueryItem = URLQueryItem(name: "entity", value: resultType.name)
         urlComponents?.queryItems = [searchTermQueryItem, resultsTermQueryItem]
         
-        guard let requestURL = urlComponents.url else {
+        guard let requestURL = urlComponents?.url else {
             print("Request URL is invalid")
             return
         }
@@ -135,10 +134,10 @@ class APIController {
                 print("No data returned from data task.")
                 return
             }
-            let jsonDecoder = jsonDecoder()
+            let jsonDecoder = JSONDecoder()
             do {
                 let searchResults = try jsonDecoder.decode(FoodTruckRepresentation.self, from: data)
-                self.search
+            
             } catch {
                 
             }
@@ -153,17 +152,16 @@ class APIController {
       // MARK: - Sign up / Log In Methods
      
      //create fucntion for sign up
-    func signUp(with user: User, completion: @escaping (Error?) -> Void = { }) {
+    func signUp(with user: User, completion: @escaping (Error?) -> Void = { _ in }) {
             let signUpUrl = baseURL.appendingPathComponent("api/register")
             var request = URLRequest(url: signUpUrl)
-            request.httpMethod = HTTPMethod.post.rawValue
+            request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            registerUser = Login(username: username, password: password)
             let jsonEncoder = JSONEncoder()
             do {
-                let jsonData = try jsonEncoder.encode(registerUser)
+                let jsonData = try jsonEncoder.encode(user)
                 request.httpBody = jsonData
-                print(jsonData.prettyPrintedJSONString!)
+//                print(jsonData.prettyPrintedJSONString!)
             } catch {
                 print("Error encoding user object: \(error)")
                 completion(error)
@@ -185,7 +183,7 @@ class APIController {
         }
         // MARK: - Sign IN
         // create function for sign in
-    func LogIn(with user: User, completion: @escaping (Error?) -> Void = { }) {
+    func LogIn(with user: User, completion: @escaping (Error?) -> Void = { _ in }) {
             let signInURL = baseURL.appendingPathComponent("auth/login")
             var request = URLRequest(url: signInURL)
             request.httpMethod = "POST"
@@ -193,7 +191,7 @@ class APIController {
             
             let jsonEncoder = JSONEncoder()
             do {
-                let jsonData = try jsonEncoder.encode(loginUser)
+                let jsonData = try jsonEncoder.encode(user)
                 request.httpBody = jsonData
                
             } catch {

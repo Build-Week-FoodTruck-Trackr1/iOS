@@ -10,23 +10,27 @@ import UIKit
 
 class TruckMainViewController: UIViewController {
     
-    var user: User = User()
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if user 
+    performSegue(withIdentifier: "ToLogin", sender: self)
         // Do any additional setup after loading the view.
     }
     
-
+    
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ToLogin" {
+            if let loginVC = segue.destination as? TruckLoginViewController {
+                loginVC.self.self.user = self.user
+            }
+        }
     }
    
+    
 
 }

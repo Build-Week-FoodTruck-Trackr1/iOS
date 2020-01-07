@@ -147,12 +147,12 @@
 		3543AB01CAA0D8EED5227ABEEE28A05A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		35B53D4C386B6269AD75E522600C4D1E /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/General/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		3672CA22C4C14670538FF949085F02AE /* garland-view-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "garland-view-Info.plist"; sourceTree = "<group>"; };
-		384FCAC0BE78AC1D8E5183724E82B8F5 /* Pods_FoodTruck_Trackr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FoodTruck_Trackr.framework; path = "Pods-FoodTruck Trackr.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		384FCAC0BE78AC1D8E5183724E82B8F5 /* Pods_FoodTruck_Trackr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTruck_Trackr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		390B87272CB476C7DD5389BD7CB70DD8 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionHelpers.swift; path = Sources/Utility/ExtensionHelpers.swift; sourceTree = "<group>"; };
 		392252AFC51CA11A4A1280EB20BAE0D0 /* GarlandCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GarlandCollection.swift; path = Sources/GarlandCollection.swift; sourceTree = "<group>"; };
 		3F2ABD6EB8B25B9DE6154FBE81EF4DB9 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/Networking/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		3F452C78F068F0574FD1AE2EB128B5C9 /* Kingfisher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Kingfisher-Info.plist"; sourceTree = "<group>"; };
-		3FB8A498C655110BA5A039DA3D3C329D /* MapViewPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapViewPlus.framework; path = MapViewPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FB8A498C655110BA5A039DA3D3C329D /* MapViewPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MapViewPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FDCFA1B564003D68ACF98F9D3CA109 /* MapViewPlusDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapViewPlusDelegates.swift; path = MapViewPlus/Classes/Abstract/MapViewPlusDelegates.swift; sourceTree = "<group>"; };
 		4690E04EF5ACD0AF57FAD8122B257952 /* garland-view.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "garland-view.xcconfig"; sourceTree = "<group>"; };
 		47EDA351540BF2CCA8B665BD20516408 /* AuthenticationChallengeResponsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationChallengeResponsable.swift; path = Sources/Networking/AuthenticationChallengeResponsable.swift; sourceTree = "<group>"; };
@@ -169,13 +169,13 @@
 		547A04D8AE03E782A9BB47F7A15A13E5 /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Sources/Cache/DiskStorage.swift; sourceTree = "<group>"; };
 		587A0FE2DA548C7AD42B87B0B97E728B /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Sources/Networking/SessionDelegate.swift; sourceTree = "<group>"; };
 		59C0E892BDDA4EA2DDBA814E4ADD41C0 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MapViewPlus/Assets/Assets.xcassets; sourceTree = "<group>"; };
-		5B8FF304CCA06AED903DE9AC34DC83BA /* garland_view.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = garland_view.framework; path = "garland-view.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8FF304CCA06AED903DE9AC34DC83BA /* garland_view.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = garland_view.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D7790435042C185DF597B77AFD3B4CD /* MapViewPlus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MapViewPlus.modulemap; sourceTree = "<group>"; };
 		5D87A1FC080BDEA3FCE73EE4066E6A92 /* Pods-FoodTruck Trackr-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FoodTruck Trackr-umbrella.h"; sourceTree = "<group>"; };
 		5E9F0C8F44B6BA09D64D174990BC69D4 /* garland-view-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "garland-view-umbrella.h"; sourceTree = "<group>"; };
 		5F9B5B200BCF79154496281B2610FC35 /* CalloutAndAnchorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalloutAndAnchorView.swift; path = MapViewPlus/Classes/Views/CalloutAndAnchorView.swift; sourceTree = "<group>"; };
 		60DFF9E1F8CADB92FF37C02C49B818C2 /* MapViewPlus.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapViewPlus.xcconfig; sourceTree = "<group>"; };
-		613DDC9439CF871C4C3967D569CB583A /* MapViewPlus.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MapViewPlus.bundle; path = "MapViewPlus-MapViewPlus.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		613DDC9439CF871C4C3967D569CB583A /* MapViewPlus.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapViewPlus.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C8B46FF67F40B5FCBBB36DFEFB9FDE /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Utility/Result.swift; sourceTree = "<group>"; };
 		65ABDE01D5FCAC536091FBEA504C39DB /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/Extensions/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
 		66298764592EAC22157BDA12DBC60F68 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		9189E52DF5CE6D96F8077D2C5ED406DF /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/Networking/RequestModifier.swift; sourceTree = "<group>"; };
 		9CEE494D32C94DFB08478037F9D42161 /* MapViewPlusAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapViewPlusAnimator.swift; path = MapViewPlus/Classes/Animator/MapViewPlusAnimator.swift; sourceTree = "<group>"; };
 		9D05451C95E623BD5BDFFC99851E9638 /* ImageProgressive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProgressive.swift; path = Sources/Image/ImageProgressive.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2513ED20C4B7DDFF96822459BA28CFA /* ImagesHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagesHelper.swift; path = MapViewPlus/Classes/Helper/ImagesHelper.swift; sourceTree = "<group>"; };
 		A46F677AD06FC9F6CD612B26BBF6CDFB /* garland-view-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "garland-view-dummy.m"; sourceTree = "<group>"; };
 		A472598237B344FEA88708C8CB195866 /* GarlandViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GarlandViewController.swift; path = Sources/GarlandViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		C24D28AAD4E24536ECB71790BE2F95B2 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/Cache/CacheSerializer.swift; sourceTree = "<group>"; };
 		C2B3B8111EB7F164CAE01E16F8D8F910 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		C3C76CED268E1F366FB22C5C55AD9BDE /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/Cache/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
-		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44DEA1ECADC54669D6C86D56F6C718A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		CFDF99012C1F2E376275EE396C76DF5F /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/Views/AnimatedImageView.swift; sourceTree = "<group>"; };
 		D256B8776D9EDAEABB93E8D25EB15BEE /* CalloutViewPlus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalloutViewPlus.swift; path = MapViewPlus/Classes/Abstract/CalloutViewPlus.swift; sourceTree = "<group>"; };
@@ -318,7 +318,6 @@
 				CB44B44CD59712D08EE6104BEFCEE09C /* Resources */,
 				7FE49F3403DE061061815A387728B2DE /* Support Files */,
 			);
-			name = MapViewPlus;
 			path = MapViewPlus;
 			sourceTree = "<group>";
 		};
@@ -456,7 +455,6 @@
 				65ABDE01D5FCAC536091FBEA504C39DB /* UIButton+Kingfisher.swift */,
 				03AB7FC1C34A884116A3F50FBE48DDD9 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -502,7 +500,6 @@
 				A472598237B344FEA88708C8CB195866 /* GarlandViewController.swift */,
 				F183E647602BC1CE914695FFD3503D69 /* Support Files */,
 			);
-			name = "garland-view";
 			path = "garland-view";
 			sourceTree = "<group>";
 		};
@@ -866,7 +863,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/garland-view/garland-view-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/garland-view/garland-view-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -902,7 +899,8 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FoodTruck Trackr/Pods-FoodTruck Trackr-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -931,7 +929,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MapViewPlus";
 				IBSC_MODULE = MapViewPlus;
 				INFOPLIST_FILE = "Target Support Files/MapViewPlus/ResourceBundle-MapViewPlus-MapViewPlus-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				PRODUCT_NAME = MapViewPlus;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -957,7 +955,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Kingfisher/Kingfisher-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -985,7 +983,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MapViewPlus";
 				IBSC_MODULE = MapViewPlus;
 				INFOPLIST_FILE = "Target Support Files/MapViewPlus/ResourceBundle-MapViewPlus-MapViewPlus-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				PRODUCT_NAME = MapViewPlus;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1045,7 +1043,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1075,7 +1073,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/garland-view/garland-view-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/garland-view/garland-view-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1112,7 +1110,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MapViewPlus/MapViewPlus-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MapViewPlus/MapViewPlus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1149,7 +1147,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Kingfisher/Kingfisher-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1185,7 +1183,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-FoodTruck Trackr/Pods-FoodTruck Trackr-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1255,7 +1253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1284,7 +1282,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MapViewPlus/MapViewPlus-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MapViewPlus/MapViewPlus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -14,12 +14,24 @@ struct User: Codable {
     let email: String
     let currentLocation: String
     let isOperator: Bool?
-    let trucksOwned: String?
-    let favoriteTrucks: [FoodTruck]
+    let trucksOwned: [FoodTruckRepresentation]
+    let favoriteTrucks: [FoodTruckRepresentation]
     
+
+    
+    init(username: String, password: String, email: String, currentLocation: String, isOperator: Bool?, trucksOwned: [FoodTruckRepresentation], favoriteTrucks: [FoodTruckRepresentation]) {
+        self.userName = username
+        self.password = password
+        self.email = email
+        self.currentLocation = currentLocation
+        self.isOperator = isOperator
+        self.trucksOwned = trucksOwned
+        self.favoriteTrucks = favoriteTrucks
+    }
+ 
     convenience init(userName: String, password: String, currentLocation: String, email: String, isOperator: Bool?) {
         self.userName = userName
-        self.password = passwordj
+        self.password = password
         self.email = email
         self.currentLocation = currentLocation
         self.isOperator = isOperator
@@ -28,8 +40,8 @@ struct User: Codable {
 
     // password, email, current location, and type(either “diner” or “operator”)
     
-    convenience init(username: String, password: String, currentLocation: String, email: String, favoriteTrucks: [FoodTruck], isOperator: Bool) {
-        self.userName = userName
+    init(username: String, password: String, currentLocation: String, email: String, favoriteTrucks: [FoodTruckRepresentation], isOperator: Bool) {
+        self.userName = username
         self.password = password
         self.currentLocation = currentLocation
         self.email = email
@@ -37,8 +49,8 @@ struct User: Codable {
         self.favoriteTrucks = favoriteTrucks
     }
     
-    convenience init(username: String, password: String, currentLocation: String, email: String trucksOwned: [FoodTruck], isOperator: Bool) {
-            self.userName = userName
+    convenience init(username: String, password: String, currentLocation: String, email: String, trucksOwned: [FoodTruckRepresentation], isOperator: Bool) {
+            self.userName = username
             self.password = password
             self.currentLocation = currentLocation
             self.email = email
