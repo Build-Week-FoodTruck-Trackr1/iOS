@@ -16,7 +16,6 @@
 		5D88D73323AB267400116489 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73223AB267400116489 /* Schedule.storyboard */; };
 		5D88D73523AB269C00116489 /* Truck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73423AB269C00116489 /* Truck.storyboard */; };
 		5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73623AB26AB00116489 /* Menu.storyboard */; };
-		5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73823AB26BF00116489 /* Auth.storyboard */; };
 		5D88D74623AB298000116489 /* FoodTruck_TrackrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D74523AB298000116489 /* FoodTruck_TrackrTests.swift */; };
 		5D88D75423AB299900116489 /* FoodTruck_TrackrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D75323AB299900116489 /* FoodTruck_TrackrUITests.swift */; };
 		951AFCFF23AC666E00A06F13 /* FoodTruck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 951AFCFD23AC666E00A06F13 /* FoodTruck.xcdatamodeld */; };
@@ -29,6 +28,10 @@
 		955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9623AC645400310EBC /* CoreDataStack.swift */; };
 		9579894723B05C1800414C22 /* FoodTruckRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */; };
 		9579894923B0619300414C22 /* MenuItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894823B0619300414C22 /* MenuItemRepresentation.swift */; };
+		D7FD812223C4315A00835E39 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7FD812123C4315A00835E39 /* Auth.storyboard */; };
+		D7FD812423C4317300835E39 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812323C4317300835E39 /* User.swift */; };
+		D7FD812623C4317A00835E39 /* TruckLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */; };
+		D7FD812823C4325100835E39 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812723C4325100835E39 /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +63,6 @@
 		5D88D73223AB267400116489 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		5D88D73423AB269C00116489 /* Truck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Truck.storyboard; sourceTree = "<group>"; };
 		5D88D73623AB26AB00116489 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
-		5D88D73823AB26BF00116489 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		5D88D74323AB298000116489 /* FoodTruck TrackrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FoodTruck TrackrTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D88D74523AB298000116489 /* FoodTruck_TrackrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruck_TrackrTests.swift; sourceTree = "<group>"; };
 		5D88D74723AB298000116489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +82,10 @@
 		9579894523B05A8100414C22 /* FoodTruck 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FoodTruck 2.xcdatamodel"; sourceTree = "<group>"; };
 		9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckRepresentation.swift; sourceTree = "<group>"; };
 		9579894823B0619300414C22 /* MenuItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRepresentation.swift; sourceTree = "<group>"; };
+		D7FD812123C4315A00835E39 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Auth.storyboard; path = "../../../../../../../../../../Desktop/untitled folder/Auth.storyboard"; sourceTree = "<group>"; };
+		D7FD812323C4317300835E39 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../../../../../../../../../Desktop/untitled folder/User.swift"; sourceTree = "<group>"; };
+		D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TruckLoginViewController.swift; path = "../../../../../../../../../../Desktop/untitled folder/TruckLoginViewController.swift"; sourceTree = "<group>"; };
+		D7FD812723C4325100835E39 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +170,7 @@
 		5D88D73123AB265000116489 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5D88D73823AB26BF00116489 /* Auth.storyboard */,
+				D7FD812123C4315A00835E39 /* Auth.storyboard */,
 				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				5D680A1D23A9E06D004F42EC /* Main.storyboard */,
 				5D88D73623AB26AB00116489 /* Menu.storyboard */,
@@ -177,6 +183,7 @@
 		5D88D73A23AB288100116489 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D7FD812323C4317300835E39 /* User.swift */,
 				955A7D9623AC645400310EBC /* CoreDataStack.swift */,
 				951AFCFD23AC666E00A06F13 /* FoodTruck.xcdatamodeld */,
 				9534169323AC81CE001728CF /* FoodTruck+Convenience.swift */,
@@ -191,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */,
+				D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */,
 				9534168F23AC7670001728CF /* MenuItemViewController.swift */,
 			);
 			path = "View Controllers";
@@ -199,6 +207,7 @@
 		5D88D73C23AB289700116489 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7FD812723C4325100835E39 /* APIController.swift */,
 				9534169123AC8135001728CF /* MenuController.swift */,
 			);
 			path = Controllers;
@@ -353,7 +362,7 @@
 				5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */,
 				5D680A1F23A9E06D004F42EC /* Main.storyboard in Resources */,
 				5D88D73323AB267400116489 /* Schedule.storyboard in Resources */,
-				5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */,
+				D7FD812223C4315A00835E39 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +452,10 @@
 				955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,
 				9534169023AC7670001728CF /* MenuItemViewController.swift in Sources */,
+				D7FD812423C4317300835E39 /* User.swift in Sources */,
 				9579894923B0619300414C22 /* MenuItemRepresentation.swift in Sources */,
+				D7FD812823C4325100835E39 /* APIController.swift in Sources */,
+				D7FD812623C4317A00835E39 /* TruckLoginViewController.swift in Sources */,
 				9579894723B05C1800414C22 /* FoodTruckRepresentation.swift in Sources */,
 				955A7D9323AB37FF00310EBC /* MenuTableViewController.swift in Sources */,
 				9534169423AC81CE001728CF /* FoodTruck+Convenience.swift in Sources */,
@@ -623,7 +635,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "FoodTruck Trackr/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -642,7 +654,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "FoodTruck Trackr/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
