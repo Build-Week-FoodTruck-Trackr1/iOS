@@ -13,8 +13,8 @@ class MenuTableViewController: UITableViewController {
 
     private let menuController = MenuController()
 
-        lazy var fetchedResultsController: NSFetchedResultsController<Menu> = {
-            let fetchRequest: NSFetchRequest<Menu> = Menu.fetchRequest()
+        lazy var fetchedResultsController: NSFetchedResultsController<MenuItem> = {
+            let fetchRequest: NSFetchRequest<MenuItem> = MenuItem.fetchRequest()
             fetchRequest.sortDescriptors = [
                 NSSortDescriptor(key: "menuItem", ascending: true),
                 NSSortDescriptor(key: "itemName", ascending: true)
