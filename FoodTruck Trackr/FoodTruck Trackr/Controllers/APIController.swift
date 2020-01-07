@@ -46,32 +46,36 @@ class APIController {
     
     let baseURL = URL(string: "https://build-foodtruck-trackr1.herokuapp.com/")!
     
-    func put(foodTruck: FoodTruck, completion: @escaping () -> Void = { }) {
-        let name = foodTruck.truckTitle
-        let requestURL = baseURL.appendingPathExtension("json")
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = "PUT"
-
-        do {
-            //Put FoodTruckRepresentation Here
-            guard var representation = foodTruck.truckRepresentation else {
-                completion()
-                return
-            }
-            representation.identifier
-        } catch {
-            print("Error encoding task \(error)")
-            return
-        }
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-            guard error == nil else {
-                print(NSError())
-                completion()
-                return
-            }
-            completion()
-        }.resume()
-    }
+//    func put(foodTruck: FoodTruck, completion: @escaping () -> Void = { }) {
+//        let name = foodTruck.truckTitle
+//        let requestURL = baseURL.appendingPathExtension("json")
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = "PUT"
+//
+//        do {
+//            //Put FoodTruckRepresentation Here
+//            guard let representation = foodTruck.truckRepresentation else {
+//              completion()
+//                        return
+//                    }
+//                    representation.identifier = UUID().uuidString
+//                    task.identifier = uuid
+//                    try saveToPersistence()
+//                    request.httpBody = try JSONEncoder().encode(representation)
+//        } catch {
+//            print("Error encoding task \(error)")
+//            completion()
+//            return
+//        }
+//        URLSession.shared.dataTask(with: request) { (data, _, error) in
+//            guard error == nil else {
+//                print(NSError())
+//                completion()
+//                return
+//            }
+//            completion()
+//        }.resume()
+//    }
     
     private func saveToPersistence() throws {
     let moc = CoreDataStack.shared.mainContext

@@ -32,6 +32,7 @@
 		D7FD812423C4317300835E39 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812323C4317300835E39 /* User.swift */; };
 		D7FD812623C4317A00835E39 /* TruckLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */; };
 		D7FD812823C4325100835E39 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812723C4325100835E39 /* APIController.swift */; };
+		D7FD812A23C4357D00835E39 /* TruckCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812923C4357D00835E39 /* TruckCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		D7FD812323C4317300835E39 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../../../../../../../../../Desktop/untitled folder/User.swift"; sourceTree = "<group>"; };
 		D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TruckLoginViewController.swift; path = "../../../../../../../../../../Desktop/untitled folder/TruckLoginViewController.swift"; sourceTree = "<group>"; };
 		D7FD812723C4325100835E39 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		D7FD812923C4357D00835E39 /* TruckCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */,
 				D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */,
 				9534168F23AC7670001728CF /* MenuItemViewController.swift */,
+				D7FD812923C4357D00835E39 /* TruckCollectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			files = (
 				955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */,
 				5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */,
+				D7FD812A23C4357D00835E39 /* TruckCollectionViewController.swift in Sources */,
 				9534169223AC8135001728CF /* MenuController.swift in Sources */,
 				955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,
