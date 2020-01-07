@@ -23,17 +23,13 @@
 		21FEB4966B1C9F1C1BBDB5EE9E337610 /* CacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24D28AAD4E24536ECB71790BE2F95B2 /* CacheSerializer.swift */; };
 		241E465897A56A5EE5FA73FEAEDAB450 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8B46FF67F40B5FCBBB36DFEFB9FDE /* Result.swift */; };
 		257B0FEB5F806A21583C3E9B4F16F9E0 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85057AC5CD2F52C25916BB1D09BFA2B /* Source.swift */; };
-		31CFA0DA12C0C63BE1E84BD7B3780568 /* GarlandPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D06829C6BCA799F196095ACE853 /* GarlandPresentAnimationController.swift */; };
 		32ADB348BDDEE0B27ED4C125694D6D02 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3357052BFF479DC036BB921C4168A4F /* Resource.swift */; };
-		34B42A7FF337302B0D51312CF2A2B0BD /* GarlandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472598237B344FEA88708C8CB195866 /* GarlandViewController.swift */; };
 		36A814BB8A755D68D5E3D96C4EAADB6E /* ImageDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837BF137199E2197E393AF5A2E2C970C /* ImageDrawing.swift */; };
 		3896AA21EC5D3EB7B522FCC66CAE2D69 /* ImageDownloaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5D1018A6927B514D70BC0845DD3F24 /* ImageDownloaderDelegate.swift */; };
 		3C1DFF8C213664BDB15F04ABA7FE4176 /* GIFAnimatedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B41943BFEF697F4CB450ABCBA9ED3 /* GIFAnimatedImage.swift */; };
 		3EBA483E87C18A32151CE08617F0E00C /* KingfisherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB38045F3DCD9A714C5C2322AF97B3 /* KingfisherError.swift */; };
 		4547D2497788CEF8DB3CE88A9E724266 /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2ABD6EB8B25B9DE6154FBE81EF4DB9 /* ImagePrefetcher.swift */; };
-		470C2AE5778662937D3522469460DDC2 /* garland-view-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A46F677AD06FC9F6CD612B26BBF6CDFB /* garland-view-dummy.m */; };
 		4F5E0DC4752A4F8AED457D83141D1264 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6819934F42A288C769E1EDB3A2BDF302 /* Box.swift */; };
-		5706A50456379DBC3E80AA3356F578BF /* GarlandCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392252AFC51CA11A4A1280EB20BAE0D0 /* GarlandCollection.swift */; };
 		57373DBECB85E0F33BF755AC1E9B55B6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB66A0DCF86D610470074F5F50570A00 /* Kingfisher.framework */; };
 		5B2C4CD6191E9E17463DF4DF3E5169E8 /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76475C7187351C3EB164460F1740AC25 /* ImageModifier.swift */; };
 		5D4759FF7D34320BC1BFE3171BD83250 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9015F91F545DA7CF8BA9BA00EBAE9FA2 /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,10 +55,8 @@
 		8538DA93E20F89D2DAB447709057427B /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271677678B57526CAAE3EABC1FA41124 /* Delegate.swift */; };
 		8A4DB9795771D216FE87EDABCD89AF60 /* DefaultCalloutViewThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516C967EA60586B9E2B5B4E30059CC6A /* DefaultCalloutViewThemeManager.swift */; };
 		91C10F9F51CD2A8E9680B85535263BB9 /* DefaultCalloutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D797D051377A6D1A4F852339DEC9EDF /* DefaultCalloutViewModel.swift */; };
-		93697E2F211687AEF7B3B0AE1F5465E9 /* garland-view-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E9F0C8F44B6BA09D64D174990BC69D4 /* garland-view-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A01D0E20E670C29E4F36C0EAB9C96D8A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11C9014609AAA312C659B793C0D2056 /* Storage.swift */; };
 		A3765576E13E2188F1C8AD16104360A8 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED862B47C262EDFB7CCA5CC2B1E71CAC /* MemoryStorage.swift */; };
-		A603CB829BCFE518914828B4E7A6D414 /* GarlandConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1913F7C735E37C7C9032CFB4A10AE027 /* GarlandConfig.swift */; };
 		AC31ABEB2D79702FFF36FB01F7157DDA /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E393DEB6807EC7DEF570466C286FB /* ImageDownloader.swift */; };
 		ACB9D36043B85C46D0C94266E7F1DBA2 /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ABDE01D5FCAC536091FBEA504C39DB /* UIButton+Kingfisher.swift */; };
 		ADEA1883A271AAEBB15FEAE77F7EFB6C /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF349219CC637263109AC6DB7875C9C5 /* KingfisherManager.swift */; };
@@ -134,10 +128,8 @@
 		0B510F073313EE352D1739DD22D156D4 /* MapViewPlus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MapViewPlus-Info.plist"; sourceTree = "<group>"; };
 		0DCECB0478694DD6ABACE3E6A3BD00B1 /* AnnotationPlus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnnotationPlus.swift; path = MapViewPlus/Classes/Abstract/AnnotationPlus.swift; sourceTree = "<group>"; };
 		16EEAB72C8D788C1E7EAB9A924490310 /* MapViewPlus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MapViewPlus-dummy.m"; sourceTree = "<group>"; };
-		1913F7C735E37C7C9032CFB4A10AE027 /* GarlandConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GarlandConfig.swift; path = Sources/GarlandConfig.swift; sourceTree = "<group>"; };
 		1DAFDC6050752BFDE0261A574F17CDDB /* Pods-FoodTruck Trackr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoodTruck Trackr.release.xcconfig"; sourceTree = "<group>"; };
 		2028320004CC5034E3CC7515FF1AAC64 /* SizeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeExtensions.swift; path = Sources/Utility/SizeExtensions.swift; sourceTree = "<group>"; };
-		2045D7A49A08F44004592D8810E1C43B /* garland-view.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "garland-view.modulemap"; sourceTree = "<group>"; };
 		213BC120D1385936E3B130CA91A0DD2D /* Pods-FoodTruck Trackr-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FoodTruck Trackr-Info.plist"; sourceTree = "<group>"; };
 		23E5F44A8B750076E55C350B1ADBE91C /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Views/Indicator.swift; sourceTree = "<group>"; };
 		2468A67ACA2D5CE3E6B7A922199478F7 /* Runtime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Sources/Utility/Runtime.swift; sourceTree = "<group>"; };
@@ -146,15 +138,12 @@
 		3217D6F44EB8F32DF4EE3F778EC65435 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/General/Kingfisher.swift; sourceTree = "<group>"; };
 		3543AB01CAA0D8EED5227ABEEE28A05A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		35B53D4C386B6269AD75E522600C4D1E /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/General/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
-		3672CA22C4C14670538FF949085F02AE /* garland-view-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "garland-view-Info.plist"; sourceTree = "<group>"; };
-		384FCAC0BE78AC1D8E5183724E82B8F5 /* Pods_FoodTruck_Trackr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FoodTruck_Trackr.framework; path = "Pods-FoodTruck Trackr.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		384FCAC0BE78AC1D8E5183724E82B8F5 /* Pods_FoodTruck_Trackr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTruck_Trackr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		390B87272CB476C7DD5389BD7CB70DD8 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionHelpers.swift; path = Sources/Utility/ExtensionHelpers.swift; sourceTree = "<group>"; };
-		392252AFC51CA11A4A1280EB20BAE0D0 /* GarlandCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GarlandCollection.swift; path = Sources/GarlandCollection.swift; sourceTree = "<group>"; };
 		3F2ABD6EB8B25B9DE6154FBE81EF4DB9 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/Networking/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		3F452C78F068F0574FD1AE2EB128B5C9 /* Kingfisher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Kingfisher-Info.plist"; sourceTree = "<group>"; };
-		3FB8A498C655110BA5A039DA3D3C329D /* MapViewPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapViewPlus.framework; path = MapViewPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FB8A498C655110BA5A039DA3D3C329D /* MapViewPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MapViewPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FDCFA1B564003D68ACF98F9D3CA109 /* MapViewPlusDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapViewPlusDelegates.swift; path = MapViewPlus/Classes/Abstract/MapViewPlusDelegates.swift; sourceTree = "<group>"; };
-		4690E04EF5ACD0AF57FAD8122B257952 /* garland-view.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "garland-view.xcconfig"; sourceTree = "<group>"; };
 		47EDA351540BF2CCA8B665BD20516408 /* AuthenticationChallengeResponsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationChallengeResponsable.swift; path = Sources/Networking/AuthenticationChallengeResponsable.swift; sourceTree = "<group>"; };
 		48B4210E32F63060AF157F1BC4BE8911 /* ImageDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDataProvider.swift; path = Sources/General/ImageSource/ImageDataProvider.swift; sourceTree = "<group>"; };
 		48E6BD54BD84DA4414DB6CDD4F1C755A /* MapViewPlus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapViewPlus-prefix.pch"; sourceTree = "<group>"; };
@@ -169,13 +158,12 @@
 		547A04D8AE03E782A9BB47F7A15A13E5 /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Sources/Cache/DiskStorage.swift; sourceTree = "<group>"; };
 		587A0FE2DA548C7AD42B87B0B97E728B /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Sources/Networking/SessionDelegate.swift; sourceTree = "<group>"; };
 		59C0E892BDDA4EA2DDBA814E4ADD41C0 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MapViewPlus/Assets/Assets.xcassets; sourceTree = "<group>"; };
-		5B8FF304CCA06AED903DE9AC34DC83BA /* garland_view.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = garland_view.framework; path = "garland-view.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8FF304CCA06AED903DE9AC34DC83BA /* garland_view.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = garland_view.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D7790435042C185DF597B77AFD3B4CD /* MapViewPlus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MapViewPlus.modulemap; sourceTree = "<group>"; };
 		5D87A1FC080BDEA3FCE73EE4066E6A92 /* Pods-FoodTruck Trackr-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FoodTruck Trackr-umbrella.h"; sourceTree = "<group>"; };
-		5E9F0C8F44B6BA09D64D174990BC69D4 /* garland-view-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "garland-view-umbrella.h"; sourceTree = "<group>"; };
 		5F9B5B200BCF79154496281B2610FC35 /* CalloutAndAnchorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalloutAndAnchorView.swift; path = MapViewPlus/Classes/Views/CalloutAndAnchorView.swift; sourceTree = "<group>"; };
 		60DFF9E1F8CADB92FF37C02C49B818C2 /* MapViewPlus.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapViewPlus.xcconfig; sourceTree = "<group>"; };
-		613DDC9439CF871C4C3967D569CB583A /* MapViewPlus.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MapViewPlus.bundle; path = "MapViewPlus-MapViewPlus.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		613DDC9439CF871C4C3967D569CB583A /* MapViewPlus.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapViewPlus.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C8B46FF67F40B5FCBBB36DFEFB9FDE /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Utility/Result.swift; sourceTree = "<group>"; };
 		65ABDE01D5FCAC536091FBEA504C39DB /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/Extensions/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
 		66298764592EAC22157BDA12DBC60F68 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
@@ -183,7 +171,6 @@
 		6E5CAEC8AF264B7F4DB0056DF4FEF2A9 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
 		6F4B7BAEC8F34E733241E25403954D5E /* AnchorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnchorView.swift; path = MapViewPlus/Classes/Views/AnchorView.swift; sourceTree = "<group>"; };
 		76475C7187351C3EB164460F1740AC25 /* ImageModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageModifier.swift; path = Sources/Networking/ImageModifier.swift; sourceTree = "<group>"; };
-		795E6E071781237D6217C201139CAC58 /* garland-view-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "garland-view-prefix.pch"; sourceTree = "<group>"; };
 		7DCA5840F7A57E83EA40722FDFA2C3F0 /* SessionDataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDataTask.swift; path = Sources/Networking/SessionDataTask.swift; sourceTree = "<group>"; };
 		837BF137199E2197E393AF5A2E2C970C /* ImageDrawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDrawing.swift; path = Sources/Image/ImageDrawing.swift; sourceTree = "<group>"; };
 		845E393DEB6807EC7DEF570466C286FB /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/Networking/ImageDownloader.swift; sourceTree = "<group>"; };
@@ -195,22 +182,19 @@
 		9189E52DF5CE6D96F8077D2C5ED406DF /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/Networking/RequestModifier.swift; sourceTree = "<group>"; };
 		9CEE494D32C94DFB08478037F9D42161 /* MapViewPlusAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapViewPlusAnimator.swift; path = MapViewPlus/Classes/Animator/MapViewPlusAnimator.swift; sourceTree = "<group>"; };
 		9D05451C95E623BD5BDFFC99851E9638 /* ImageProgressive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProgressive.swift; path = Sources/Image/ImageProgressive.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2513ED20C4B7DDFF96822459BA28CFA /* ImagesHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagesHelper.swift; path = MapViewPlus/Classes/Helper/ImagesHelper.swift; sourceTree = "<group>"; };
-		A46F677AD06FC9F6CD612B26BBF6CDFB /* garland-view-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "garland-view-dummy.m"; sourceTree = "<group>"; };
-		A472598237B344FEA88708C8CB195866 /* GarlandViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GarlandViewController.swift; path = Sources/GarlandViewController.swift; sourceTree = "<group>"; };
 		AB66A0DCF86D610470074F5F50570A00 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F60950C2AEE5986844B0CE2AAC565 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B5A147F915193C123A34C2D50883F224 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image/Image.swift; sourceTree = "<group>"; };
 		B6E8950AEF1F0E8688FA8B607D9B20DC /* ResourceBundle-MapViewPlus-MapViewPlus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MapViewPlus-MapViewPlus-Info.plist"; sourceTree = "<group>"; };
-		BA602D06829C6BCA799F196095ACE853 /* GarlandPresentAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GarlandPresentAnimationController.swift; path = Sources/GarlandPresentAnimationController.swift; sourceTree = "<group>"; };
 		BBD1420F631B18B006A9048A314AAFBF /* DefaultCalloutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultCalloutView.swift; path = MapViewPlus/Classes/DefaultCalloutView/DefaultCalloutView.swift; sourceTree = "<group>"; };
 		BEFE12775087695B3AF9AC0C970465EF /* MapViewPlus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapViewPlus.swift; path = MapViewPlus/Classes/Source/MapViewPlus.swift; sourceTree = "<group>"; };
 		BF261A807D8B2CE5E910E703EBE3012E /* MapViewPlus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapViewPlus-umbrella.h"; sourceTree = "<group>"; };
 		C24D28AAD4E24536ECB71790BE2F95B2 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/Cache/CacheSerializer.swift; sourceTree = "<group>"; };
 		C2B3B8111EB7F164CAE01E16F8D8F910 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		C3C76CED268E1F366FB22C5C55AD9BDE /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/Cache/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
-		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44DEA1ECADC54669D6C86D56F6C718A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		CFDF99012C1F2E376275EE396C76DF5F /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/Views/AnimatedImageView.swift; sourceTree = "<group>"; };
 		D256B8776D9EDAEABB93E8D25EB15BEE /* CalloutViewPlus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalloutViewPlus.swift; path = MapViewPlus/Classes/Abstract/CalloutViewPlus.swift; sourceTree = "<group>"; };
@@ -318,7 +302,6 @@
 				CB44B44CD59712D08EE6104BEFCEE09C /* Resources */,
 				7FE49F3403DE061061815A387728B2DE /* Support Files */,
 			);
-			name = MapViewPlus;
 			path = MapViewPlus;
 			sourceTree = "<group>";
 		};
@@ -363,7 +346,6 @@
 		39410917ECEA7159676D6632266390FC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F1B0427F2FC79735600EFFB225084C59 /* garland-view */,
 				BBF70D45033423CF3D61C3E874A03440 /* Kingfisher */,
 				16EEC77925E1D24072DA84CCEAC12CBD /* MapViewPlus */,
 			);
@@ -456,7 +438,6 @@
 				65ABDE01D5FCAC536091FBEA504C39DB /* UIButton+Kingfisher.swift */,
 				03AB7FC1C34A884116A3F50FBE48DDD9 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -477,33 +458,6 @@
 				83BD92C0545D20554DFC591AAC531CD9 /* Products */,
 				7F07454DC48011E39CAA37B521378DAD /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		F183E647602BC1CE914695FFD3503D69 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2045D7A49A08F44004592D8810E1C43B /* garland-view.modulemap */,
-				4690E04EF5ACD0AF57FAD8122B257952 /* garland-view.xcconfig */,
-				A46F677AD06FC9F6CD612B26BBF6CDFB /* garland-view-dummy.m */,
-				3672CA22C4C14670538FF949085F02AE /* garland-view-Info.plist */,
-				795E6E071781237D6217C201139CAC58 /* garland-view-prefix.pch */,
-				5E9F0C8F44B6BA09D64D174990BC69D4 /* garland-view-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/garland-view";
-			sourceTree = "<group>";
-		};
-		F1B0427F2FC79735600EFFB225084C59 /* garland-view */ = {
-			isa = PBXGroup;
-			children = (
-				392252AFC51CA11A4A1280EB20BAE0D0 /* GarlandCollection.swift */,
-				1913F7C735E37C7C9032CFB4A10AE027 /* GarlandConfig.swift */,
-				BA602D06829C6BCA799F196095ACE853 /* GarlandPresentAnimationController.swift */,
-				A472598237B344FEA88708C8CB195866 /* GarlandViewController.swift */,
-				F183E647602BC1CE914695FFD3503D69 /* Support Files */,
-			);
-			name = "garland-view";
-			path = "garland-view";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,7 +492,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93697E2F211687AEF7B3B0AE1F5465E9 /* garland-view-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,11 +758,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				470C2AE5778662937D3522469460DDC2 /* garland-view-dummy.m in Sources */,
-				5706A50456379DBC3E80AA3356F578BF /* GarlandCollection.swift in Sources */,
-				A603CB829BCFE518914828B4E7A6D414 /* GarlandConfig.swift in Sources */,
-				31CFA0DA12C0C63BE1E84BD7B3780568 /* GarlandPresentAnimationController.swift in Sources */,
-				34B42A7FF337302B0D51312CF2A2B0BD /* GarlandViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -851,7 +799,6 @@
 /* Begin XCBuildConfiguration section */
 		4E434EDBB5428D6CCAA28630A256B6E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4690E04EF5ACD0AF57FAD8122B257952 /* garland-view.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1060,7 +1007,6 @@
 		};
 		B07D5B39BC87429BA8B60AD15B3B3D8A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4690E04EF5ACD0AF57FAD8122B257952 /* garland-view.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
