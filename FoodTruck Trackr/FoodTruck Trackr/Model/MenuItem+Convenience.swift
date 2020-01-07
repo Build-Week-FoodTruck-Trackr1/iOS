@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-enum Category: Int16, CaseIterable {
+enum Category: Int16, CaseIterable, Codable {
     case appetizer = 0
     case entree = 1
     case side = 2

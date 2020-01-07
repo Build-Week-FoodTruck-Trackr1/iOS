@@ -35,13 +35,14 @@ class MenuTableViewController: UITableViewController {
             tableView.reloadData()
         }
 
-//        @IBAction func shouldRefresh(_ sender: Any) {
-//            menuController.fetchTasksFromServer{(_) in
-//                DispatchQueue.main.async {
-//                    self.refreshControl?.endRefreshing()
-//                }
-//            }
-//        }
+        @IBAction func shouldRefresh(_ sender: Any) {
+            menuController.fetchItemsFromServer{(_) in
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                }
+            }
+        }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
