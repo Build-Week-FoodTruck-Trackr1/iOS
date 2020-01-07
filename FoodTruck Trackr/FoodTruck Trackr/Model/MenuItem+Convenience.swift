@@ -53,7 +53,7 @@ extension MenuItem {
     convenience init(
         itemName: String,
         itemPrice: String,
-        itemPhoto: String?,
+        itemPhoto: Data?,
         itemDescription: String?,
         category: Category = .appetizer,
         customerRating: Int32? = 0,
@@ -76,13 +76,13 @@ extension MenuItem {
     convenience init?(menuItemRepresentation: MenuItemRepresentation,
                       context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        guard let category = Category(typeName: menuItemRepresentation.category) else { return nil }
+        //guard let category = menuItemRepresentation.category else { return nil }
         
         self.init(itemName: menuItemRepresentation.itemName,
                   itemPrice: menuItemRepresentation.itemPrice,
                   itemPhoto: menuItemRepresentation.itemPhoto,
                   itemDescription: menuItemRepresentation.itemDescription,
-                  category: category,
+                  category: menuItemRepresentation.category,
                   customerRating: menuItemRepresentation.customerRating,
                   customerRatingAvg: menuItemRepresentation.customerRatingAvg,
                   context: context)
@@ -98,7 +98,7 @@ extension MenuItem {
                                        itemPrice: itemPrice,
                                        itemPhoto: itemPhoto,
                                        itemDescription: itemDescription,
-                                       category: category.type,
+                                       category: category,
                                        customerRating: customerRating,
                                        customerRatingAvg: customerRatingAvg)
     }

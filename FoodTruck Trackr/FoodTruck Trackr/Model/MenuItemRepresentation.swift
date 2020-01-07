@@ -16,9 +16,9 @@ struct MenuItemRepresentation {
     
     var itemName: String
     var itemPrice: String
-    var itemPhoto: String?
+    var itemPhoto: Data?
     var itemDescription: String?
-    var category: String
+    var category: Category
     var customerRating: Int32?
     var customerRatingAvg: Double?
 

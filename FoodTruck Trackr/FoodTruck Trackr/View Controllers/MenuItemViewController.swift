@@ -39,7 +39,7 @@ class MenuItemViewController: UIViewController {
         let categoryIndex = categorySegControl.selectedSegmentIndex
         let category = Category.allCases[categoryIndex]
                         
-        let imageData: Data? = image
+        let imageData: Data? = image.pngData()
         
         if let menuItem = menuItem {
             // editing/updating an existing task
@@ -51,10 +51,10 @@ class MenuItemViewController: UIViewController {
         } else {
             let menuItem = MenuItem(itemName: name,
                                     itemPrice: price,
-                                    itemPhoto: String(from: image,
+                                    itemPhoto: imageData,
                                     itemDescription: description,
-                                    category: category.type)
-            menuController?.put(menuItem: menuItem)
+                                    category: category)
+            menuController?.put(item: menuItem)
         }
         
         do {
