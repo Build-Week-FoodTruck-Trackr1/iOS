@@ -42,7 +42,7 @@ class TruckCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToLogin" {
             if let loginVC = segue.destination as? TruckLoginViewController {
-                loginVC.user = apiController.user
+               loginVC.apiController = apiController
             }
         }
     }

@@ -24,7 +24,7 @@ class TruckLoginViewController: UIViewController {
     var user: User?
     var operatorStatus: Bool = false
     var foodTruck = [FoodTruckRepresentation]()
-    let apiController = APIController()
+    var apiController: APIController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class TruckLoginViewController: UIViewController {
                                         currentLocation: location,
                                         email: email,
                                         isOperator: operatorStatus)!
-            apiController.LogIn(with: signInUser)
+            apiController?.LogIn(with: signInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
             // Sign UP
             let signUpUser = User(username: user,
@@ -53,7 +53,7 @@ class TruckLoginViewController: UIViewController {
                                   email: email,
                                   trucksOwned: self.foodTruck,
                                   isOperator: operatorStatus)!
-            apiController.signUp(with: signUpUser)
+            apiController?.signUp(with: signUpUser)
         }
     }
     

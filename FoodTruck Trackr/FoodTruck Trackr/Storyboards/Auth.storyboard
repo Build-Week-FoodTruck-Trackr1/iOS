@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main-->
+        <!--Truck-->
         <scene sceneID="pPc-i4-NY3">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="rhh-og-0Go" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Truck" id="rhh-og-0Go" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="P5a-FJ-kqI"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQP-hg-ONJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -154,7 +154,6 @@
                         <outlet property="signUpLogInButton" destination="wce-iR-UL6" id="muE-0L-FL3"/>
                         <outlet property="truckNameTextField" destination="OlG-Fa-ACo" id="fFl-dW-vNS"/>
                         <outlet property="userNameTextField" destination="zBt-ut-mCE" id="TX6-cO-Kg7"/>
-                        <outlet property="userOperatorToggle" destination="7i3-GQ-VRw" id="eVb-Z6-OUx"/>
                         <segue destination="rhh-og-0Go" kind="show" identifier="ToMain" id="3fm-sL-DJP"/>
                     </connections>
                 </viewController>
