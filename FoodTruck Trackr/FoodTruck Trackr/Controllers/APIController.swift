@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreData
 
 
 enum ResultType: String {
@@ -42,9 +42,38 @@ struct SearchResult: Codable {
 
 class APIController {
     
+    typealias CompletionHandler = (Error?) -> Void
+    
     var user: User?
     
     let baseURL = URL(string: "https://build-foodtruck-trackr1.herokuapp.com/")!
+    
+    func fetchTrucksFromServer(completion: @escaping CompletionHandler = { _ in}) {
+        let reqeustURL = baseURL.appendingPathExtension("json")
+        URLSession.shared.dataTask(with: reqeustURL) { (data, _, error) in
+            guard error == nil else {
+                print("error fetching tasks: \(error!)")
+                completion(error)
+                return
+            }
+            guard let data = data else {
+                print("no data returned by data task")
+                completion(NSError())
+                return
+            }
+            
+            do {
+                let foodTruckRepresentations = Array(try JSONDecoder().decode([String : FoodTruckRepresentation].self, from: data).values)
+                // TODO: Update all of our tasks
+                try self.updateFoodTrucks(with: foodTruckRepresentations)
+                completion(nil)
+            } catch {
+                print("Error decoding task representations: \(error)")
+                completion(error)
+                return
+            }
+        }.resume()
+    }
     
     func put(foodTruck: FoodTruck, completion: @escaping () -> Void = { }) {
 //        let name = foodTruck.truckTitle
@@ -143,9 +172,58 @@ class APIController {
         }.resume()
     }
     
+
     
-    func addTruck() {
+    private func updateFoodTrucks(with representations: [FoodTruckRepresentation]) throws {
+           let foodTrucksWithID = representations.filter {$0.identifier != nil }
+        let identifiersToFetch = foodTrucksWithID.compactMap { _ in UUID() }
+           let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, foodTrucksWithID))
+           var foodTrucksToCreate = representationsByID
+           let fetchRequest: NSFetchRequest<FoodTruck> = FoodTruck.fetchRequest()
+           let context = CoreDataStack.shared.container.newBackgroundContext()
            
+           context.perform {
+               do {
+                      let existingTasks = try context.fetch(fetchRequest)
+                      for foodTruck in existingTasks {
+                          guard let id = foodTruck.identifier,
+                              let representation = representationsByID[id] else {
+                                  context.delete(foodTruck)
+                                  continue
+                          }
+                        foodTruck.truckTitle = representation.truckTitle
+                        foodTruck.cuisineType = representation.cuisineType
+                        foodTruck.customerRating = representation.customerRating!
+                          foodTrucksToCreate.removeValue(forKey: id)
+                      }
+                      for representation in foodTrucksToCreate.values {
+                        FoodTruck(truckRepresentation: representation, context: context)
+                      }
+                      } catch {
+                          print("Error Fetching tasks for UUIDs: \(error)")
+                  }
+           }
+           try CoreDataStack.shared.save(context: context)
+         }
+       
+       func deleteFoodTruckFromServer(_ task: FoodTruck, completion: @escaping CompletionHandler = { _ in }) {
+           guard let uuid = task.identifier else {
+               completion(NSError())
+               return
+           }
+           
+           let requestURL = baseURL.appendingPathComponent(uuid.uuidString).appendingPathExtension("json")
+           var request = URLRequest(url: requestURL)
+           request.httpMethod = "DELETE"
+           
+           URLSession.shared.dataTask(with: request) { (_, _, error) in
+               guard error == nil else {
+                   print("Error deleting task: \(error!)")
+                   completion(error)
+                   return
+               }
+               completion(nil)
+           }.resume()
        }
     
       // MARK: - Sign up / Log In Methods
