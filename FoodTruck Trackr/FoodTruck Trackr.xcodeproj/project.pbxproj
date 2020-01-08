@@ -10,7 +10,6 @@
 		0FD6BFA2FF861E8D878F0F25 /* Pods_FoodTruck_Trackr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7197CD5B0F82D1E85FC710 /* Pods_FoodTruck_Trackr.framework */; };
 		5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D680A1723A9E06D004F42EC /* AppDelegate.swift */; };
 		5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D680A1923A9E06D004F42EC /* SceneDelegate.swift */; };
-		5D680A1F23A9E06D004F42EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D680A1D23A9E06D004F42EC /* Main.storyboard */; };
 		5D680A2123A9E06F004F42EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D680A2023A9E06F004F42EC /* Assets.xcassets */; };
 		5D680A2423A9E06F004F42EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */; };
 		5D88D73323AB267400116489 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73223AB267400116489 /* Schedule.storyboard */; };
@@ -53,7 +52,6 @@
 		5D680A1423A9E06D004F42EC /* FoodTruck Trackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodTruck Trackr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D680A1723A9E06D004F42EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D680A1923A9E06D004F42EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D680A1E23A9E06D004F42EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D680A2023A9E06F004F42EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D680A2323A9E06F004F42EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D680A2523A9E06F004F42EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			children = (
 				5D88D73823AB26BF00116489 /* Auth.storyboard */,
 				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
-				5D680A1D23A9E06D004F42EC /* Main.storyboard */,
 				5D88D73623AB26AB00116489 /* Menu.storyboard */,
 				5D88D73223AB267400116489 /* Schedule.storyboard */,
 				5D88D73423AB269C00116489 /* Truck.storyboard */,
@@ -351,7 +348,6 @@
 				5D680A2123A9E06F004F42EC /* Assets.xcassets in Resources */,
 				5D88D73523AB269C00116489 /* Truck.storyboard in Resources */,
 				5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */,
-				5D680A1F23A9E06D004F42EC /* Main.storyboard in Resources */,
 				5D88D73323AB267400116489 /* Schedule.storyboard in Resources */,
 				5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */,
 			);
@@ -484,14 +480,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5D680A1D23A9E06D004F42EC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D680A1E23A9E06D004F42EC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
