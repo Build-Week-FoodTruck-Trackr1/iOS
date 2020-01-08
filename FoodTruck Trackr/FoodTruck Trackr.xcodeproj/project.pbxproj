@@ -28,11 +28,11 @@
 		955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9623AC645400310EBC /* CoreDataStack.swift */; };
 		9579894723B05C1800414C22 /* FoodTruckRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */; };
 		9579894923B0619300414C22 /* MenuItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894823B0619300414C22 /* MenuItemRepresentation.swift */; };
-		D7FD812223C4315A00835E39 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7FD812123C4315A00835E39 /* Auth.storyboard */; };
-		D7FD812423C4317300835E39 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812323C4317300835E39 /* User.swift */; };
-		D7FD812623C4317A00835E39 /* TruckLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */; };
 		D7FD812823C4325100835E39 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812723C4325100835E39 /* APIController.swift */; };
 		D7FD812A23C4357D00835E39 /* TruckCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812923C4357D00835E39 /* TruckCollectionViewController.swift */; };
+		D7FD812C23C5701F00835E39 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812B23C5701E00835E39 /* User.swift */; };
+		D7FD812E23C5703700835E39 /* TruckLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD812D23C5703700835E39 /* TruckLoginViewController.swift */; };
+		D7FD813223C570EE00835E39 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7FD813123C570ED00835E39 /* Auth.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,11 +83,11 @@
 		9579894523B05A8100414C22 /* FoodTruck 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FoodTruck 2.xcdatamodel"; sourceTree = "<group>"; };
 		9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckRepresentation.swift; sourceTree = "<group>"; };
 		9579894823B0619300414C22 /* MenuItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRepresentation.swift; sourceTree = "<group>"; };
-		D7FD812123C4315A00835E39 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Auth.storyboard; path = "../../../../../../../../../../Desktop/untitled folder/Auth.storyboard"; sourceTree = "<group>"; };
-		D7FD812323C4317300835E39 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../../../../../../../../../Desktop/untitled folder/User.swift"; sourceTree = "<group>"; };
-		D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TruckLoginViewController.swift; path = "../../../../../../../../../../Desktop/untitled folder/TruckLoginViewController.swift"; sourceTree = "<group>"; };
 		D7FD812723C4325100835E39 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		D7FD812923C4357D00835E39 /* TruckCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckCollectionViewController.swift; sourceTree = "<group>"; };
+		D7FD812B23C5701E00835E39 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D7FD812D23C5703700835E39 /* TruckLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckLoginViewController.swift; sourceTree = "<group>"; };
+		D7FD813123C570ED00835E39 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +172,7 @@
 		5D88D73123AB265000116489 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				D7FD812123C4315A00835E39 /* Auth.storyboard */,
+				D7FD813123C570ED00835E39 /* Auth.storyboard */,
 				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				5D680A1D23A9E06D004F42EC /* Main.storyboard */,
 				5D88D73623AB26AB00116489 /* Menu.storyboard */,
@@ -185,13 +185,13 @@
 		5D88D73A23AB288100116489 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D7FD812323C4317300835E39 /* User.swift */,
 				955A7D9623AC645400310EBC /* CoreDataStack.swift */,
 				951AFCFD23AC666E00A06F13 /* FoodTruck.xcdatamodeld */,
 				9534169323AC81CE001728CF /* FoodTruck+Convenience.swift */,
 				9534169523AC81F6001728CF /* MenuItem+Convenience.swift */,
 				9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */,
 				9579894823B0619300414C22 /* MenuItemRepresentation.swift */,
+				D7FD812B23C5701E00835E39 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 		5D88D73B23AB288C00116489 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7FD812D23C5703700835E39 /* TruckLoginViewController.swift */,
 				955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */,
-				D7FD812523C4317A00835E39 /* TruckLoginViewController.swift */,
 				9534168F23AC7670001728CF /* MenuItemViewController.swift */,
 				D7FD812923C4357D00835E39 /* TruckCollectionViewController.swift */,
 			);
@@ -365,7 +365,7 @@
 				5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */,
 				5D680A1F23A9E06D004F42EC /* Main.storyboard in Resources */,
 				5D88D73323AB267400116489 /* Schedule.storyboard in Resources */,
-				D7FD812223C4315A00835E39 /* Auth.storyboard in Resources */,
+				D7FD813223C570EE00835E39 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,10 +456,10 @@
 				955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,
 				9534169023AC7670001728CF /* MenuItemViewController.swift in Sources */,
-				D7FD812423C4317300835E39 /* User.swift in Sources */,
 				9579894923B0619300414C22 /* MenuItemRepresentation.swift in Sources */,
+				D7FD812C23C5701F00835E39 /* User.swift in Sources */,
 				D7FD812823C4325100835E39 /* APIController.swift in Sources */,
-				D7FD812623C4317A00835E39 /* TruckLoginViewController.swift in Sources */,
+				D7FD812E23C5703700835E39 /* TruckLoginViewController.swift in Sources */,
 				9579894723B05C1800414C22 /* FoodTruckRepresentation.swift in Sources */,
 				955A7D9323AB37FF00310EBC /* MenuTableViewController.swift in Sources */,
 				9534169423AC81CE001728CF /* FoodTruck+Convenience.swift in Sources */,
@@ -569,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -623,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -717,6 +717,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3C2X999TFX;
 				INFOPLIST_FILE = "FoodTruck TrackrUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -736,6 +737,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3C2X999TFX;
 				INFOPLIST_FILE = "FoodTruck TrackrUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
