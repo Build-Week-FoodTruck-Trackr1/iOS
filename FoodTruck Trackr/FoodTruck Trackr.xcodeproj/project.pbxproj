@@ -15,7 +15,6 @@
 		5D88D73323AB267400116489 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73223AB267400116489 /* Schedule.storyboard */; };
 		5D88D73523AB269C00116489 /* Truck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73423AB269C00116489 /* Truck.storyboard */; };
 		5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73623AB26AB00116489 /* Menu.storyboard */; };
-		5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D88D73823AB26BF00116489 /* Auth.storyboard */; };
 		5D88D74623AB298000116489 /* FoodTruck_TrackrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D74523AB298000116489 /* FoodTruck_TrackrTests.swift */; };
 		5D88D75423AB299900116489 /* FoodTruck_TrackrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88D75323AB299900116489 /* FoodTruck_TrackrUITests.swift */; };
 		951AFCFF23AC666E00A06F13 /* FoodTruck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 951AFCFD23AC666E00A06F13 /* FoodTruck.xcdatamodeld */; };
@@ -58,7 +57,6 @@
 		5D88D73223AB267400116489 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		5D88D73423AB269C00116489 /* Truck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Truck.storyboard; sourceTree = "<group>"; };
 		5D88D73623AB26AB00116489 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
-		5D88D73823AB26BF00116489 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		5D88D74323AB298000116489 /* FoodTruck TrackrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FoodTruck TrackrTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D88D74523AB298000116489 /* FoodTruck_TrackrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruck_TrackrTests.swift; sourceTree = "<group>"; };
 		5D88D74723AB298000116489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 		5D88D73123AB265000116489 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5D88D73823AB26BF00116489 /* Auth.storyboard */,
 				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				5D88D73623AB26AB00116489 /* Menu.storyboard */,
 				5D88D73223AB267400116489 /* Schedule.storyboard */,
@@ -349,7 +346,6 @@
 				5D88D73523AB269C00116489 /* Truck.storyboard in Resources */,
 				5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */,
 				5D88D73323AB267400116489 /* Schedule.storyboard in Resources */,
-				5D88D73923AB26BF00116489 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
