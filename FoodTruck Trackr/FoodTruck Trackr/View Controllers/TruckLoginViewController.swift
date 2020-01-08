@@ -28,7 +28,8 @@ class TruckLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameStackView.isHidden = true
+        nameStackView.isHidden = false
+    
     }
     
     @IBAction func signUpLogInButtonPressed(_ sender: Any) {
@@ -55,6 +56,7 @@ class TruckLoginViewController: UIViewController {
                                   isOperator: operatorStatus)!
             apiController?.signUp(with: signUpUser)
         }
+        dismiss(animated: true)
     }
     
     func Auth(user: User) {
