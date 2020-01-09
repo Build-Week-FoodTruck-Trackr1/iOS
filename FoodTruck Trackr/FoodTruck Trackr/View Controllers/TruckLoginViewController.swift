@@ -45,25 +45,18 @@ class TruckLoginViewController: UIViewController {
         if modeSegControl.selectedSegmentIndex == 0 {
             // Sign IN
             
-           let signInUser = User(userName: user, password: pass, currentLocation: location, email: email, isOperator: operatorStatus)
-            guard let newSignInUser = signInUser else { return }
-            apiController?.LogIn(with: newSignInUser)
+           let signInUser = User(username: user, password: pass, email: email, currentLocation: location, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
+     
+            apiController?.LogIn(with: signInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
             // Sign UP
-            let signUpUser = User(username: user,
-                                  password: pass,
-                                  currentLocation: location,
-                                  email: email,
-                                  trucksOwned: truckArray,
-                                  isOperator: operatorStatus)!
+            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
             apiController?.signUp(with: signUpUser)
         }
         dismiss(animated: true)
     }
     
-    func Auth(user: User) {
-        
-    }
+   
     
     @IBAction func segmentControlToggled(_ sender: Any) {
         if modeSegControl.selectedSegmentIndex == 0 {
