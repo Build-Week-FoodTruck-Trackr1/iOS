@@ -15,8 +15,9 @@ class User: Codable {
     let currentLocation: String
     let isOperator: Bool?
     let trucksOwned: [FoodTruckRepresentation]?
-    let favoriteTrucks: [FoodTruckRepresentation]
+    let favoriteTrucks: [FoodTruckRepresentation]?
     
+
 
     
     init(username: String, password: String, email: String, currentLocation: String, isOperator: Bool?, trucksOwned: [FoodTruckRepresentation], favoriteTrucks: [FoodTruckRepresentation]) {
@@ -28,6 +29,16 @@ class User: Codable {
         self.trucksOwned = trucksOwned
         self.favoriteTrucks = favoriteTrucks
     }
+    
+//    init?(userName: String, password: String, currentLocation: String, email: String, isOperator: Bool?) {
+//        self.userName = userName
+//        self.password = password
+//        self.currentLocation = currentLocation
+//        self.email = email
+//        self.isOperator = isOperator
+//    }
+    
+
    
      convenience init?(userName: String, password: String, currentLocation: String, email: String, isOperator: Bool?) {
         self.init(userName: userName,
