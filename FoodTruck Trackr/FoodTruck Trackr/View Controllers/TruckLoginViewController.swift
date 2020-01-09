@@ -58,7 +58,7 @@ class TruckLoginViewController: UIViewController {
             let signUpUser = User(username: user, password: pass, currentLocation: location, type: type, email: email, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
             apiController?.signUp(with: signUpUser)
         }
-        dismiss(animated: true)
+        
     }
     
    
@@ -76,6 +76,11 @@ class TruckLoginViewController: UIViewController {
     
     @IBAction func operatorValueChanged(_ sender: Any) {
         operatorStatus.toggle()
+        if operatorStatus == false {
+            type = "diner"
+        } else {
+            type = "operator"
+        }
     }
     
     

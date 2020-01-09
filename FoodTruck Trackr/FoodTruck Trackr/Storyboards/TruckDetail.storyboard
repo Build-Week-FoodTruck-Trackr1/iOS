@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dFh-je-b9e">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="U2E-XV-qjp">
+            <objects>
+                <viewController id="dFh-je-b9e" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iHc-Rx-LvW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qSI-T1-SxD">
+                                <rect key="frame" x="87" y="244" width="240" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="8K3-ex-kT6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiV-Vl-4a0">
+                                <rect key="frame" x="186" y="494" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMd-C3-wHD">
+                                <rect key="frame" x="186" y="565" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kMd-C3-wHD" firstAttribute="leading" secondItem="IiV-Vl-4a0" secondAttribute="leading" id="1dG-aO-Nqo"/>
+                            <constraint firstItem="qSI-T1-SxD" firstAttribute="top" secondItem="s3r-eF-Yvy" secondAttribute="top" constant="200" id="6aB-P0-2aA"/>
+                            <constraint firstItem="IiV-Vl-4a0" firstAttribute="top" secondItem="qSI-T1-SxD" secondAttribute="bottom" constant="50" id="XwF-fZ-Otu"/>
+                            <constraint firstItem="kMd-C3-wHD" firstAttribute="centerX" secondItem="qSI-T1-SxD" secondAttribute="centerX" id="k3n-Jg-T43"/>
+                            <constraint firstItem="kMd-C3-wHD" firstAttribute="top" secondItem="IiV-Vl-4a0" secondAttribute="bottom" constant="50" id="se5-EG-6lb"/>
+                            <constraint firstItem="qSI-T1-SxD" firstAttribute="centerX" secondItem="iHc-Rx-LvW" secondAttribute="centerX" id="sw7-6l-AEE"/>
+                            <constraint firstItem="qSI-T1-SxD" firstAttribute="leading" secondItem="s3r-eF-Yvy" secondAttribute="leading" constant="87" id="tau-h1-gJV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="s3r-eF-Yvy"/>
+                    </view>
+                    <connections>
+                        <segue destination="Bnt-H7-Eh7" kind="show" identifier="ToTrucks" id="Ycc-kc-bb6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2F-j6-xzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="92"/>
+        </scene>
+        <!--Truck-->
+        <scene sceneID="8S0-iC-iP8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Truck" id="Bnt-H7-Eh7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="owT-iz-CYc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="naI-tl-R9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="99"/>
+        </scene>
+    </scenes>
+</document>

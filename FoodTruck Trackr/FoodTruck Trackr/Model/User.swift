@@ -18,48 +18,24 @@ class User: Codable {
     let trucksOwned: [FoodTruckRepresentation]?
     let favoriteTrucks: [FoodTruckRepresentation]?
     
-
+    let email: String?
+    let currentLocation: String?
+    let type: String
+    let id: Int
 
     
-    init(username: String, password: String, currentLocation: String, type: String, email: String, isOperator: Bool?, trucksOwned: [FoodTruckRepresentation], favoriteTrucks: [FoodTruckRepresentation]) {
+    init(username: String, password: String, email: String, currentLocation: String, type: String, id: Int) {
         self.username = username
         self.password = password
         self.email = email
         self.currentLocation = currentLocation
-        self.isOperator = isOperator
         self.type = type
-        self.trucksOwned = trucksOwned
-        self.favoriteTrucks = favoriteTrucks
-    }
-    
-    convenience init?(userName: String, password: String, currentLocation: String, email: String, isOperator: Bool?) {
-        self.init(userName: userName,
-            password: password,
-            currentLocation: currentLocation,
-            email: email,
-            isOperator: isOperator)
-    }
-    
+        self.id = id
 
-    // password, email, current location, and type(either “diner” or “operator”)
-    
-    convenience init?(username: String, password: String, currentLocation: String, email: String, favoriteTrucks: [FoodTruckRepresentation], isOperator: Bool) {
-        self.init(username: username,
-                  password: password,
-                  currentLocation: currentLocation,
-                  email: email,
-                  favoriteTrucks: favoriteTrucks,
-                  isOperator: isOperator)
+
     }
     
-   convenience init?(username: String, password: String, currentLocation: String, email: String, trucksOwned: [FoodTruckRepresentation], isOperator: Bool) {
-    self.init(username: username,
-              password: password,
-              currentLocation: currentLocation,
-              email: email,
-              trucksOwned: trucksOwned,
-              isOperator: isOperator)
-    }
+   
     
 }
 
