@@ -26,6 +26,7 @@ class TruckLoginViewController: UIViewController {
     var foodTruck = [FoodTruckRepresentation]()
     var apiController: APIController?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameStackView.isHidden = false
@@ -38,19 +39,23 @@ class TruckLoginViewController: UIViewController {
         let mightyTruck = FoodTruckRepresentation(truckTitle: "MightyTruck", imageOfTruck: "Red", cuisineType: "Mexican", identifier: UUID(), customerRating: 88, customerRatingAvg: 65.393932)
         
         let truckArray: [FoodTruckRepresentation] = [superTruck, mightyTruck]
+        
         guard let user = userNameTextField.text,
             let pass = passwordTextField.text,
             let location = currentLocationTextField.text,
             let email = emailTextField.text else { return }
         if modeSegControl.selectedSegmentIndex == 0 {
             // Sign IN
+            let type = isOperatorSwitch.isOn ? "operator" : "diner"
             
-           let signInUser = User(username: user, password: pass, email: email, currentLocation: location, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
+            let signInUser = User(username: user, password: pass, currentLocation: location, type: type, email: email, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
      
             apiController?.LogIn(with: signInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
             // Sign UP
-            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
+            let type = isOperatorSwitch.isOn ? "operator" : "diner"
+
+            let signUpUser = User(username: user, password: pass, currentLocation: location, type: type, email: email, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
             apiController?.signUp(with: signUpUser)
         }
         dismiss(animated: true)

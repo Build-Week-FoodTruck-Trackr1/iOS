@@ -9,10 +9,11 @@
 import Foundation
 
 class User: Codable {
-    let userName: String
+    let username: String
     let password: String
     let email: String
     let currentLocation: String
+    let type: String
     let isOperator: Bool?
     let trucksOwned: [FoodTruckRepresentation]?
     let favoriteTrucks: [FoodTruckRepresentation]?
@@ -20,30 +21,22 @@ class User: Codable {
 
 
     
-    init(username: String, password: String, email: String, currentLocation: String, isOperator: Bool?, trucksOwned: [FoodTruckRepresentation], favoriteTrucks: [FoodTruckRepresentation]) {
-        self.userName = username
+    init(username: String, password: String, currentLocation: String, type: String, email: String, isOperator: Bool?, trucksOwned: [FoodTruckRepresentation], favoriteTrucks: [FoodTruckRepresentation]) {
+        self.username = username
         self.password = password
         self.email = email
         self.currentLocation = currentLocation
         self.isOperator = isOperator
+        self.type = type
         self.trucksOwned = trucksOwned
         self.favoriteTrucks = favoriteTrucks
     }
     
-//    init?(userName: String, password: String, currentLocation: String, email: String, isOperator: Bool?) {
-//        self.userName = userName
-//        self.password = password
-//        self.currentLocation = currentLocation
-//        self.email = email
-//        self.isOperator = isOperator
-//    }
-    
-
-   
-     convenience init?(userName: String, password: String, currentLocation: String, email: String, isOperator: Bool?) {
+    convenience init?(userName: String, password: String, currentLocation: String, email: String, isOperator: Bool?) {
         self.init(userName: userName,
             password: password,
-            currentLocation: currentLocation, email: email,
+            currentLocation: currentLocation,
+            email: email,
             isOperator: isOperator)
     }
     

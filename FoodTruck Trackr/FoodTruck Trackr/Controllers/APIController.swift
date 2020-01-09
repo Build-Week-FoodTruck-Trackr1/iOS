@@ -239,6 +239,8 @@ class APIController {
                 let jsonData = try jsonEncoder.encode(user)
                 request.httpBody = jsonData
 //                print(jsonData.prettyPrintedJSONString!)
+                
+                
             } catch {
                 print("Error encoding user object: \(error)")
                 completion(error)
