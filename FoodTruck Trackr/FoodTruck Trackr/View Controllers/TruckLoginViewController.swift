@@ -29,10 +29,15 @@ class TruckLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameStackView.isHidden = false
-    
+   
     }
     
+    
     @IBAction func signUpLogInButtonPressed(_ sender: Any) {
+        let superTruck = FoodTruckRepresentation(truckTitle: "SuperTruck", imageOfTruck: "Blue", cuisineType: "Italian", identifier: UUID(), customerRating: 32, customerRatingAvg: 70.5555)
+        let mightyTruck = FoodTruckRepresentation(truckTitle: "MightyTruck", imageOfTruck: "Red", cuisineType: "Mexican", identifier: UUID(), customerRating: 88, customerRatingAvg: 65.393932)
+        
+        let truckArray: [FoodTruckRepresentation] = [superTruck, mightyTruck]
         guard let user = userNameTextField.text,
             let pass = passwordTextField.text,
             let location = currentLocationTextField.text,
@@ -40,19 +45,16 @@ class TruckLoginViewController: UIViewController {
         if modeSegControl.selectedSegmentIndex == 0 {
             // Sign IN
             
-           let signInUser = User(userName: user,
-                                        password: pass,
-                                        currentLocation: location,
-                                        email: email,
-                                        isOperator: operatorStatus)!
-            apiController?.LogIn(with: signInUser)
+           let signInUser = User(userName: user, password: pass, currentLocation: location, email: email, isOperator: operatorStatus)
+            guard let newSignInUser = signInUser else { return }
+            apiController?.LogIn(with: newSignInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
             // Sign UP
             let signUpUser = User(username: user,
                                   password: pass,
                                   currentLocation: location,
                                   email: email,
-                                  trucksOwned: self.foodTruck,
+                                  trucksOwned: truckArray,
                                   isOperator: operatorStatus)!
             apiController?.signUp(with: signUpUser)
         }
