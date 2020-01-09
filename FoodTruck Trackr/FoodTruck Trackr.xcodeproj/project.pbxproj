@@ -27,6 +27,7 @@
 		955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9623AC645400310EBC /* CoreDataStack.swift */; };
 		9579894723B05C1800414C22 /* FoodTruckRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */; };
 		9579894923B0619300414C22 /* MenuItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894823B0619300414C22 /* MenuItemRepresentation.swift */; };
+		D768EAB623C6DE6900DC4F06 /* TruckDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D768EAB523C6DE6900DC4F06 /* TruckDetail.storyboard */; };
 		D76A012F23C58E4200981E64 /* TruckCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A012D23C58E4200981E64 /* TruckCollectionViewController.swift */; };
 		D76A013023C58E4200981E64 /* TruckLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A012E23C58E4200981E64 /* TruckLoginViewController.swift */; };
 		D76A013223C58E5300981E64 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A013123C58E5300981E64 /* APIController.swift */; };
@@ -81,6 +82,7 @@
 		9579894523B05A8100414C22 /* FoodTruck 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FoodTruck 2.xcdatamodel"; sourceTree = "<group>"; };
 		9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckRepresentation.swift; sourceTree = "<group>"; };
 		9579894823B0619300414C22 /* MenuItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRepresentation.swift; sourceTree = "<group>"; };
+		D768EAB523C6DE6900DC4F06 /* TruckDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TruckDetail.storyboard; sourceTree = "<group>"; };
 		D76A012D23C58E4200981E64 /* TruckCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckCollectionViewController.swift; sourceTree = "<group>"; };
 		D76A012E23C58E4200981E64 /* TruckLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckLoginViewController.swift; sourceTree = "<group>"; };
 		D76A013123C58E5300981E64 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				5D88D73623AB26AB00116489 /* Menu.storyboard */,
 				5D88D73223AB267400116489 /* Schedule.storyboard */,
 				5D88D73423AB269C00116489 /* Truck.storyboard */,
+				D768EAB523C6DE6900DC4F06 /* TruckDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				5D680A2423A9E06F004F42EC /* LaunchScreen.storyboard in Resources */,
 				5D680A2123A9E06F004F42EC /* Assets.xcassets in Resources */,
 				5D88D73523AB269C00116489 /* Truck.storyboard in Resources */,
+				D768EAB623C6DE6900DC4F06 /* TruckDetail.storyboard in Resources */,
 				5D88D73723AB26AB00116489 /* Menu.storyboard in Resources */,
 				5D88D73323AB267400116489 /* Schedule.storyboard in Resources */,
 				D76A013423C58E5D00981E64 /* Auth.storyboard in Resources */,

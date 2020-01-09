@@ -10,6 +10,14 @@ import Foundation
 import CoreData
 
 
+enum NetworkError: Error {
+    case noAuth
+    case badData
+    case badAuth
+    case otherError
+    case noDecode
+}
+
 enum ResultType: String {
     case software
     case musicTrack
@@ -229,24 +237,26 @@ class APIController {
       // MARK: - Sign up / Log In Methods
      
      //create fucntion for sign up
-    func signUp(with user: User, completion: @escaping (Error?) -> Void = { _ in }) {
+    func signUp(with user: User, completion: @escaping (Error?) -> Void) {
             let signUpUrl = baseURL.appendingPathComponent("api/register")
             var request = URLRequest(url: signUpUrl)
             request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json", forHTTPHeaderField: "content-type")
             let jsonEncoder = JSONEncoder()
             do {
                 let jsonData = try jsonEncoder.encode(user)
                 request.httpBody = jsonData
-//                print(jsonData.prettyPrintedJSONString!)
+               
+                let jsonString = String(data: jsonData, encoding: .utf8)!
+                print(jsonString)
+                
             } catch {
                 print("Error encoding user object: \(error)")
-                completion(error)
+                completion(NSError())
                 return
             }
             URLSession.shared.dataTask(with: request) { _, response, error in
-                if let response = response as? HTTPURLResponse,
-                    response.statusCode != 201 {
+                if let response = response as? HTTPURLResponse, response.statusCode != 201 {
                     completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                     return
                 }
@@ -254,14 +264,13 @@ class APIController {
                     completion(error)
                     return
                 }
-                
                 completion(nil)
             }.resume()
         }
         // MARK: - Sign IN
         // create function for sign in
     func LogIn(with user: User, completion: @escaping (Error?) -> Void = { _ in }) {
-            let signInURL = baseURL.appendingPathComponent("auth/login")
+            let signInURL = baseURL.appendingPathComponent("api/login")
             var request = URLRequest(url: signInURL)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")

@@ -25,7 +25,7 @@ class TruckLoginViewController: UIViewController {
     var operatorStatus: Bool = false
     var foodTruck = [FoodTruckRepresentation]()
     var apiController: APIController?
-    
+    var type = "diner"
     override func viewDidLoad() {
         super.viewDidLoad()
         nameStackView.isHidden = false
@@ -45,15 +45,26 @@ class TruckLoginViewController: UIViewController {
         if modeSegControl.selectedSegmentIndex == 0 {
             // Sign IN
             
-           let signInUser = User(username: user, password: pass, email: email, currentLocation: location, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
+            let signInUser = User(username: user, password: pass, email: email, currentLocation: location, type: type, id: 5)
      
             apiController?.LogIn(with: signInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
             // Sign UP
-            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
-            apiController?.signUp(with: signUpUser)
+            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, type: type, id: 5)
+            apiController?.signUp(with: signUpUser ) { (error) in
+                if let error = error {
+                    print("There was an error: \(error)")
+                    
+                } else {
+                    DispatchQueue.main.async {
+                         self.dismiss(animated: true)
+                    }
+                }
+               
+            }
+                
         }
-        dismiss(animated: true)
+        
     }
     
    
@@ -71,6 +82,11 @@ class TruckLoginViewController: UIViewController {
     
     @IBAction func operatorValueChanged(_ sender: Any) {
         operatorStatus.toggle()
+        if operatorStatus == false {
+            type = "diner"
+        } else {
+            type = "operator"
+        }
     }
     
     
