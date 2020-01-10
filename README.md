@@ -34,7 +34,7 @@ Instagram, but made specifically for logging and tracking your outdoor and mount
 - [UX](https://www.figma.com/file/nnl2C3EkGxGdUvvMjdv0BT/Guidr-Wireframes?node-id=17089%3A424)
 
 ### Team Members
-- iOS Unit 2 Dev - [Jessie Griffin](https://www.linkedin.com/in/jessie-ann-griffin/) - [@JessieAGriffin](https://twitter.com/jessieagriffin) - [ThreeDayStory](https://github.com/ThreeDayStory)
+- iOS Unit 2 Dev - [Jessie Griffin](https://www.linkedin.com/in/jessie-ann-griffin/) - [@iOSjess](https://twitter.com/iOSjess) - [ThreeDayStory](https://github.com/ThreeDayStory)
 - iOS Unit 2 Dev - [Aaron Houghton] - 
 - iOS Unit 3 Dev - [Joel Groomer](https://www.linkedin.com/) - 
 - Web UI Dev - 
