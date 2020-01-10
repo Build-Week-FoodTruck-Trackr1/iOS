@@ -11,12 +11,8 @@ import Foundation
 class User: Codable {
     let username: String
     let password: String
-    let email: String
-    let currentLocation: String
-    let type: String
-    let isOperator: Bool?
-    let trucksOwned: [FoodTruckRepresentation]?
-    let favoriteTrucks: [FoodTruckRepresentation]?
+
+   
     
     let email: String?
     let currentLocation: String?
