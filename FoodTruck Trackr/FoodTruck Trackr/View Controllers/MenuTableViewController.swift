@@ -25,7 +25,11 @@ class MenuTableViewController: UITableViewController {
                                                  sectionNameKeyPath: "menuItem",
                                                  cacheName: nil)
             frc.delegate = self
-            try! frc.performFetch()
+            do {
+                try frc.performFetch()
+            } catch {
+                print("Error performing menu fetch")
+            }
             return frc
             
         }()

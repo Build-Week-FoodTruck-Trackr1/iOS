@@ -12,6 +12,8 @@
 		5D63445D23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63445C23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift */; };
 		5D63445F23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63445E23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift */; };
 		5D63446123C7FF20000D7A42 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63446023C7FF20000D7A42 /* ScheduleTableViewCell.swift */; };
+		5D63447A23C81F24000D7A42 /* StarRatingControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D63447923C81F24000D7A42 /* StarRatingControl.framework */; };
+		5D63447B23C81F24000D7A42 /* StarRatingControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D63447923C81F24000D7A42 /* StarRatingControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D680A1723A9E06D004F42EC /* AppDelegate.swift */; };
 		5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D680A1923A9E06D004F42EC /* SceneDelegate.swift */; };
 		5D680A2123A9E06F004F42EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D680A2023A9E06F004F42EC /* Assets.xcassets */; };
@@ -56,12 +58,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D63447C23C81F24000D7A42 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5D63447B23C81F24000D7A42 /* StarRatingControl.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0DA9B02BDE212244C1201A06 /* Pods-FoodTruck Trackr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTruck Trackr.release.xcconfig"; path = "Target Support Files/Pods-FoodTruck Trackr/Pods-FoodTruck Trackr.release.xcconfig"; sourceTree = "<group>"; };
 		5D63445A23C7E6A5000D7A42 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		5D63445C23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduledLocation+Convenience.swift"; sourceTree = "<group>"; };
 		5D63445E23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledLocationRepresentation.swift; sourceTree = "<group>"; };
 		5D63446023C7FF20000D7A42 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		5D63447923C81F24000D7A42 /* StarRatingControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StarRatingControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D680A1423A9E06D004F42EC /* FoodTruck Trackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodTruck Trackr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D680A1723A9E06D004F42EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D680A1923A9E06D004F42EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FD6BFA2FF861E8D878F0F25 /* Pods_FoodTruck_Trackr.framework in Frameworks */,
+				5D63447A23C81F24000D7A42 /* StarRatingControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				7E7197CD5B0F82D1E85FC710 /* Pods_FoodTruck_Trackr.framework */,
+				5D63447923C81F24000D7A42 /* StarRatingControl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,6 +296,7 @@
 				5D680A1223A9E06D004F42EC /* Resources */,
 				6F46CCEED36C3ACACCCB9B15 /* [CP] Embed Pods Frameworks */,
 				5D680A2B23A9E65E004F42EC /* ShellScript */,
+				5D63447C23C81F24000D7A42 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
