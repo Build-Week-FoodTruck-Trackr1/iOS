@@ -25,7 +25,8 @@ class TruckLoginViewController: UIViewController {
     var operatorStatus: Bool = false
     var foodTruck = [FoodTruckRepresentation]()
     var apiController: APIController?
-    var type = "diner"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameStackView.isHidden = false
@@ -38,19 +39,23 @@ class TruckLoginViewController: UIViewController {
         let mightyTruck = FoodTruckRepresentation(truckTitle: "MightyTruck", imageOfTruck: "Red", cuisineType: "Mexican", identifier: 9999, customerRating: 88, customerRatingAvg: 65.393932)
         
         let truckArray: [FoodTruckRepresentation] = [superTruck, mightyTruck]
+        
         guard let user = userNameTextField.text,
             let pass = passwordTextField.text,
             let location = currentLocationTextField.text,
             let email = emailTextField.text else { return }
         if modeSegControl.selectedSegmentIndex == 0 {
             // Sign IN
+            let type = isOperatorSwitch.isOn ? "operator" : "diner"
             
-            let signInUser = User(username: user, password: pass, email: email, currentLocation: location, type: type, id: 5)
+            let signInUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
      
             apiController?.LogIn(with: signInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
+            let type = isOperatorSwitch.isOn ? "operator" : "diner"
+
             // Sign UP
-            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, type: type, id: 5)
+            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
             apiController?.signUp(with: signUpUser ) { (error) in
                 if let error = error {
                     print("There was an error: \(error)")
@@ -82,11 +87,7 @@ class TruckLoginViewController: UIViewController {
     
     @IBAction func operatorValueChanged(_ sender: Any) {
         operatorStatus.toggle()
-        if operatorStatus == false {
-            type = "diner"
-        } else {
-            type = "operator"
-        }
+        let type = isOperatorSwitch.isOn ? "operator" : "diner"
     }
     
     

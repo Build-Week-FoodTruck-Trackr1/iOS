@@ -11,19 +11,20 @@ import Foundation
 class User: Codable {
     let username: String
     let password: String
+
+   
+    
     let email: String?
     let currentLocation: String?
     let type: String
-    let id: Int
 
     
-    init(username: String, password: String, email: String, currentLocation: String, type: String, id: Int) {
+    init(username: String, password: String, email: String, currentLocation: String, type: String) {
         self.username = username
         self.password = password
         self.email = email
         self.currentLocation = currentLocation
         self.type = type
-        self.id = id
 
 
     }

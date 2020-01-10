@@ -13,39 +13,36 @@ class MenuTableViewController: UITableViewController {
 
     private let menuController = MenuController()
 
-        lazy var fetchedResultsController: NSFetchedResultsController<MenuItem> = {
-            let fetchRequest: NSFetchRequest<MenuItem> = MenuItem.fetchRequest()
-            fetchRequest.sortDescriptors = [
-                NSSortDescriptor(key: "menuItem", ascending: true),
-                NSSortDescriptor(key: "itemName", ascending: true)
-            ]
-            let moc = CoreDataStack.shared.mainContext
-            let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                 managedObjectContext: moc,
-                                                 sectionNameKeyPath: "menuItem",
-                                                 cacheName: nil)
-            frc.delegate = self
-            do {
-                try frc.performFetch()
-            } catch {
-                print("Error performing menu fetch")
+    lazy var fetchedResultsController: NSFetchedResultsController<MenuItem> = {
+        let fetchRequest: NSFetchRequest<MenuItem> = MenuItem.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "menuItem", ascending: true),
+            NSSortDescriptor(key: "itemName", ascending: true)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: moc,
+                                             sectionNameKeyPath: "menuItem",
+                                             cacheName: nil)
+        frc.delegate = self
+        try! frc.performFetch()
+        return frc
+        
+    }()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    @IBAction func shouldRefresh(_ sender: Any) {
+        menuController.fetchItemsFromServer{(_) in
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
             }
-            return frc
-            
-        }()
-
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            tableView.reloadData()
         }
-
-//        @IBAction func shouldRefresh(_ sender: Any) {
-//            menuController.fetchTasksFromServer{(_) in
-//                DispatchQueue.main.async {
-//                    self.refreshControl?.endRefreshing()
-//                }
-//            }
-//        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,31 +55,51 @@ class MenuTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController.sections?.count ?? 1
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //        return tasks.count
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
+        guard let sectionName = Category(rawValue: Int16(sectionInfo.name)!) else { return nil }
+        return sectionName.type.capitalized
+    }
         
-        guard let categories = menuController.categories else { return 0 }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as?
+            MenuItemTableViewCell else { return UITableViewCell() }
         
-        return categories.count
+        if let items = menuController.menuItems {
+            cell.itemNameLabel.text = items[indexPath.row].itemName
+        }
+
+        return cell
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "AddItem":
-            if let detailVC = segue.destination as? MenuItemViewController {
+        if segue.identifier == "AddItem" {
+            if let addItemVC = segue.destination as? MenuItemViewController {
                 title = "Add Item"
-                
+                addItemVC.menuController = menuController
             }
-        case "ShowItemDetail":
-            if let detailVC = segue.destination as? MenuItemViewController {
-                
+        } else if segue.identifier == "ShowItemDetail" {
+            if let detailVC = segue.destination as? MenuItemViewController,
+                let indexPath = tableView.indexPathForSelectedRow
+            {
+                if let items = menuController.menuItems {
+                    title = items[indexPath.row].itemName
+                }
+                detailVC.menuController = menuController
             }
-        default:
-            break
-            
         }
-       }
-
+    }
 }
 
 extension MenuTableViewController: NSFetchedResultsControllerDelegate {

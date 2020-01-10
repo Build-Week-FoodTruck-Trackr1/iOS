@@ -23,20 +23,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-U3-JRg">
-                                            <rect key="frame" x="128" y="8.5" width="158" height="41"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lTR-gR-E2k">
+                                            <rect key="frame" x="8" y="0.0" width="398" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-U3-JRg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="270" height="58"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MR-cG-dmJ">
+                                                    <rect key="frame" x="278" y="0.0" width="120" height="58"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="Usp-Zh-7cj"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="gfc-U3-JRg" firstAttribute="centerY" secondItem="fmP-ba-2ud" secondAttribute="centerY" id="0i8-0X-Sl1"/>
-                                        <constraint firstItem="gfc-U3-JRg" firstAttribute="centerX" secondItem="fmP-ba-2ud" secondAttribute="centerX" id="FbC-ZP-aX9"/>
+                                        <constraint firstItem="lTR-gR-E2k" firstAttribute="centerX" secondItem="fmP-ba-2ud" secondAttribute="centerX" id="CWj-Ir-EZo"/>
+                                        <constraint firstAttribute="trailing" secondItem="lTR-gR-E2k" secondAttribute="trailing" constant="8" id="VC6-mw-eW4"/>
+                                        <constraint firstItem="lTR-gR-E2k" firstAttribute="leading" secondItem="fmP-ba-2ud" secondAttribute="leading" constant="8" id="ckf-fW-3wQ"/>
+                                        <constraint firstItem="lTR-gR-E2k" firstAttribute="centerY" secondItem="fmP-ba-2ud" secondAttribute="centerY" id="hgf-ID-x7j"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="categoryLabel" destination="gfc-U3-JRg" id="qOy-FL-i47"/>
+                                    <outlet property="itemNameLabel" destination="gfc-U3-JRg" id="qOy-FL-i47"/>
                                     <segue destination="8Vt-4d-WDk" kind="show" identifier="ShowItemDetail" id="1eA-ys-wFh"/>
                                 </connections>
                             </tableViewCell>
@@ -83,7 +97,7 @@
                                         </segments>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xvs-uU-4HF" userLabel="Name Stack View">
-                                        <rect key="frame" x="0.0" y="46" width="366" height="33"/>
+                                        <rect key="frame" x="0.0" y="46" width="366" height="136.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-MK-xLd">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="20.5"/>
@@ -99,7 +113,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tyi-Z9-PjJ" userLabel="Price Stack View">
-                                        <rect key="frame" x="0.0" y="95" width="366" height="33"/>
+                                        <rect key="frame" x="0.0" y="198.5" width="366" height="33"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmS-XZ-yBQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="43.5" height="20.5"/>
@@ -109,13 +123,32 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a price..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rk4-gs-j5t">
                                                 <rect key="frame" x="55.5" y="0.0" width="310.5" height="33"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TZ7-LR-z68" userLabel="Rating Stack View">
+                                        <rect key="frame" x="0.0" y="247.5" width="366" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-C4-bge">
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pc-6j-7xc">
+                                                <rect key="frame" x="91" y="0.0" width="275" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="dCM-KZ-mB5"/>
+                                                    <constraint firstAttribute="width" secondItem="2Pc-6j-7xc" secondAttribute="height" multiplier="250:30" id="wjK-w5-t4t"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NQF-FB-Pta" userLabel="Desc Stack View">
-                                        <rect key="frame" x="0.0" y="144" width="366" height="231"/>
+                                        <rect key="frame" x="0.0" y="296.5" width="366" height="78.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGL-NR-nEQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="92.5" height="20.5"/>
@@ -124,7 +157,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a description here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PpH-r8-8Ba">
-                                                <rect key="frame" x="0.0" y="28.5" width="366" height="202.5"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="366" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -153,6 +186,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Xvs-uU-4HF" secondAttribute="trailing" id="24x-vA-kRc"/>
                                     <constraint firstItem="MkN-CR-6aG" firstAttribute="leading" secondItem="N2G-Af-FNR" secondAttribute="leading" id="5ul-N2-cS8"/>
+                                    <constraint firstItem="TZ7-LR-z68" firstAttribute="leading" secondItem="N2G-Af-FNR" secondAttribute="leading" id="BvL-D4-1fE"/>
                                     <constraint firstAttribute="trailing" secondItem="MkN-CR-6aG" secondAttribute="trailing" id="KPw-QY-rTT"/>
                                     <constraint firstAttribute="trailing" secondItem="NQF-FB-Pta" secondAttribute="trailing" id="WFw-Cd-Ffe"/>
                                     <constraint firstItem="Rk4-gs-j5t" firstAttribute="height" secondItem="Pc8-Zq-55g" secondAttribute="height" id="bwH-ck-rld"/>
@@ -161,6 +195,7 @@
                                     <constraint firstItem="tyi-Z9-PjJ" firstAttribute="leading" secondItem="N2G-Af-FNR" secondAttribute="leading" id="iYo-Pf-hu2"/>
                                     <constraint firstItem="Pc8-Zq-55g" firstAttribute="height" secondItem="KEI-mF-jZR" secondAttribute="height" multiplier="1.1" id="peB-L9-N84"/>
                                     <constraint firstItem="NQF-FB-Pta" firstAttribute="leading" secondItem="N2G-Af-FNR" secondAttribute="leading" id="sr2-hJ-A5c"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Pc-6j-7xc" secondAttribute="trailing" id="uly-U6-IQC"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -185,6 +220,7 @@
                         <outlet property="categorySegControl" destination="KEI-mF-jZR" id="9sj-OM-7OA"/>
                         <outlet property="decriptionTextView" destination="PpH-r8-8Ba" id="62A-00-Nh6"/>
                         <outlet property="imageView" destination="VJS-4k-kcb" id="qJR-T5-po9"/>
+                        <outlet property="itemRatingView" destination="2Pc-6j-7xc" id="EyV-JR-DHv"/>
                         <outlet property="nameTextField" destination="Pc8-Zq-55g" id="J5J-Zh-oj9"/>
                         <outlet property="priceTextField" destination="Rk4-gs-j5t" id="39w-CA-ue1"/>
                     </connections>

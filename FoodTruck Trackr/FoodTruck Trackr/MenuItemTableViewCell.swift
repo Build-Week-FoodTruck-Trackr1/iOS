@@ -10,8 +10,8 @@ import UIKit
 
 class MenuItemTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var categoryLabel: UILabel!
-    
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var itemRatingView: UIView!
     
 
 }
