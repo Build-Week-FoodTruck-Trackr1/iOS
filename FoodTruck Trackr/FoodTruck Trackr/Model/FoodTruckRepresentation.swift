@@ -13,7 +13,7 @@ struct FoodTruckRepresentation: Codable {
     var truckTitle: String
     var imageOfTruck: String?
     var cuisineType: String
-    var identifier: UUID
+    var identifier: Int32
     var customerRating: Int32?
     var customerRatingAvg: Double?
     
