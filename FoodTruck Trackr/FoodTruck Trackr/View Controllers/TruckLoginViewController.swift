@@ -52,6 +52,8 @@ class TruckLoginViewController: UIViewController {
      
             apiController?.LogIn(with: signInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
+            let type = isOperatorSwitch.isOn ? "operator" : "diner"
+
             // Sign UP
             let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
             apiController?.signUp(with: signUpUser ) { (error) in
@@ -85,11 +87,7 @@ class TruckLoginViewController: UIViewController {
     
     @IBAction func operatorValueChanged(_ sender: Any) {
         operatorStatus.toggle()
-        if operatorStatus == false {
-            type = "diner"
-        } else {
-            type = "operator"
-        }
+        let type = isOperatorSwitch.isOn ? "operator" : "diner"
     }
     
     
