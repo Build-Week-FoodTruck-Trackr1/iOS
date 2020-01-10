@@ -48,15 +48,24 @@ class TruckLoginViewController: UIViewController {
             // Sign IN
             let type = isOperatorSwitch.isOn ? "operator" : "diner"
             
-            let signInUser = User(username: user, password: pass, currentLocation: location, type: type, email: email, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
+            let signInUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
      
             apiController?.LogIn(with: signInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
             // Sign UP
-            let type = isOperatorSwitch.isOn ? "operator" : "diner"
-
-            let signUpUser = User(username: user, password: pass, currentLocation: location, type: type, email: email, isOperator: operatorStatus, trucksOwned: truckArray, favoriteTrucks: truckArray)
-            apiController?.signUp(with: signUpUser)
+            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
+            apiController?.signUp(with: signUpUser ) { (error) in
+                if let error = error {
+                    print("There was an error: \(error)")
+                    
+                } else {
+                    DispatchQueue.main.async {
+                         self.dismiss(animated: true)
+                    }
+                }
+               
+            }
+                
         }
         
     }

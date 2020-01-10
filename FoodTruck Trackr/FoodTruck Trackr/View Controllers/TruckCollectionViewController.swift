@@ -28,7 +28,11 @@ class TruckCollectionViewController: UICollectionViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        performSegue(withIdentifier: "ToLogin", sender: self)
+        
+        if apiController.bearer == nil {
+            performSegue(withIdentifier: "ToLogin", sender: self)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
