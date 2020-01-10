@@ -1,5 +1,5 @@
 # iOS
-![guidrapp logo](https://github.com/build-week-guidr-august-2019/Mobile-App/blob/master/GuidrApp_Logo_Tiny.jpg)
+![App Logo](https://github.com/Build-Week-FoodTruck-Trackr1/iOS/Logo_1.png)
 
 ### What is the Food Truck Trackr App?
 Instagram, but made specifically for logging and tracking your outdoor and mountainous excursions!
