@@ -45,12 +45,12 @@ class TruckLoginViewController: UIViewController {
         if modeSegControl.selectedSegmentIndex == 0 {
             // Sign IN
             
-            let signInUser = User(username: user, password: pass, email: email, currentLocation: location, type: type, id: 5)
+            let signInUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
      
             apiController?.LogIn(with: signInUser)
         } else if modeSegControl.selectedSegmentIndex == 1 {
             // Sign UP
-            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, type: type, id: 5)
+            let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
             apiController?.signUp(with: signUpUser ) { (error) in
                 if let error = error {
                     print("There was an error: \(error)")
