@@ -11,6 +11,9 @@ import Foundation
 class User: Codable {
     let username: String
     let password: String
+
+   
+    
     let email: String?
     let currentLocation: String?
     let type: String

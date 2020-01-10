@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MenuItemRepresentation {
+struct MenuItemRepresentation: Codable {
     
     var itemName: String
     var itemPrice: String

@@ -7,5 +7,4 @@ target 'FoodTruck Trackr' do
 
   # Pods for FoodTruck Trackr
   pod 'MapViewPlus'
- 
 end

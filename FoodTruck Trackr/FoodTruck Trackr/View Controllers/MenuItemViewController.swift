@@ -42,7 +42,7 @@ class MenuItemViewController: UIViewController {
         let imageData: Data? = image.pngData()
         
         if let menuItem = menuItem {
-            // editing/updating an existing task
+            // editing/updating an existing item
             menuItem.itemName = name
             menuItem.itemPrice = price
             menuItem.category = category.type
@@ -68,8 +68,25 @@ class MenuItemViewController: UIViewController {
     }
     
     private func updateViews() {
+        guard isViewLoaded else { return } // so we don't try to update the views before the view is loaded
         
+        title = menuItem?.itemName ?? "Create Item"
+        nameTextField.text = menuItem?.itemName
+        
+        var category: Category
+        if let itemCategoryString = menuItem?.category, let itemCategory = Category(typeName: itemCategoryString) {
+            category = itemCategory
+        } else {
+            category = .entree
+        }
+        if let index = Category.allCases.firstIndex(of: category) {
+            categorySegControl.selectedSegmentIndex = index
+        }
+        priceTextField.text = menuItem?.itemPrice
+        decriptionTextView.text = menuItem?.description
+        
+        if let photoData = menuItem?.itemPhoto {
+            imageView.image = UIImage(data: photoData)
+        }
     }
-    
-   
 }
