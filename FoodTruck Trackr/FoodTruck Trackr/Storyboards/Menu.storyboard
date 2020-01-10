@@ -220,6 +220,7 @@
                         <outlet property="categorySegControl" destination="KEI-mF-jZR" id="9sj-OM-7OA"/>
                         <outlet property="decriptionTextView" destination="PpH-r8-8Ba" id="62A-00-Nh6"/>
                         <outlet property="imageView" destination="VJS-4k-kcb" id="qJR-T5-po9"/>
+                        <outlet property="itemRatingView" destination="2Pc-6j-7xc" id="EyV-JR-DHv"/>
                         <outlet property="nameTextField" destination="Pc8-Zq-55g" id="J5J-Zh-oj9"/>
                         <outlet property="priceTextField" destination="Rk4-gs-j5t" id="39w-CA-ue1"/>
                     </connections>

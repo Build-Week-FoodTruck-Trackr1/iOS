@@ -16,6 +16,7 @@ class MenuItemViewController: UIViewController {
     @IBOutlet weak var decriptionTextView: UITextView!
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var itemRatingView: UIView!
     
     var menuItem: MenuItem? {
         didSet {
