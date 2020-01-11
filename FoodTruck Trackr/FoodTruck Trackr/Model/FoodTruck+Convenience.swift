@@ -42,22 +42,17 @@ extension FoodTruck {
         self.init(truckTitle: truckRepresentation.truckTitle,
                   cuisineType: truckRepresentation.cuisineType,
                   imageOfTruck: truckRepresentation.imageOfTruck,
-                  truckID: truckRepresentation.identifier,
+                  truckID: truckRepresentation.truckID,
                   customerRating: truckRepresentation.customerRating,
                   customerRatingAvg: truckRepresentation.customerRatingAvg,
                   context: context)
     }
     
     var truckRepresentation: FoodTruckRepresentation? {
-        guard let truckTitle = truckTitle,
-            let cuisineType = cuisineType,
+        guard truckTitle != nil,
+            cuisineType != nil,
             truckID > 0 else { return nil }
         
-        return FoodTruckRepresentation(truckTitle: truckTitle,
-                                       imageOfTruck: imageOfTruck,
-                                       cuisineType: cuisineType,
-                                       identifier: truckID,
-                                       customerRating: customerRating,
-                                       customerRatingAvg: customerRatingAvg)
+        return FoodTruckRepresentation(from: self)
     }
 }
