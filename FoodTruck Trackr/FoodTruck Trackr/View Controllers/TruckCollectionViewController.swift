@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 private let reuseIdentifier = "Cell"
 
 class TruckCollectionViewController: UICollectionViewController {
     
     
-    let apiController = APIController()
+    var apiController = APIController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,10 @@ class TruckCollectionViewController: UICollectionViewController {
             if let loginVC = segue.destination as? TruckLoginViewController {
                loginVC.apiController = apiController
             }
+        } else if segue.identifier == "ToTruckDetail" {
+            if let detailVC = segue.destination as? TruckLoginViewController {
+                detailVC.apiController = apiController
+            }
         }
     }
     
@@ -56,19 +61,19 @@ class TruckCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return apiController.foodTruck.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TruckCollectionViewCell else { return UICollectionViewCell()}
+        
+        
     
         return cell
     }

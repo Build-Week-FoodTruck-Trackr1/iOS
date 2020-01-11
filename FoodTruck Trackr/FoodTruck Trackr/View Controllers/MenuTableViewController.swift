@@ -76,7 +76,7 @@ class MenuTableViewController: UITableViewController {
         default:
             break
             
-        }
+            }
        }
 
 }

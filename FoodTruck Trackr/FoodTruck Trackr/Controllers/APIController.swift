@@ -54,6 +54,7 @@ class APIController {
     
     var user: User?
     var bearer: Bearer?
+    var foodTruck: FoodTruck
     
     let baseURL = URL(string: "https://build-foodtruck-trackr1.herokuapp.com/")!
     
