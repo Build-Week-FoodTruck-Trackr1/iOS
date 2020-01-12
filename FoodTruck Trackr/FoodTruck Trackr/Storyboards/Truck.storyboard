@@ -59,7 +59,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtm-wE-NbE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truck ID: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtm-wE-NbE">
                                                     <rect key="frame" x="0.0" y="109.5" width="127" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -77,8 +77,8 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="137" height="140"/>
                                 <connections>
+                                    <outlet property="truckID" destination="xtm-wE-NbE" id="KLU-bm-5qm"/>
                                     <outlet property="truckImage" destination="cDY-QP-XQR" id="zEs-Nz-g3L"/>
-                                    <outlet property="truckLocation" destination="xtm-wE-NbE" id="bBf-F8-KMm"/>
                                     <outlet property="truckTitle" destination="YSG-Pa-U8z" id="ROx-5Z-ct2"/>
                                 </connections>
                             </collectionViewCell>
@@ -96,8 +96,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="truckImage" destination="cDY-QP-XQR" id="fRH-Zf-vFo"/>
-                        <outlet property="truckTitle" destination="YSG-Pa-U8z" id="ecw-RF-vxA"/>
                         <segue destination="dIW-J1-Kwp" kind="presentation" identifier="ToLogin" id="7e0-Gb-yL8"/>
                     </connections>
                 </collectionViewController>

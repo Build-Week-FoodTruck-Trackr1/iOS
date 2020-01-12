@@ -37,6 +37,7 @@
 		D7FFBD0123C8223D007597DB /* TruckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */; };
 		D7FFBD0423C825DA007597DB /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBD0323C825DA007597DB /* AlertHelper.swift */; };
 		D7FFBD0623C82EB0007597DB /* TruckLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBD0523C82EB0007597DB /* TruckLocation.swift */; };
+		D7FFBD0823CA1FF9007597DB /* ImageDisplayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBD0723CA1FF9007597DB /* ImageDisplayHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckDetailViewController.swift; sourceTree = "<group>"; };
 		D7FFBD0323C825DA007597DB /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D7FFBD0523C82EB0007597DB /* TruckLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckLocation.swift; sourceTree = "<group>"; };
+		D7FFBD0723CA1FF9007597DB /* ImageDisplayHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				D7FFBD0323C825DA007597DB /* AlertHelper.swift */,
+				D7FFBD0723CA1FF9007597DB /* ImageDisplayHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76A013023C58E4200981E64 /* TruckLoginViewController.swift in Sources */,
+				D7FFBD0823CA1FF9007597DB /* ImageDisplayHelper.swift in Sources */,
 				D7FFBCFF23C82113007597DB /* TruckCollectionViewCell.swift in Sources */,
 				955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */,
 				5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */,

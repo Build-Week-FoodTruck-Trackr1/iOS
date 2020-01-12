@@ -11,7 +11,11 @@ import UIKit
 class TruckDetailViewController: UIViewController {
     
     var apiController: APIController?
-    var delegate: FoodTruck
+    var delegate: FoodTruck? {
+           didSet {
+               updateView()
+           }
+       }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +23,7 @@ class TruckDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    var delegate: FoodTruck? {
-        didSet {
-            updateView()
-        }
-    }
+   
     
     func updateView() {
         
