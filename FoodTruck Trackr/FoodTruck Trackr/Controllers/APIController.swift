@@ -157,42 +157,68 @@ class APIController {
     }
 
     
-    func fetchFoodTrucksFromServer(completion: @escaping (Result<[FoodTruckRepresentation], NetworkError>) -> Void) {
-        guard let bearer = bearer else {
-            completion(.failure(.noAuth))
-            return
-        }
-        let baseURL = self.baseURL.appendingPathComponent("trucks")
-        var request = URLRequest(url: baseURL)
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response as? HTTPURLResponse, response.statusCode == 401 {
-                completion(.failure(.badAuth))
-                return
-            }
-            if let error = error {
-                print("There was a fetch Error: \(error)")
-                completion(.failure(.otherError))
-            }
-            guard let data = data else {
-                completion(.failure(.badData))
-                return
-            }
-            
-            do {
-                let foodTrucks = try JSONDecoder().decode([FoodTruckRepresentation].self, from: data)
-                try self.updateFoodTrucks(with: foodTrucks)
-                completion(.success(foodTrucks))
-                return
-            } catch {
-                print("Error decoding data. \(error)")
-                completion(.failure(.noDecode))
-                return
-            }
-        }.resume()
-    }
+//    func fetchFoodTrucksFromServer(completion: @escaping (Result<[FoodTruckRepresentation], NetworkError>) -> Void) {
+//        guard let bearer = bearer else {
+//            completion(.failure(.noAuth))
+//            return
+//        }
+//        let baseURL = self.baseURL.appendingPathComponent("trucks")
+//        var request = URLRequest(url: baseURL)
+//        request.httpMethod = "GET"
+//        request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
+//
+//        URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            if let response = response as? HTTPURLResponse, response.statusCode == 401 {
+//                completion(.failure(.badAuth))
+//                return
+//            }
+//            if let error = error {
+//                print("There was a fetch Error: \(error)")
+//                completion(.failure(.otherError))
+//            }
+//            guard let data = data else {
+//                completion(.failure(.badData))
+//                return
+//            }
+//
+//            do {
+//                let foodTrucks = try JSONDecoder().decode([FoodTruckRepresentation].self, from: data)
+//                try self.updateFoodTrucks(with: foodTrucks)
+//                completion(.success(foodTrucks))
+//                return
+//            } catch {
+//                print("Error decoding data. \(error)")
+//                completion(.failure(.noDecode))
+//                return
+//            }
+//        }.resume()
+//    }
+    
+    // fetch tasks from Firebase
+      func fetchTrucksFromFirebase(completion: @escaping () -> Void = { }) {
+
+          let requestURL = baseURL.appendingPathExtension("json")
+          URLSession.shared.dataTask(with: requestURL)  { (data, _, error)  in
+              if let error = error {
+                  NSLog("Error with URL Request. \(error)")
+                  completion()
+                  return
+              }
+              guard let data = data else {
+                  NSLog("Error with returning data.")
+                  completion()
+                  return
+              }
+              
+              let decoder = JSONDecoder()
+              do {
+                  let foodTrucks = Array(try decoder.decode([String : FoodTruckRepresentation].self, from: data).values)
+                  try self.updateFoodTrucks(with: foodTrucks)
+              } catch {
+                  
+              }
+          }.resume()
+      }
     
     private func updateFoodTrucks(with representations: [FoodTruckRepresentation]) throws {
         let foodTrucksWithID = representations.filter {$0.truckID > 0 }
@@ -258,8 +284,8 @@ class APIController {
             completion(.failure(.noAuth))
             return
         }
-        let gigsURL = baseURL.appendingPathComponent("trucks")
-        var request = URLRequest(url: gigsURL)
+        let baseURL = self.baseURL.appendingPathComponent("trucks")
+        var request = URLRequest(url: baseURL)
         request.httpMethod = "GET"
         request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
         
@@ -279,6 +305,7 @@ class APIController {
             
             do {
                 let foodTrucks = try JSONDecoder().decode([FoodTruckRepresentation].self, from: data)
+                try self.updateFoodTrucks(with: foodTrucks)
                 completion(.success(foodTrucks))
                 return
             } catch {
