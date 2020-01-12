@@ -179,12 +179,139 @@
                         <outlet property="txtNextAddress" destination="kHt-2k-ddA" id="8sc-df-rFX"/>
                         <outlet property="txtNextArrivalTime" destination="nr8-e1-hgi" id="St6-bg-cFz"/>
                         <outlet property="txtNextDepartureTime" destination="BJ9-T0-Aux" id="U1w-dO-XDE"/>
+                        <segue destination="vp7-v4-B4H" kind="presentation" id="MNN-kr-BkE"/>
+                        <segue destination="r0X-dT-O2r" kind="presentation" id="Ow7-3P-PB4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1BV-a5-CMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="SFs-RJ-hPr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-168.11594202898553" y="-153.34821428571428"/>
+        </scene>
+        <!--Schedule Time View Controller-->
+        <scene sceneID="Iqi-z7-t7z">
+            <objects>
+                <viewController id="r0X-dT-O2r" customClass="ScheduleTimeViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qUc-ia-NPD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNm-xh-5vF">
+                                <rect key="frame" x="20" y="20" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VDF-7u-bdw">
+                                <rect key="frame" x="0.0" y="62" width="414" height="216"/>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gek-Do-3n6">
+                                <rect key="frame" x="20" y="297.5" width="374" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7L-at-GJZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveTapped:" destination="r0X-dT-O2r" eventType="touchUpInside" id="Shu-3U-mMS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJP-Gt-BIx">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="r0X-dT-O2r" eventType="touchUpInside" id="pfv-qg-0hT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xNm-xh-5vF" firstAttribute="top" secondItem="Ui0-1Y-ONo" secondAttribute="top" constant="20" id="3Zl-yH-n4r"/>
+                            <constraint firstItem="VDF-7u-bdw" firstAttribute="trailing" secondItem="Ui0-1Y-ONo" secondAttribute="trailing" id="ES5-4y-HMj"/>
+                            <constraint firstItem="VDF-7u-bdw" firstAttribute="top" secondItem="xNm-xh-5vF" secondAttribute="bottom" constant="8" id="NqG-SI-7wD"/>
+                            <constraint firstItem="Ui0-1Y-ONo" firstAttribute="trailing" secondItem="gek-Do-3n6" secondAttribute="trailing" constant="20" id="YmA-VX-z9K"/>
+                            <constraint firstItem="gek-Do-3n6" firstAttribute="leading" secondItem="Ui0-1Y-ONo" secondAttribute="leading" constant="20" id="YnM-cJ-NAE"/>
+                            <constraint firstItem="Ui0-1Y-ONo" firstAttribute="trailing" secondItem="xNm-xh-5vF" secondAttribute="trailing" constant="20" id="k48-uG-gvt"/>
+                            <constraint firstItem="VDF-7u-bdw" firstAttribute="leading" secondItem="Ui0-1Y-ONo" secondAttribute="leading" id="rFK-n0-Ng7"/>
+                            <constraint firstItem="xNm-xh-5vF" firstAttribute="leading" secondItem="Ui0-1Y-ONo" secondAttribute="leading" constant="20" id="smU-b5-NtF"/>
+                            <constraint firstItem="gek-Do-3n6" firstAttribute="top" secondItem="VDF-7u-bdw" secondAttribute="bottom" constant="20" id="zYN-EE-OfJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ui0-1Y-ONo"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="VDF-7u-bdw" id="Ce3-XY-tYb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="13q-hd-nfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="232"/>
+        </scene>
+        <!--Schedule Location View Controller-->
+        <scene sceneID="fdl-Lq-rCf">
+            <objects>
+                <viewController id="vp7-v4-B4H" customClass="ScheduleLocationViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SMg-bV-5rW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnN-k2-dPc">
+                                <rect key="frame" x="20" y="20" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ay4-09-tBO" customClass="MapViewPlus" customModule="MapViewPlus">
+                                <rect key="frame" x="0.0" y="73.5" width="414" height="684.5"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VGZ-1A-unO">
+                                <rect key="frame" x="20" y="778" width="374" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVL-bK-7CN">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveTapped:" destination="vp7-v4-B4H" eventType="touchUpInside" id="9Al-iY-PYK"/>
+                                            <action selector="saveTapped:" destination="r0X-dT-O2r" eventType="touchUpInside" id="aQa-8f-ZS2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHF-pZ-wqf">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="r0X-dT-O2r" eventType="touchUpInside" id="5SJ-8L-KM0"/>
+                                            <action selector="cancelTapped:" destination="vp7-v4-B4H" eventType="touchUpInside" id="CiD-Mc-3jE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZvV-eM-hyF" firstAttribute="trailing" secondItem="nnN-k2-dPc" secondAttribute="trailing" constant="20" id="6Tm-ug-kS5"/>
+                            <constraint firstItem="VGZ-1A-unO" firstAttribute="leading" secondItem="ZvV-eM-hyF" secondAttribute="leading" constant="20" id="6Ux-mt-aY1"/>
+                            <constraint firstItem="ZvV-eM-hyF" firstAttribute="trailing" secondItem="VGZ-1A-unO" secondAttribute="trailing" constant="20" id="7E9-3H-ecG"/>
+                            <constraint firstItem="ZvV-eM-hyF" firstAttribute="trailing" secondItem="Ay4-09-tBO" secondAttribute="trailing" id="RmS-T2-koY"/>
+                            <constraint firstItem="Ay4-09-tBO" firstAttribute="leading" secondItem="ZvV-eM-hyF" secondAttribute="leading" id="Wol-h9-YI0"/>
+                            <constraint firstItem="nnN-k2-dPc" firstAttribute="leading" secondItem="ZvV-eM-hyF" secondAttribute="leading" constant="20" id="YQv-Bd-3YJ"/>
+                            <constraint firstItem="VGZ-1A-unO" firstAttribute="bottom" secondItem="ZvV-eM-hyF" secondAttribute="bottom" id="YUv-Rn-ZDh"/>
+                            <constraint firstItem="Ay4-09-tBO" firstAttribute="top" secondItem="nnN-k2-dPc" secondAttribute="bottom" constant="20" id="hNJ-K8-S1G"/>
+                            <constraint firstItem="VGZ-1A-unO" firstAttribute="top" secondItem="Ay4-09-tBO" secondAttribute="bottom" constant="20" id="liY-te-lYF"/>
+                            <constraint firstItem="nnN-k2-dPc" firstAttribute="top" secondItem="ZvV-eM-hyF" secondAttribute="top" constant="20" id="o4g-eJ-08J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZvV-eM-hyF"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Ay4-09-tBO" id="4ah-ur-DBd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxB-FY-87h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="-481"/>
         </scene>
     </scenes>
 </document>

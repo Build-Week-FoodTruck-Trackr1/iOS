@@ -14,6 +14,8 @@
 		5D63447A23C81F24000D7A42 /* StarRatingControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D63447923C81F24000D7A42 /* StarRatingControl.framework */; };
 		5D63447B23C81F24000D7A42 /* StarRatingControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D63447923C81F24000D7A42 /* StarRatingControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D63447E23CA3978000D7A42 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */; };
+		5D63448023CAE48F000D7A42 /* ScheduleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63447F23CAE48F000D7A42 /* ScheduleLocationViewController.swift */; };
+		5D63448223CAE4A2000D7A42 /* ScheduleTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63448123CAE4A2000D7A42 /* ScheduleTimeViewController.swift */; };
 		5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D680A1723A9E06D004F42EC /* AppDelegate.swift */; };
 		5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D680A1923A9E06D004F42EC /* SceneDelegate.swift */; };
 		5D680A2123A9E06F004F42EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D680A2023A9E06F004F42EC /* Assets.xcassets */; };
@@ -79,6 +81,8 @@
 		5D63446023C7FF20000D7A42 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		5D63447923C81F24000D7A42 /* StarRatingControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StarRatingControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		5D63447F23CAE48F000D7A42 /* ScheduleLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocationViewController.swift; sourceTree = "<group>"; };
+		5D63448123CAE4A2000D7A42 /* ScheduleTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimeViewController.swift; sourceTree = "<group>"; };
 		5D680A1423A9E06D004F42EC /* FoodTruck Trackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodTruck Trackr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D680A1723A9E06D004F42EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D680A1923A9E06D004F42EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */,
 				9534168F23AC7670001728CF /* MenuItemViewController.swift */,
 				5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */,
+				5D63447F23CAE48F000D7A42 /* ScheduleLocationViewController.swift */,
+				5D63448123CAE4A2000D7A42 /* ScheduleTimeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -486,6 +492,8 @@
 				5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */,
 				5D63445F23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift in Sources */,
 				9534169223AC8135001728CF /* MenuController.swift in Sources */,
+				5D63448023CAE48F000D7A42 /* ScheduleLocationViewController.swift in Sources */,
+				5D63448223CAE4A2000D7A42 /* ScheduleTimeViewController.swift in Sources */,
 				5D63446123C7FF20000D7A42 /* ScheduleTableViewCell.swift in Sources */,
 				D76A013623C58E6B00981E64 /* User.swift in Sources */,
 				5D63445D23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift in Sources */,
