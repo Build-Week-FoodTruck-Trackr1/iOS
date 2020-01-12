@@ -20,17 +20,15 @@ class TruckLoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var isOperatorSwitch: UISwitch!
     
-    
+    var apiController: APIController?
     var user: User?
     var operatorStatus: Bool = false
     var foodTruck = [FoodTruckRepresentation]()
-    var apiController: APIController?
-    
-    
+    var type = "diner"
     override func viewDidLoad() {
         super.viewDidLoad()
         nameStackView.isHidden = false
-   
+        
     }
     
     
@@ -44,13 +42,26 @@ class TruckLoginViewController: UIViewController {
             let pass = passwordTextField.text,
             let location = currentLocationTextField.text,
             let email = emailTextField.text else { return }
+        if user.isEmpty || pass.isEmpty || location.isEmpty {
+            self.alertMessage(title: "Problem Signing In", message: "A field was left blank or the username or password doesn't match up. Please correct and try again.")
+            return
+        }
+        
         if modeSegControl.selectedSegmentIndex == 0 {
             // Sign IN
             let type = isOperatorSwitch.isOn ? "operator" : "diner"
             
             let signInUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
-     
             apiController?.LogIn(with: signInUser)
+            if self.apiController?.bearer?.token.isEmpty == true {
+                DispatchQueue.main.async {
+                      self.alertMessage(title: "There's a problem", message: "Your username or password aren't valid. Please try again.")
+                }
+            } else {
+                DispatchQueue.main.async {
+                            self.dismiss(animated: true)
+                       }
+            }
         } else if modeSegControl.selectedSegmentIndex == 1 {
             let type = isOperatorSwitch.isOn ? "operator" : "diner"
 
@@ -59,11 +70,15 @@ class TruckLoginViewController: UIViewController {
             apiController?.signUp(with: signUpUser ) { (error) in
                 if let error = error {
                     print("There was an error: \(error)")
-                    
+                    DispatchQueue.main.async {
+                        self.alertMessage(title: "There was an error signing up.", message: "Please Try again.")
+                    }
                 } else {
                     DispatchQueue.main.async {
-                         self.dismiss(animated: true)
+                        self.modeSegControl.selectedSegmentIndex = 0
+                        self.alertMessage(title: "Sign up successful.", message: "Please Sign in.")
                     }
+                    
                 }
                
             }
@@ -103,3 +118,6 @@ class TruckLoginViewController: UIViewController {
     
 
 }
+
+
+
