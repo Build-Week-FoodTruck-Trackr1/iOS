@@ -14,6 +14,7 @@ class ScheduleTimeViewController: UIViewController {
     
     var delegate: ScheduleViewController?
     var time: Date?
+    var selectedFieldTag: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,10 @@ class ScheduleTimeViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
+        guard let time = time,
+            let selectedFieldTag = selectedFieldTag
+        else { return }
+        delegate?.saveTime(time: time, tag: selectedFieldTag)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {

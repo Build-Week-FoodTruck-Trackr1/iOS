@@ -14,6 +14,7 @@ class ScheduleLocationViewController: UIViewController {
     @IBOutlet weak var mapView: MapViewPlus!
     
     var delegate: ScheduleViewController?
+    var selectedFieldTag: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +24,6 @@ class ScheduleLocationViewController: UIViewController {
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
