@@ -33,10 +33,6 @@ class TruckLoginViewController: UIViewController {
     
     
     @IBAction func signUpLogInButtonPressed(_ sender: Any) {
-        let superTruck = FoodTruckRepresentation(truckTitle: "SuperTruck", imageOfTruck: "Blue", cuisineType: "Italian", identifier: 999, customerRating: 32, customerRatingAvg: 70.5555)
-        let mightyTruck = FoodTruckRepresentation(truckTitle: "MightyTruck", imageOfTruck: "Red", cuisineType: "Mexican", identifier: 9999, customerRating: 88, customerRatingAvg: 65.393932)
-        
-        let truckArray: [FoodTruckRepresentation] = [superTruck, mightyTruck]
         
         guard let user = userNameTextField.text,
             let pass = passwordTextField.text,

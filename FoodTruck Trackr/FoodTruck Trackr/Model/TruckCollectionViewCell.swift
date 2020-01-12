@@ -25,7 +25,7 @@ class TruckCollectionViewCell: UICollectionViewCell {
         guard let truck = self.truck, let image = truck.imageOfTruck else { return }
         truckImage.image = self.displayURLImage(url: image)
         truckTitle.text = truck.truckTitle
-        truckID.text = "Truck ID: \(truck.identifier.uuidString)"
+        truckID.text = "Truck ID: \(truck.truckID)"
         
     }
     

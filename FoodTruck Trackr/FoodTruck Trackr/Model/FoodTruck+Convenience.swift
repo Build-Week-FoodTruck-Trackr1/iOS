@@ -9,8 +9,6 @@
 import Foundation
 import CoreData
 
-//https://build-foodtruck-trackr1.herokuapp.com/api
-
 extension FoodTruck {
     convenience init(truckTitle: String,
                      cuisineType: String,
@@ -49,8 +47,8 @@ extension FoodTruck {
     }
     
     var truckRepresentation: FoodTruckRepresentation? {
-        guard truckTitle != nil,
-            cuisineType != nil,
+        guard truckTitle == truckTitle,
+            cuisineType == cuisineType,
             truckID > 0 else { return nil }
         
         return FoodTruckRepresentation(from: self)
