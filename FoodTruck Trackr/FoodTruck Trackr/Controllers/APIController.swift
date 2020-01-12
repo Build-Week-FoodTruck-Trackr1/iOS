@@ -154,36 +154,63 @@ class APIController {
 
     
     private func updateFoodTrucks(with representations: [FoodTruckRepresentation]) throws {
-           let foodTrucksWithID = representations.filter {$0.identifier != nil }
-        let identifiersToFetch = foodTrucksWithID.compactMap { _ in UUID() }
-           let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, foodTrucksWithID))
-           var foodTrucksToCreate = representationsByID
-           let fetchRequest: NSFetchRequest<FoodTruck> = FoodTruck.fetchRequest()
-           let context = CoreDataStack.shared.container.newBackgroundContext()
-           
-           context.perform {
-               do {
-                      let existingTasks = try context.fetch(fetchRequest)
-                      for foodTruck in existingTasks {
-                          guard let id = foodTruck.identifier,
-                              let representation = representationsByID[id] else {
-                                  context.delete(foodTruck)
-                                  continue
-                          }
-                        foodTruck.truckTitle = representation.truckTitle
-                        foodTruck.cuisineType = representation.cuisineType
-                        foodTruck.customerRating = representation.customerRating!
-                          foodTrucksToCreate.removeValue(forKey: id)
-                      }
-                      for representation in foodTrucksToCreate.values {
-                        FoodTruck(truckRepresentation: representation, context: context)
-                      }
-                      } catch {
-                          print("Error Fetching tasks for UUIDs: \(error)")
-                  }
-           }
-           try CoreDataStack.shared.save(context: context)
-         }
+        let foodTrucksWithID = representations.filter {$0.truckID > 0 }
+        let identifiersToFetch = foodTrucksWithID.compactMap { $0.truckID }
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, foodTrucksWithID))
+        var foodTrucksToCreate = representationsByID
+        let fetchRequest: NSFetchRequest<FoodTruck> = FoodTruck.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "truckID IN %@", identifiersToFetch)
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        context.perform {
+            do {
+                let existingTasks = try context.fetch(fetchRequest)
+                for foodTruck in existingTasks {
+                    guard foodTruck.truckID > 0,
+                        let representation = representationsByID[foodTruck.truckID] else {
+                            context.delete(foodTruck)
+                            continue
+                    }
+//                    foodTruck.truckTitle = representation.truckTitle
+//                    foodTruck.cuisineType = representation.cuisineType
+//                    foodTruck.customerRating = representation.customerRating!
+                    self.updateTruck(foodTruck, with: representation)
+                    foodTrucksToCreate.removeValue(forKey: foodTruck.truckID)
+                }
+                for representation in foodTrucksToCreate.values {
+                    _ = FoodTruck(truckRepresentation: representation, context: context)
+                }
+            } catch {
+                print("Error Fetching tasks for UUIDs: \(error)")
+            }
+        }
+        try CoreDataStack.shared.save(context: context)
+    }
+    
+    private func updateTruck(_ truck: FoodTruck, with representation: FoodTruckRepresentation) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy hh:mm"
+        
+        truck.truckTitle = representation.truckTitle
+        truck.cuisineType = representation.cuisineType
+        truck.imageOfTruck = representation.imageOfTruck
+        truck.truckID = representation.truckID
+        truck.customerRating = representation.customerRating ?? 0
+        truck.customerRatingAvg = representation.customerRatingAvg ?? 0
+        truck.currentLocation = representation.currentLocation
+        truck.location = representation.location
+        
+        if let cdt = formatter.date(from: representation.currentDepartureTime ?? "") {
+            truck.currentDepartureTime = cdt
+        }
+        if let arrivalTime = formatter.date(from: representation.arrivalTime ?? "") {
+            truck.arrivalTime = arrivalTime
+        }
+        if let departureTime = formatter.date(from: representation.departureTime ?? "") {
+            truck.departureTime = departureTime
+        }
+    }
+    
     
     func fetchFoodTrucksFromServer(completion: @escaping (Result<[FoodTruckRepresentation], NetworkError>) -> Void) {
         guard let bearer = bearer else {

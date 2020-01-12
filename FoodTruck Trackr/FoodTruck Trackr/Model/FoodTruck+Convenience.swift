@@ -12,22 +12,25 @@ import CoreData
 //https://build-foodtruck-trackr1.herokuapp.com/api
 
 extension FoodTruck {
-    convenience init(
-        truckTitle: String,
-        imageOfTruck: String? = nil,
-        cuisineType: String,
-        identifier: UUID = UUID(),
-        customerRating: Int32? = 0,
-        customerRatingAvg: Double? = 0.0,
-        context: NSManagedObjectContext = CoreDataStack.shared.mainContext)
-    {
+    convenience init(truckTitle: String,
+                     cuisineType: String,
+                     imageOfTruck: String? = nil,
+                     truckID: Int32 = -1,
+                     customerRating: Int32? = 0,
+                     customerRatingAvg: Double? = 0.0,
+                     currentLocation: String? = nil,
+                     currentDepartureTime: Date? = nil,
+                     arrivalTime: Date? = nil,
+                     location: String? = nil,
+                     departureTime: Date? = nil,
+                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext
+    ) {
         self.init(context: context)
         self.truckTitle = truckTitle
         self.imageOfTruck = imageOfTruck
         self.cuisineType = cuisineType
-        self.identifier = identifier
-        if let customerRating = customerRating, let customerRatingAvg = customerRatingAvg
-        {
+        self.truckID = truckID
+        if let customerRating = customerRating, let customerRatingAvg = customerRatingAvg {
             self.customerRating = customerRating
             self.customerRatingAvg = customerRatingAvg
         }
@@ -37,24 +40,19 @@ extension FoodTruck {
                       context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(truckTitle: truckRepresentation.truckTitle,
-                  imageOfTruck: truckRepresentation.imageOfTruck,
                   cuisineType: truckRepresentation.cuisineType,
-                  identifier: truckRepresentation.identifier,
+                  imageOfTruck: truckRepresentation.imageOfTruck,
+                  truckID: truckRepresentation.truckID,
                   customerRating: truckRepresentation.customerRating,
                   customerRatingAvg: truckRepresentation.customerRatingAvg,
                   context: context)
     }
     
     var truckRepresentation: FoodTruckRepresentation? {
-        guard let truckTitle = truckTitle,
-            let cuisineType = cuisineType,
-            let identifier = identifier else { return nil }
+        guard truckTitle != nil,
+            cuisineType != nil,
+            truckID > 0 else { return nil }
         
-        return FoodTruckRepresentation(truckTitle: truckTitle,
-                                       imageOfTruck: imageOfTruck,
-                                       cuisineType: cuisineType,
-                                       identifier: identifier,
-                                       customerRating: customerRating,
-                                       customerRatingAvg: customerRatingAvg)
+        return FoodTruckRepresentation(from: self)
     }
 }
