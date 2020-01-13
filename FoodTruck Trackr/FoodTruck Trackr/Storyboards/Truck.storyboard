@@ -13,7 +13,7 @@
                 <viewControllerPlaceholder storyboardName="TruckDetail" id="bQ1-hI-ArY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5L-r6-NnO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="-252"/>
+            <point key="canvasLocation" x="929" y="-263"/>
         </scene>
         <!--Auth-->
         <scene sceneID="UcP-2X-GTP">
@@ -84,6 +84,7 @@
                                     <outlet property="truckID" destination="xtm-wE-NbE" id="64f-ar-650"/>
                                     <outlet property="truckImage" destination="dRm-9g-vNf" id="doK-c4-IFQ"/>
                                     <outlet property="truckTitle" destination="YSG-Pa-U8z" id="YRE-Um-Cgg"/>
+                                    <segue destination="bQ1-hI-ArY" kind="showDetail" identifier="ToTruckDetail" id="EC4-du-d1k"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -95,7 +96,7 @@
                     <navigationItem key="navigationItem" title="FoodTruck Trackr" id="Vhx-Js-boj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2UH-IR-bs9">
                             <connections>
-                                <segue destination="bQ1-hI-ArY" kind="showDetail" identifier="ToTruckDetail" id="BLd-bx-WKJ"/>
+                                <segue destination="bQ1-hI-ArY" kind="showDetail" identifier="AddTruck" id="BLd-bx-WKJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -126,4 +127,7 @@
             <point key="canvasLocation" x="-726.08695652173924" y="-80.357142857142847"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BLd-bx-WKJ"/>
+    </inferredMetricsTieBreakers>
 </document>
