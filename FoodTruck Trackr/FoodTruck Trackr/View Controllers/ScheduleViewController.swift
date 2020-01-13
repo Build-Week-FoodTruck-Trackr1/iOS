@@ -21,11 +21,11 @@ enum TimeTag: Int {
 
 class ScheduleViewController: UIViewController {
     
-    @IBOutlet weak private var txtCurrentAddress: UITextField!
-    @IBOutlet weak private var txtCurrentDepartureTime: UITextField!
-    @IBOutlet weak private var txtNextAddress: UITextField!
-    @IBOutlet weak private var txtNextArrivalTime: UITextField!
-    @IBOutlet weak private var txtNextDepartureTime: UITextField!
+    @IBOutlet private weak var txtCurrentAddress: UITextField!
+    @IBOutlet private weak var txtCurrentDepartureTime: UITextField!
+    @IBOutlet private weak var txtNextAddress: UITextField!
+    @IBOutlet private weak var txtNextArrivalTime: UITextField!
+    @IBOutlet private weak var txtNextDepartureTime: UITextField!
     
     var foodTruck: FoodTruck?
 
@@ -37,7 +37,7 @@ class ScheduleViewController: UIViewController {
     private func updateViews() {
         guard let foodTruck = foodTruck else { return }
         
-        title = foodTruck.truckTitle ?? "" + " Schedule"
+        title = foodTruck.name ?? "" + " Schedule"
     }
 
     @IBAction func addressFieldTapped(_ sender: UITextField) {
