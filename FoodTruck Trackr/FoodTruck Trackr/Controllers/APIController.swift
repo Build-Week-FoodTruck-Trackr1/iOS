@@ -18,12 +18,6 @@ enum NetworkError: Error {
     case noDecode
 }
 
-enum ResultType: String {
-    case software
-    case musicTrack
-    case movie
-}
-
 enum FoodType: String {
     case italian
     case american
@@ -156,44 +150,6 @@ class APIController {
             }
         }.resume()
     }
-
-    
-//    func fetchFoodTrucksFromServer(completion: @escaping (Result<[FoodTruckRepresentation], NetworkError>) -> Void) {
-//        guard let bearer = bearer else {
-//            completion(.failure(.noAuth))
-//            return
-//        }
-//        let baseURL = self.baseURL.appendingPathComponent("trucks")
-//        var request = URLRequest(url: baseURL)
-//        request.httpMethod = "GET"
-//        request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
-//
-//        URLSession.shared.dataTask(with: request) { (data, response, error) in
-//            if let response = response as? HTTPURLResponse, response.statusCode == 401 {
-//                completion(.failure(.badAuth))
-//                return
-//            }
-//            if let error = error {
-//                print("There was a fetch Error: \(error)")
-//                completion(.failure(.otherError))
-//            }
-//            guard let data = data else {
-//                completion(.failure(.badData))
-//                return
-//            }
-//
-//            do {
-//                let foodTrucks = try JSONDecoder().decode([FoodTruckRepresentation].self, from: data)
-//                try self.updateFoodTrucks(with: foodTrucks)
-//                completion(.success(foodTrucks))
-//                return
-//            } catch {
-//                print("Error decoding data. \(error)")
-//                completion(.failure(.noDecode))
-//                return
-//            }
-//        }.resume()
-//    }
    
     
     private func updateFoodTrucks(with representations: [FoodTruckRepresentation]) throws {
@@ -214,9 +170,6 @@ class APIController {
                             context.delete(foodTruck)
                             continue
                     }
-//                    foodTruck.name = representation.name
-//                    foodTruck.cuisineType = representation.cuisineType
-//                    foodTruck.customerRating = representation.customerRating!
                     guard let truck = self.truck else { return }
                     self.updateTruck(truck, with: representation)
                     foodTrucksToCreate.removeValue(forKey: foodTruck.id)
