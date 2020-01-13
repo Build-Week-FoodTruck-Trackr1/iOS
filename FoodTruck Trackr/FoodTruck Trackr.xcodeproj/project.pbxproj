@@ -61,6 +61,13 @@
 			remoteGlobalIDString = 5D680A1323A9E06D004F42EC;
 			remoteInfo = "FoodTruck Trackr";
 		};
+		D7FFBD0D23CBECA3007597DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7FFBD0923CBECA3007597DB /* StarRatingControl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D63446C23C8051F000D7A42;
+			remoteInfo = StarRatingControl;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -123,6 +130,7 @@
 		D7FFBD0323C825DA007597DB /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D7FFBD0523C82EB0007597DB /* TruckLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckLocation.swift; sourceTree = "<group>"; };
 		D7FFBD0723CA1FF9007597DB /* ImageDisplayHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayHelper.swift; sourceTree = "<group>"; };
+		D7FFBD0923CBECA3007597DB /* StarRatingControl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StarRatingControl.xcodeproj; path = ../StarRatingControl/StarRatingControl.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,7 @@
 				5D680A1523A9E06D004F42EC /* Products */,
 				1C87FE91AAD49D05D59B8AC2 /* Pods */,
 				207FC7C45DF166D8C9A15736 /* Frameworks */,
+				D7FFBD0923CBECA3007597DB /* StarRatingControl.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				D76A013323C58E5D00981E64 /* Auth.storyboard */,
-				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				5D88D73623AB26AB00116489 /* Menu.storyboard */,
 				5D88D73223AB267400116489 /* Schedule.storyboard */,
 				5D88D73423AB269C00116489 /* Truck.storyboard */,
@@ -244,6 +252,7 @@
 				D76A012E23C58E4200981E64 /* TruckLoginViewController.swift */,
 				955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */,
 				9534168F23AC7670001728CF /* MenuItemViewController.swift */,
+				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */,
 				D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */,
 			);
@@ -304,6 +313,14 @@
 				D7FFBD0723CA1FF9007597DB /* ImageDisplayHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D7FFBD0A23CBECA3007597DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7FFBD0E23CBECA3007597DB /* StarRatingControl.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +417,12 @@
 			mainGroup = 5D680A0B23A9E06D004F42EC;
 			productRefGroup = 5D680A1523A9E06D004F42EC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D7FFBD0A23CBECA3007597DB /* Products */;
+					ProjectRef = D7FFBD0923CBECA3007597DB /* StarRatingControl.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5D680A1323A9E06D004F42EC /* FoodTruck Trackr */,
@@ -408,6 +431,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D7FFBD0E23CBECA3007597DB /* StarRatingControl.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = StarRatingControl.framework;
+			remoteRef = D7FFBD0D23CBECA3007597DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5D680A1223A9E06D004F42EC /* Resources */ = {

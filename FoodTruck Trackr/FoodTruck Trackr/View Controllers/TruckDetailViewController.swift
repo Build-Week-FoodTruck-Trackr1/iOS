@@ -10,6 +10,11 @@ import UIKit
 
 class TruckDetailViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var truckNameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var cuisineLabel: UILabel!
+
     var apiController: APIController?
     var delegate: FoodTruck? {
            didSet {

@@ -9,11 +9,8 @@
 import Foundation
 
 class User: Codable {
-    let username: String
-    let password: String
-
-   
-    
+    let username: String?
+    let password: String?
     let email: String?
     let currentLocation: String?
     let type: String
@@ -45,7 +42,7 @@ class User: Codable {
         case type  = "type"
         case token = "token"
         case email = "email"
-        case currentLocation = "location"
+        case currentLocation = "currentLocation"
     }
     
    

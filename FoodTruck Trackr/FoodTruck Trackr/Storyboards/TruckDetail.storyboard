@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Truck Detail View Controller-->
         <scene sceneID="U2E-XV-qjp">
             <objects>
-                <viewController id="dFh-je-b9e" sceneMemberID="viewController">
+                <viewController id="dFh-je-b9e" customClass="TruckDetailViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHc-Rx-LvW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,14 +21,21 @@
                                     <constraint firstAttribute="height" constant="200" id="8K3-ex-kT6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiV-Vl-4a0">
-                                <rect key="frame" x="186" y="494" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMd-C3-wHD">
+                                <rect key="frame" x="198.5" y="565" width="17" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMd-C3-wHD">
-                                <rect key="frame" x="186" y="565" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cuisine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRx-je-PAF">
+                                <rect key="frame" x="186" y="619" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiV-Vl-4a0">
+                                <rect key="frame" x="198.5" y="494" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,12 +54,16 @@
                         <viewLayoutGuide key="safeArea" id="s3r-eF-Yvy"/>
                     </view>
                     <connections>
+                        <outlet property="cuisineLabel" destination="VRx-je-PAF" id="5aC-di-tAj"/>
+                        <outlet property="idLabel" destination="kMd-C3-wHD" id="bJc-kw-kP4"/>
+                        <outlet property="imageView" destination="qSI-T1-SxD" id="OZy-hQ-IDe"/>
+                        <outlet property="truckNameLabel" destination="IiV-Vl-4a0" id="ukH-th-wzn"/>
                         <segue destination="Bnt-H7-Eh7" kind="show" identifier="ToTrucks" id="Ycc-kc-bb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2F-j6-xzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="92"/>
+            <point key="canvasLocation" x="76.811594202898561" y="91.741071428571431"/>
         </scene>
         <!--Truck-->
         <scene sceneID="8S0-iC-iP8">
