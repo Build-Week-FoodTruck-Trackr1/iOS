@@ -50,18 +50,20 @@ class TruckLoginViewController: UIViewController {
         if modeSegControl.selectedSegmentIndex == 0 {
             // Sign IN
             let type = isOperatorSwitch.isOn ? "operator" : "diner"
-            
             let signInUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
-            apiController?.LogIn(with: signInUser)
-            if self.apiController?.bearer?.token.isEmpty == true {
-                DispatchQueue.main.async {
-                      self.alertMessage(title: "There's a problem", message: "Your username or password aren't valid. Please try again.")
-                }
-            } else {
-                DispatchQueue.main.async {
+                apiController?.LogIn(with: signInUser) { error in
+                    if error != nil {
+                        DispatchQueue.main.async {
+                            self.alertMessage(title: "There's a problem", message: "Your username or password aren't valid. Please try again.")
+                                    return
+                        }
+                    } else {
+                        DispatchQueue.main.async {
                             self.dismiss(animated: true)
-                       }
-            }
+                        }
+                    }
+                }
+            
         } else if modeSegControl.selectedSegmentIndex == 1 {
             let type = isOperatorSwitch.isOn ? "operator" : "diner"
 
