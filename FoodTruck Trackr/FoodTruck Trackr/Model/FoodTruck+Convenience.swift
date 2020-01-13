@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 extension FoodTruck {
-    convenience init(truckTitle: String,
+    convenience init(name: String,
                      cuisineType: String,
-                     imageOfTruck: String? = nil,
-                     truckID: Int32 = -1,
+                     imgUrl: String? = nil,
+                     id: Int32 = -1,
                      customerRating: Int32? = 0,
                      customerRatingAvg: Double? = 0.0,
                      currentLocation: String? = nil,
@@ -24,10 +24,10 @@ extension FoodTruck {
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext
     ) {
         self.init(context: context)
-        self.truckTitle = truckTitle
-        self.imageOfTruck = imageOfTruck
+        self.name = name
+        self.imgUrl = imgUrl
         self.cuisineType = cuisineType
-        self.truckID = truckID
+        self.id = id
         if let customerRating = customerRating, let customerRatingAvg = customerRatingAvg {
             self.customerRating = customerRating
             self.customerRatingAvg = customerRatingAvg
@@ -37,19 +37,19 @@ extension FoodTruck {
     convenience init?(truckRepresentation: FoodTruckRepresentation,
                       context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        self.init(truckTitle: truckRepresentation.truckTitle,
+        self.init(name: truckRepresentation.name,
                   cuisineType: truckRepresentation.cuisineType,
-                  imageOfTruck: truckRepresentation.imageOfTruck,
-                  truckID: truckRepresentation.truckID,
+                  imgUrl: truckRepresentation.imgUrl,
+                  id: truckRepresentation.id,
                   customerRating: truckRepresentation.customerRating,
                   customerRatingAvg: truckRepresentation.customerRatingAvg,
                   context: context)
     }
     
     var truckRepresentation: FoodTruckRepresentation? {
-        guard truckTitle == truckTitle,
+        guard name == name,
             cuisineType == cuisineType,
-            truckID > 0 else { return nil }
+            id > 0 else { return nil }
         
         return FoodTruckRepresentation(from: self)
     }
