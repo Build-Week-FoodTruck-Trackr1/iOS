@@ -12,7 +12,8 @@ import CoreData
 class MenuTableViewController: UITableViewController {
 
     private let menuController = MenuController()
-
+    
+    
     lazy var fetchedResultsController: NSFetchedResultsController<MenuItem> = {
         let fetchRequest: NSFetchRequest<MenuItem> = MenuItem.fetchRequest()
         fetchRequest.sortDescriptors = [
@@ -35,22 +36,16 @@ class MenuTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    @IBAction func shouldRefresh(_ sender: Any) {
-        menuController.fetchItemsFromServer{(_) in
-            DispatchQueue.main.async {
-                self.refreshControl?.endRefreshing()
-            }
-        }
-    }
+//    @IBAction func shouldRefresh(_ sender: Any) {
+//        menuController.fetchItemsFromServer{(_) in
+//            DispatchQueue.main.async {
+//                self.refreshControl?.endRefreshing()
+//            }
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source

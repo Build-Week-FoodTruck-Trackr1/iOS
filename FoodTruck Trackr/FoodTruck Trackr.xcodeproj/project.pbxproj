@@ -223,6 +223,7 @@
 		5D88D73123AB265000116489 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				D76A013323C58E5D00981E64 /* Auth.storyboard */,
 				5D88D73623AB26AB00116489 /* Menu.storyboard */,
 				5D88D73223AB267400116489 /* Schedule.storyboard */,
@@ -256,7 +257,6 @@
 				D76A012E23C58E4200981E64 /* TruckLoginViewController.swift */,
 				955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */,
 				9534168F23AC7670001728CF /* MenuItemViewController.swift */,
-				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				95F3470D23CBF0A600829065 /* ScheduleLocationViewController.swift */,
 				95F3470B23CBF09800829065 /* ScheduleTimeViewController.swift */,
 				5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */,

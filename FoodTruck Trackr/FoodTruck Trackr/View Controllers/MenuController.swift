@@ -23,6 +23,58 @@ class MenuController {
         
     }
     
+    func createMenuItem(with name: String, price: String, photo: Data?, description: String?) {
+        
+        _ = MenuItem(itemName: name, itemPrice: price, itemPhoto: photo, itemDescription: description)
+        
+        saveToPersistentStore()
+    }
+    
+    func update(menuItem: MenuItem, name: String, price: String, photo: Data?, description: String?) {
+        
+        menuItem.itemName = name
+        menuItem.itemPrice = price
+        menuItem.itemPhoto = photo
+        menuItem.itemDescription = description
+        
+        saveToPersistentStore()
+    }
+    
+    func delete(menuItem: MenuItem) {
+        
+        CoreDataStack.shared.mainContext.delete(menuItem)
+        
+        saveToPersistentStore()
+    }
+    
+    func loadFromPersistentStore() -> [MenuItem] {
+        
+        let fetchRequest: NSFetchRequest<MenuItem> = MenuItem.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(format: "identifier == %@", UUID().uuidString)
+        let moc = CoreDataStack.shared.mainContext
+        
+        do {
+            return try moc.fetch(fetchRequest)
+        } catch {
+            print("Error fetching from moc: \(error)")
+            return []
+        }
+    }
+    
+    func saveToPersistentStore() {
+        
+        do {
+            try CoreDataStack.shared.mainContext.save()
+        } catch {
+            NSLog("Error saving managed object context: \(error)")
+        }
+    }
+    
+    var entries: [MenuItem] {
+        return loadFromPersistentStore()
+    }
+    
     func fetchItemsFromServer(completion: @escaping CompletionHandler = { _ in }) { // replaced with typealias CompletionHandler
         
         let requestURL = baseURL.appendingPathExtension("json")
