@@ -54,13 +54,13 @@ class ScheduleViewController: UIViewController {
             print("Bad tag when saving location selection: \(tag)")
             return
         }
-        
-        switch locTag {
-        case .current:
-            <#code#>
-        case .next:
-            <#code#>
-        }
+//        
+//        switch locTag {
+//        case .current:
+//            <#code#>
+//        case .next:
+//            <#code#>
+//        }
     }
 
     public func saveTime(time: Date, tag: Int) {
