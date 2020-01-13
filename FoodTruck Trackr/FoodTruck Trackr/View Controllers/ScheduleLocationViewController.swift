@@ -95,9 +95,6 @@ extension ScheduleLocationViewController: CLLocationManagerDelegate {
             locationServiceAuthorized = false
         }
     }
-}
-
-extension ScheduleLocationViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
