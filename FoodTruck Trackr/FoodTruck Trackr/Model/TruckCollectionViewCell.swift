@@ -12,7 +12,6 @@ class TruckCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var truckImage: UIImageView!
     @IBOutlet weak var truckTitle: UILabel!
-    
     @IBOutlet weak var truckID: UILabel!
     
     var truck: FoodTruckRepresentation? {
@@ -22,10 +21,10 @@ class TruckCollectionViewCell: UICollectionViewCell {
     }
     
     func updateView() {
-        guard let truck = self.truck, let image = truck.imageOfTruck else { return }
+        guard let truck = self.truck, let image = truck.imgUrl else { return }
         truckImage.image = self.displayURLImage(url: image)
-        truckTitle.text = truck.truckTitle
-        truckID.text = "Truck ID: \(truck.truckID)"
+        truckTitle.text = truck.name
+        truckID.text = "Truck ID: \(truck.id)"
         
     }
     
