@@ -44,11 +44,7 @@ class MenuItemViewController: UIViewController {
         
         if let menuItem = menuItem {
             // editing/updating an existing item
-            menuItem.itemName = name
-            menuItem.itemPrice = price
-            menuItem.category = category.type
-            menuItem.itemDescription = description
-            menuController?.put(item: menuItem)
+            menuController?.createMenuItem(with: name, price: price, photo: imageData, description: description)
         } else {
             let menuItem = MenuItem(itemName: name,
                                     itemPrice: price,
