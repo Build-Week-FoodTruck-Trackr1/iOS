@@ -37,7 +37,7 @@ class ScheduleViewController: UIViewController {
     private func updateViews() {
         guard let foodTruck = foodTruck else { return }
         
-        title = foodTruck.truckTitle ?? "" + " Schedule"
+        title = foodTruck.name ?? "" + " Schedule"
     }
 
     @IBAction func addressFieldTapped(_ sender: UITextField) {

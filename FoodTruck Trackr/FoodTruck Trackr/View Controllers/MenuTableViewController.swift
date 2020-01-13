@@ -17,13 +17,12 @@ class MenuTableViewController: UITableViewController {
     lazy var fetchedResultsController: NSFetchedResultsController<MenuItem> = {
         let fetchRequest: NSFetchRequest<MenuItem> = MenuItem.fetchRequest()
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "menuItem", ascending: true),
             NSSortDescriptor(key: "itemName", ascending: true)
         ]
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
-                                             sectionNameKeyPath: "menuItem",
+                                             sectionNameKeyPath: "itemName",
                                              cacheName: nil)
         frc.delegate = self
         try! frc.performFetch()
