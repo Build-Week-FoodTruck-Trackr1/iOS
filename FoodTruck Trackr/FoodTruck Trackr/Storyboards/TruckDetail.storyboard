@@ -40,6 +40,9 @@
                                     <constraint firstAttribute="width" secondItem="LAW-Yh-ekm" secondAttribute="height" multiplier="1:1" id="k8u-hs-tFb"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="map"/>
+                                <connections>
+                                    <segue destination="jtj-TM-aUB" kind="show" identifier="ToSchedule" id="7IN-Ia-1CQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwQ-ud-nsm" userLabel="Menu Button">
                                 <rect key="frame" x="155.5" y="572.5" width="103.5" height="103.5"/>
@@ -48,7 +51,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="menu"/>
                                 <connections>
-                                    <segue destination="Jwj-2h-HOt" kind="show" id="f7h-u6-zoT"/>
+                                    <segue destination="Jwj-2h-HOt" kind="show" identifier="ToMenu" id="f7h-u6-zoT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJQ-cC-cO8" userLabel="Settings Button">
@@ -127,6 +130,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2F-j6-xzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="91.741071428571431"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="QHL-Mp-TrQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Schedule" id="jtj-TM-aUB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Dns-st-UcK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bl3-zc-vM8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1715" y="-21"/>
         </scene>
         <!--Menu-->
         <scene sceneID="JBA-mx-zWG">

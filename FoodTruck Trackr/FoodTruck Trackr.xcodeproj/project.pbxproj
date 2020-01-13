@@ -256,9 +256,9 @@
 			children = (
 				D76A012D23C58E4200981E64 /* TruckCollectionViewController.swift */,
 				D76A012E23C58E4200981E64 /* TruckLoginViewController.swift */,
+				D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */,
 				955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */,
 				9534168F23AC7670001728CF /* MenuItemViewController.swift */,
-				D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */,
 				5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */,
 				5D12A6B623CC002C0071F952 /* ScheduleTimeViewController.swift */,
 				5D12A6B323CBFFD60071F952 /* ScheduleLocationViewController.swift */,
@@ -734,7 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = 3C2X999TFX;
 				INFOPLIST_FILE = "FoodTruck Trackr/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -754,7 +754,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = 3C2X999TFX;
 				INFOPLIST_FILE = "FoodTruck Trackr/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (

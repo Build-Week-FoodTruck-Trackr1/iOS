@@ -27,7 +27,8 @@ class ScheduleViewController: UIViewController {
     @IBOutlet private weak var txtNextArrivalTime: UITextField!
     @IBOutlet private weak var txtNextDepartureTime: UITextField!
 
-    var foodTruck: FoodTruck?
+    var apiController: APIController?
+    var foodTruck: FoodTruckRepresentation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,14 +71,16 @@ class ScheduleViewController: UIViewController {
             print("Bad tag when saving time selection: \(tag)")
             return
         }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy hh:mm"
         
         switch timeTag {
         case .currentDeparture:
-            foodTruck?.currentDepartureTime = time
+            foodTruck?.currentDepartureTime = formatter.string(from: time)
         case .nextArrival:
-            foodTruck?.arrivalTime = time
+            foodTruck?.arrivalTime = formatter.string(from: time)
         case .nextDeparture:
-            foodTruck?.departureTime = time
+            foodTruck?.departureTime = formatter.string(from: time)
         }
     }
     
