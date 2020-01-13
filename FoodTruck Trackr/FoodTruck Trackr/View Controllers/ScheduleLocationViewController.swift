@@ -43,7 +43,9 @@ class ScheduleLocationViewController: UIViewController {
             
         }
         
-        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "locationTVC") as! LocationSearchTableViewController
+        guard let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "locationTVC") as? LocationSearchTableViewController else {
+            fatalError("locationTVC not found in storyboard.")
+        }
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable as UISearchResultsUpdating
         
