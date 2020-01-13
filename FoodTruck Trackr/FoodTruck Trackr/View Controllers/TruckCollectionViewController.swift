@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-private let reuseIdentifier = "TruckCell"
+private let reuseIdentifier = "Cell"
 
 class TruckCollectionViewController: UICollectionViewController {
 
@@ -80,16 +80,16 @@ class TruckCollectionViewController: UICollectionViewController {
         return apiController.foodTruck.count
     }
 
-        override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TruckCollectionViewCell else {
-                print("Dequeue Failed!")
-                return UICollectionViewCell()
-               
-            }
-            let truck = apiController.foodTruck[indexPath.item]
-            cell.truck = truck
-            print("\(truck.name)")
-            print("\(truck.imgUrl ?? "")")
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TruckCell", for: indexPath) as? TruckCollectionViewCell else {
+            print("Dequeue Failed!")
+            return UICollectionViewCell()
+            
+        }
+        let truck = apiController.foodTruck[indexPath.item]
+        cell.truck = truck
+        print("\(truck.name)")
+        print("\(truck.imgUrl ?? "")")
         return cell
     }
 

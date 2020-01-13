@@ -12,16 +12,14 @@ class TruckDetailViewController: UIViewController {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var truckNameLabel: UILabel!
-    @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var cuisineLabel: UILabel!
-    @IBOutlet private weak var addMenuButton: UIButton!
     
     var apiController: APIController?
-    var delegate: FoodTruck? {
-           didSet {
-               updateView()
-           }
-       }
+    var foodTruck: FoodTruck? {
+        didSet {
+            updateView()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +28,18 @@ class TruckDetailViewController: UIViewController {
     }
     
     func updateView() {
-        
+        var image: UIImage
+        if let foodTruck = foodTruck,
+            let imgURLString = foodTruck.imgUrl,
+            let imgURL = URL(string: imgURLString) {
+            let data = try? Data(contentsOf: imgURL)
+            image = UIImage(data: data!) ?? UIImage(named: "notAvailable.jpg")!
+        } else {
+            image = UIImage(named: "notAvailable.jpg")!
+        }
+        imageView.image = image
+        truckNameLabel.text = foodTruck?.name
+        cuisineLabel.text = "Serving fine \(foodTruck?.cuisineType ?? "") cuisine"
     }
 
 }
