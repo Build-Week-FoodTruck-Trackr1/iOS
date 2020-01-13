@@ -73,7 +73,7 @@ class MenuTableViewController: UITableViewController {
             MenuItemTableViewCell else { return UITableViewCell() }
         
         if let items = menuController.menuItems {
-            cell.itemNameLabel.text = items[indexPath.row].itemName
+            cell.item = items[indexPath.row]
         }
 
         return cell
@@ -88,8 +88,7 @@ class MenuTableViewController: UITableViewController {
             }
         } else if segue.identifier == "ShowItemDetail" {
             if let detailVC = segue.destination as? MenuItemViewController,
-                let indexPath = tableView.indexPathForSelectedRow
-            {
+                let indexPath = tableView.indexPathForSelectedRow {
                 if let items = menuController.menuItems {
                     title = items[indexPath.row].itemName
                 }
@@ -111,7 +110,8 @@ extension MenuTableViewController: NSFetchedResultsControllerDelegate {
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange sectionInfo: NSFetchedResultsSectionInfo,
-                    atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
         
         switch type {
         case .insert:
@@ -124,8 +124,10 @@ extension MenuTableViewController: NSFetchedResultsControllerDelegate {
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
-                    didChange anObject: Any, at indexPath: IndexPath?,
-                    for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
         
         switch type {
         case .insert:
@@ -147,4 +149,3 @@ extension MenuTableViewController: NSFetchedResultsControllerDelegate {
         }
     }
 }
-

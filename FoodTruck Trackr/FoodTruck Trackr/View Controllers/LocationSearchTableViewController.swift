@@ -12,8 +12,9 @@ import MapKit
 class LocationSearchTableViewController: UITableViewController {
 
     var matchingItems: [MKMapItem] = []
-    var mapView: MKMapView? = nil
-    var handleMapSearchDelegate: HandleMapSearch? = nil
+    var mapView: MKMapView?
+    // swiftlint:disable weak_delegate
+    var handleMapSearchDelegate: HandleMapSearch?   // not possible to remove SwiftLint warning without creating a compiler error
     
     override func viewDidLoad() {
         super.viewDidLoad()

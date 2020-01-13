@@ -71,9 +71,6 @@ struct FoodTruckRepresentation: Codable {
         }
 
     }
-    
-
-
 }
 
 struct TruckLocation: Codable {

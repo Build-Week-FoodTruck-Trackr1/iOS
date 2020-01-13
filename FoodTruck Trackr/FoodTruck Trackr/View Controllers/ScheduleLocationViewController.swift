@@ -17,7 +17,7 @@ protocol HandleMapSearch {
 
 class ScheduleLocationViewController: UIViewController {
 
-    @IBOutlet weak var mapView: MapViewPlus!
+    @IBOutlet private weak var mapView: MapViewPlus!
     
     weak var delegate: ScheduleViewController?
     var selectedFieldTag: Int?

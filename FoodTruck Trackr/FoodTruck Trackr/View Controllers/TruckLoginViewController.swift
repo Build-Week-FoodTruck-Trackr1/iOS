@@ -10,22 +10,23 @@ import UIKit
 
 class TruckLoginViewController: UIViewController {
 
-    @IBOutlet weak var modeSegControl: UISegmentedControl!
-    @IBOutlet weak var signUpLogInButton: UIButton!
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var truckNameTextField: UITextField!
-    @IBOutlet weak var nameStackView: UIStackView!
-    @IBOutlet weak var currentLocationTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var isOperatorSwitch: UISwitch!
-    @IBOutlet weak var truckLabel: UILabel!
+    @IBOutlet private weak var modeSegControl: UISegmentedControl!
+    @IBOutlet private weak var signUpLogInButton: UIButton!
+    @IBOutlet private weak var userNameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var truckNameTextField: UITextField!
+    @IBOutlet private weak var nameStackView: UIStackView!
+    @IBOutlet private weak var currentLocationTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var isOperatorSwitch: UISwitch!
+    @IBOutlet private weak var truckLabel: UILabel!
     
     var apiController: APIController?
     var user: User?
     var operatorStatus: Bool = false
     var foodTruck = [FoodTruckRepresentation]()
     var type = "diner"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameStackView.isHidden = true
@@ -41,7 +42,8 @@ class TruckLoginViewController: UIViewController {
             let location = currentLocationTextField.text,
             let email = emailTextField.text else { return }
         if user.isEmpty || pass.isEmpty || email.isEmpty {
-            self.alertMessage(title: "Problem Signing In", message: "A field was left blank or the username or password doesn't match up. Please correct and try again.")
+            self.alertMessage(title: "Problem Signing In",
+                              message: "A field was left blank or the username or password doesn't match up. Please correct and try again.")
             return
         }
         
@@ -65,7 +67,7 @@ class TruckLoginViewController: UIViewController {
 
             // Sign UP
             let signUpUser = User(username: user, password: pass, email: email, currentLocation: location, type: type)
-            apiController?.signUp(with: signUpUser ) { (error) in
+            apiController?.signUp(with: signUpUser ) { error in
                 if let error = error {
                     print("There was an error: \(error)")
                     DispatchQueue.main.async {
@@ -85,8 +87,6 @@ class TruckLoginViewController: UIViewController {
         
     }
     
-   
-    
     @IBAction func segmentControlToggled(_ sender: Any) {
         if modeSegControl.selectedSegmentIndex == 0 {
             signUpLogInButton.titleLabel?.text = "Sign In"
@@ -105,9 +105,6 @@ class TruckLoginViewController: UIViewController {
         let type = isOperatorSwitch.isOn ? "operator" : "diner"
     }
     
-    
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -118,6 +115,3 @@ class TruckLoginViewController: UIViewController {
     
 
 }
-
-
-

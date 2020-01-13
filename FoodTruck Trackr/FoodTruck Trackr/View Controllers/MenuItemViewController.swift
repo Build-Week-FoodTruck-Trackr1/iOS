@@ -10,13 +10,13 @@ import UIKit
 
 class MenuItemViewController: UIViewController {
 
-    @IBOutlet weak var categorySegControl: UISegmentedControl!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var priceTextField: UITextField!
-    @IBOutlet weak var decriptionTextView: UITextView!
-    @IBOutlet weak var addPhotoButton: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var itemRatingView: UIView!
+    @IBOutlet private weak var categorySegControl: UISegmentedControl!
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var priceTextField: UITextField!
+    @IBOutlet private weak var decriptionTextView: UITextView!
+    @IBOutlet private weak var addPhotoButton: UIButton!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var itemRatingView: UIView!
     
     var menuItem: MenuItem? {
         didSet {

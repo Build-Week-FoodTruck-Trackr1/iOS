@@ -13,7 +13,7 @@ class CoreDataStack {
     static let shared = CoreDataStack()
     lazy var container: NSPersistentContainer = {
         let newContainer = NSPersistentContainer(name: "FoodTruck")
-        newContainer.loadPersistentStores { (_, error) in
+        newContainer.loadPersistentStores { _, error in
             guard error == nil else {
                 fatalError("Failed to load persistent store: \(error!)")
             }
@@ -24,6 +24,7 @@ class CoreDataStack {
     var mainContext: NSManagedObjectContext {
         return container.viewContext
     }
+    
     func save(context: NSManagedObjectContext = CoreDataStack.shared.mainContext) throws {
         var error: Error?
         // Could be main context or background context

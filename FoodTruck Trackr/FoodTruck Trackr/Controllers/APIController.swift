@@ -46,8 +46,6 @@ struct Bearer: Codable {
     let userId: Int
 }
 
-
-
 class APIController {
     
     typealias CompletionHandler = (Error?) -> Void
@@ -64,10 +62,10 @@ class APIController {
     
     let baseURL = URL(string: "https://build-foodtruck-trackr1.herokuapp.com/")!
     
-    func fetchTrucksFromServer(completion: @escaping CompletionHandler = { _ in}) {
+    func fetchTrucksFromServer(completion: @escaping CompletionHandler = { _ in }) {
         
         let reqeustURL = baseURL.appendingPathComponent("trucks")
-        URLSession.shared.dataTask(with: reqeustURL) { (data, _, error) in
+        URLSession.shared.dataTask(with: reqeustURL) { data, _, error in
             guard error == nil else {
                 print("error fetching tasks: \(error!)")
                 completion(error)
@@ -102,7 +100,7 @@ class APIController {
         // guard let baseURL = baseURL else { return }
         let searchURL = baseURL.appendingPathComponent("json")
         
-        let request = URLRequest(url:searchURL)
+        let request = URLRequest(url: searchURL)
         
         URLSession.shared.dataTask(with: request) {data, _, error in
             if let error = error {
@@ -199,7 +197,7 @@ class APIController {
    
     
     private func updateFoodTrucks(with representations: [FoodTruckRepresentation]) throws {
-        let foodTrucksWithID = representations.filter {$0.id > 0 }
+        let foodTrucksWithID = representations.filter { $0.id > 0 }
         let identifiersToFetch = foodTrucksWithID.compactMap { $0.id }
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, foodTrucksWithID))
         var foodTrucksToCreate = representationsByID
@@ -271,7 +269,7 @@ class APIController {
         request.httpMethod = "GET"
         request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse, response.statusCode == 401 {
                 completion(.failure(.badAuth))
                 return
@@ -300,7 +298,7 @@ class APIController {
 
        
 //       func deleteFoodTruckFromServer(_ foodTruck: FoodTruck, completion: @escaping CompletionHandler = { _ in }) {
-//        
+//
 //        guard let bearer = bearer else {
 //                return
 //            }
@@ -308,7 +306,7 @@ class APIController {
 //            var request = URLRequest(url: gigsURL)
 //            request.httpMethod = "DELETE"
 //            request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
-//            
+//
 //            URLSession.shared.dataTask(with: request) { (data, response, error) in
 //                if let response = response as? HTTPURLResponse, response.statusCode == 401 {
 //                    completion(error)
@@ -322,10 +320,10 @@ class APIController {
 //                    completion(error)
 //                    return
 //                }
-//                
+//
 //                do {
 //                    let foodTrucks = try JSONDecoder().decode(FoodTruck.self, from: data)
-//                    
+//
 //                } catch {
 //                    print("Error decoding data. \(error)")
 //                    completion(error)
@@ -419,7 +417,4 @@ class APIController {
                 completion(nil)
                 }.resume()
         }
-        
-    
-
 }

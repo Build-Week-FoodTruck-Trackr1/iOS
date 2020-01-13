@@ -42,7 +42,6 @@
 		D7FFBCFF23C82113007597DB /* TruckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBCFE23C82113007597DB /* TruckCollectionViewCell.swift */; };
 		D7FFBD0123C8223D007597DB /* TruckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */; };
 		D7FFBD0423C825DA007597DB /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBD0323C825DA007597DB /* AlertHelper.swift */; };
-		D7FFBD0623C82EB0007597DB /* TruckLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBD0523C82EB0007597DB /* TruckLocation.swift */; };
 		D7FFBD0823CA1FF9007597DB /* ImageDisplayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFBD0723CA1FF9007597DB /* ImageDisplayHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,7 +128,6 @@
 		D7FFBCFE23C82113007597DB /* TruckCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TruckCollectionViewCell.swift; path = "FoodTruck Trackr/Model/TruckCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckDetailViewController.swift; sourceTree = "<group>"; };
 		D7FFBD0323C825DA007597DB /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
-		D7FFBD0523C82EB0007597DB /* TruckLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckLocation.swift; sourceTree = "<group>"; };
 		D7FFBD0723CA1FF9007597DB /* ImageDisplayHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayHelper.swift; sourceTree = "<group>"; };
 		D7FFBD0923CBECA3007597DB /* StarRatingControl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StarRatingControl.xcodeproj; path = ../StarRatingControl/StarRatingControl.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,7 +247,6 @@
 				9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */,
 				9579894823B0619300414C22 /* MenuItemRepresentation.swift */,
 				D76A013523C58E6B00981E64 /* User.swift */,
-				D7FFBD0523C82EB0007597DB /* TruckLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -552,7 +549,6 @@
 				D7FFBCFF23C82113007597DB /* TruckCollectionViewCell.swift in Sources */,
 				955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */,
 				5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */,
-				D7FFBD0623C82EB0007597DB /* TruckLocation.swift in Sources */,
 				9534169223AC8135001728CF /* MenuController.swift in Sources */,
 				5D12A6B923CC0AA90071F952 /* LocationSearchTableViewController.swift in Sources */,
 				D76A013623C58E6B00981E64 /* User.swift in Sources */,

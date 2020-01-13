@@ -47,8 +47,8 @@ extension FoodTruck {
     }
     
     var truckRepresentation: FoodTruckRepresentation? {
-        guard name == name,
-            cuisineType == cuisineType,
+        guard name != "",
+            cuisineType != "",
             id > 0 else { return nil }
         
         return FoodTruckRepresentation(from: self)

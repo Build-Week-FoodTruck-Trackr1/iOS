@@ -52,7 +52,7 @@ opt_in_rules:
   - toggle_bool
   - unavailable_function
   - unneeded_parentheses_in_closure_argument
-  - untyped_error_in_catch
+#  - untyped_error_in_catch
   - unused_control_flow_label
   - vertical_parameter_alignment_on_call
   - xct_specific_matcher

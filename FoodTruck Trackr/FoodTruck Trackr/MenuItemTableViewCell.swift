@@ -10,8 +10,12 @@ import UIKit
 
 class MenuItemTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var itemNameLabel: UILabel!
-    @IBOutlet weak var itemRatingView: UIView!
+    @IBOutlet private weak var itemNameLabel: UILabel!
+    @IBOutlet private weak var itemRatingView: UIView!
     
-
+    var item: MenuItem? { didSet { updateViews() } }
+    
+    func updateViews() {
+        itemNameLabel.text = item?.itemName
+    }
 }
