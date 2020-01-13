@@ -58,16 +58,14 @@ extension MenuItem {
         category: Category = .appetizer,
         customerRating: Int32? = 0,
         customerRatingAvg: Double? = 0.0,
-        context: NSManagedObjectContext = CoreDataStack.shared.mainContext)
-    {
+        context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.itemName = itemName
         self.itemPrice = itemPrice
         self.itemPhoto = itemPhoto
         self.itemDescription = itemDescription
         self.category = category.type
-        if let customerRating = customerRating, let customerRatingAvg = customerRatingAvg
-        {
+        if let customerRating = customerRating, let customerRatingAvg = customerRatingAvg {
             self.customerRating = customerRating
             self.customerRatingAvg = customerRatingAvg
         }
@@ -95,11 +93,11 @@ extension MenuItem {
             let itemPrice = itemPrice else { return nil }
         
         return MenuItemRepresentation(itemName: itemName,
-                                       itemPrice: itemPrice,
-                                       itemPhoto: itemPhoto,
-                                       itemDescription: itemDescription,
-                                       category: category,
-                                       customerRating: customerRating,
-                                       customerRatingAvg: customerRatingAvg)
+                                      itemPrice: itemPrice,
+                                      itemPhoto: itemPhoto,
+                                      itemDescription: itemDescription,
+                                      category: category,
+                                      customerRating: customerRating,
+                                      customerRatingAvg: customerRatingAvg)
     }
 }

@@ -10,9 +10,9 @@ import UIKit
 
 class ScheduleTimeViewController: UIViewController {
     
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var datePicker: UIDatePicker!
     
-    var delegate: ScheduleViewController?
+    weak var delegate: ScheduleViewController?
     var time: Date?
     var selectedFieldTag: Int?
 

@@ -10,9 +10,9 @@ import UIKit
 
 class TruckCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var truckImage: UIImageView!
-    @IBOutlet weak var truckTitle: UILabel!
-    @IBOutlet weak var truckID: UILabel!
+    @IBOutlet private weak var truckImage: UIImageView!
+    @IBOutlet private weak var truckTitle: UILabel!
+    @IBOutlet private weak var truckID: UILabel!
     
     var truck: FoodTruckRepresentation? {
         didSet {

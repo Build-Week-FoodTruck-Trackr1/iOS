@@ -17,7 +17,7 @@ protocol HandleMapSearch {
 
 class ScheduleLocationViewController: UIViewController {
 
-    @IBOutlet weak var mapView: MapViewPlus!
+    @IBOutlet private weak var mapView: MapViewPlus!
     
     weak var delegate: ScheduleViewController?
     var selectedFieldTag: Int?
@@ -95,9 +95,6 @@ extension ScheduleLocationViewController: CLLocationManagerDelegate {
             locationServiceAuthorized = false
         }
     }
-}
-
-extension ScheduleLocationViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {

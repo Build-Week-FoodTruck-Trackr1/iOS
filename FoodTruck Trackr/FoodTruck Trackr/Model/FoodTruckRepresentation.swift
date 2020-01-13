@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct FoodTruckRepresentation: Codable {
     
@@ -71,9 +72,6 @@ struct FoodTruckRepresentation: Codable {
         }
 
     }
-    
-
-
 }
 
 struct TruckLocation: Codable {

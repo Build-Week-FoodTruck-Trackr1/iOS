@@ -36,16 +36,13 @@ class User: Codable {
     }
     
     private enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case username = "username"
-        case password = "password"
-        case type  = "type"
-        case token = "token"
-        case email = "email"
-        case currentLocation = "currentLocation"
+        case id
+        case username
+        case password
+        case type
+        case token
+        case email
+        case currentLocation
     }
     
-   
-    
 }
-

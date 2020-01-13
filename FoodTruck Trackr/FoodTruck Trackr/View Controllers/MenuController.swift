@@ -9,8 +9,6 @@
 import Foundation
 import CoreData
 
-
-
 class MenuController {
     
     typealias CompletionHandler = (Error?) -> Void
@@ -79,7 +77,7 @@ class MenuController {
         
         let requestURL = baseURL.appendingPathExtension("json")
         
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
             if let error = error {
                 print("Error fetching tasks: \(error)")
                 completion(error)
@@ -115,32 +113,32 @@ class MenuController {
      private func updateMenu(with representations: [MenuItemRepresentation]) throws { // this will require a try when it's called
             
 //            let itemsWithID = representations.filter({ $0.identifier != nil })
-//            
+//
 //            let identifiersToFetch = itemsWithID.compactMap({ UUID(uuidString: $0.identifier!)})
 //            // Creating a dictionary of TaskRepresentation objects keyed by UUID
 //            let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, itemsWithID)) // array of uuids and second is tasks with ids
-//            
+//
 //            // Running log of all the tasks we need to
 //            var itemsToCreate = representationsByID
-//            
+//
 //            let fetchRequest: NSFetchRequest<MenuItem> = MenuItem.fetchRequest()
 //            fetchRequest.predicate = NSPredicate(format: "uuid IN %@", identifiersToFetch)
-//            
+//
 //    //        let context = CoreDataStack.shared.mainContext
 //            let context = CoreDataStack.shared.container.newBackgroundContext()
 //            context.perform {
 //                do {
 //                    let existingItems = try context.fetch(fetchRequest)
-//                    
+//
 //                    for item in existingItems {
 //                        guard let id = item.uuid,
 //                            let representation = representationsByID[id] else { continue } // continue will break out of the iteration of the loop instead of ending it
-//                        
+//
 //                        self.update(menuItem: item, with: representation)
-//                        
+//
 //                        itemsToCreate.removeValue(forKey: id)
 //                    }
-//                    
+//
 //                    for representation in itemsToCreate.values {
 //                        let _ = Task(taskRepresentation: representation, context: context)
 //                    }
