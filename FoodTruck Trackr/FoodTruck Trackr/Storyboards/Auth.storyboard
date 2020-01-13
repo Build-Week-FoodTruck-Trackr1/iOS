@@ -152,6 +152,7 @@
                         <outlet property="nameStackView" destination="1FQ-r5-Ow4" id="uKP-Bh-Fp4"/>
                         <outlet property="passwordTextField" destination="qlU-Op-AwY" id="WsE-lG-IMc"/>
                         <outlet property="signUpLogInButton" destination="wce-iR-UL6" id="muE-0L-FL3"/>
+                        <outlet property="truckLabel" destination="TYh-JH-vx9" id="i7U-d4-rOE"/>
                         <outlet property="truckNameTextField" destination="OlG-Fa-ACo" id="fFl-dW-vNS"/>
                         <outlet property="userNameTextField" destination="zBt-ut-mCE" id="TX6-cO-Kg7"/>
                         <segue destination="rhh-og-0Go" kind="show" identifier="ToMain" id="3fm-sL-DJP"/>

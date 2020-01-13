@@ -50,7 +50,10 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9LR-Wp-Xmp">
                                             <rect key="frame" x="5" y="5" width="127" height="130"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cDY-QP-XQR">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cDY-QP-XQR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="0.0"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRm-9g-vNf">
                                                     <rect key="frame" x="0.0" y="0.0" width="127" height="89"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSG-Pa-U8z">
@@ -77,9 +80,9 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="137" height="140"/>
                                 <connections>
-                                    <outlet property="truckID" destination="xtm-wE-NbE" id="KLU-bm-5qm"/>
-                                    <outlet property="truckImage" destination="cDY-QP-XQR" id="zEs-Nz-g3L"/>
-                                    <outlet property="truckTitle" destination="YSG-Pa-U8z" id="ROx-5Z-ct2"/>
+                                    <outlet property="truckID" destination="xtm-wE-NbE" id="64f-ar-650"/>
+                                    <outlet property="truckImage" destination="dRm-9g-vNf" id="doK-c4-IFQ"/>
+                                    <outlet property="truckTitle" destination="YSG-Pa-U8z" id="YRE-Um-Cgg"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
