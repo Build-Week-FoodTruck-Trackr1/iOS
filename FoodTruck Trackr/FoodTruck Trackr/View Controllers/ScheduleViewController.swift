@@ -21,11 +21,11 @@ enum TimeTag: Int {
 
 class ScheduleViewController: UIViewController {
     
-    @IBOutlet weak var txtCurrentAddress: UITextField!
-    @IBOutlet weak var txtCurrentDepartureTime: UITextField!
-    @IBOutlet weak var txtNextAddress: UITextField!
-    @IBOutlet weak var txtNextArrivalTime: UITextField!
-    @IBOutlet weak var txtNextDepartureTime: UITextField!
+    @IBOutlet weak private var txtCurrentAddress: UITextField!
+    @IBOutlet weak private var txtCurrentDepartureTime: UITextField!
+    @IBOutlet weak private var txtNextAddress: UITextField!
+    @IBOutlet weak private var txtNextArrivalTime: UITextField!
+    @IBOutlet weak private var txtNextDepartureTime: UITextField!
     
     var foodTruck: FoodTruck?
 
@@ -49,7 +49,7 @@ class ScheduleViewController: UIViewController {
     }
     
     // MARK: Delegate methods
-    public func saveLocation(loc: Any, tag: Int) {
+    public func saveLocation(loc: String, tag: Int) {
         guard let locTag = AddressTag(rawValue: tag) else {
             print("Bad tag when saving location selection: \(tag)")
             return
@@ -57,9 +57,9 @@ class ScheduleViewController: UIViewController {
         
         switch locTag {
         case .current:
-            <#code#>
+            self.foodTruck?.currentLocation = loc
         case .next:
-            <#code#>
+            self.foodTruck?.location = loc
         }
     }
 

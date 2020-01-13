@@ -10,8 +10,7 @@
 		0FD6BFA2FF861E8D878F0F25 /* Pods_FoodTruck_Trackr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7197CD5B0F82D1E85FC710 /* Pods_FoodTruck_Trackr.framework */; };
 		5D12A6B423CBFFD60071F952 /* ScheduleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D12A6B323CBFFD60071F952 /* ScheduleLocationViewController.swift */; };
 		5D12A6B723CC002C0071F952 /* ScheduleTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D12A6B623CC002C0071F952 /* ScheduleTimeViewController.swift */; };
-		5D63445D23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63445C23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift */; };
-		5D63445F23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63445E23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift */; };
+		5D12A6B923CC0AA90071F952 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D12A6B823CC0AA90071F952 /* LocationSearchTableViewController.swift */; };
 		5D63447A23C81F24000D7A42 /* StarRatingControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D63447923C81F24000D7A42 /* StarRatingControl.framework */; };
 		5D63447B23C81F24000D7A42 /* StarRatingControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D63447923C81F24000D7A42 /* StarRatingControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D63447E23CA3978000D7A42 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */; };
@@ -89,8 +88,7 @@
 		0DA9B02BDE212244C1201A06 /* Pods-FoodTruck Trackr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTruck Trackr.release.xcconfig"; path = "Target Support Files/Pods-FoodTruck Trackr/Pods-FoodTruck Trackr.release.xcconfig"; sourceTree = "<group>"; };
 		5D12A6B323CBFFD60071F952 /* ScheduleLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocationViewController.swift; sourceTree = "<group>"; };
 		5D12A6B623CC002C0071F952 /* ScheduleTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimeViewController.swift; sourceTree = "<group>"; };
-		5D63445C23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduledLocation+Convenience.swift"; sourceTree = "<group>"; };
-		5D63445E23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledLocationRepresentation.swift; sourceTree = "<group>"; };
+		5D12A6B823CC0AA90071F952 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		5D63447923C81F24000D7A42 /* StarRatingControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StarRatingControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		5D680A1423A9E06D004F42EC /* FoodTruck Trackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodTruck Trackr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,8 +238,6 @@
 				9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */,
 				9579894823B0619300414C22 /* MenuItemRepresentation.swift */,
 				D76A013523C58E6B00981E64 /* User.swift */,
-				5D63445C23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift */,
-				5D63445E23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift */,
 				D7FFBD0523C82EB0007597DB /* TruckLocation.swift */,
 			);
 			path = Model;
@@ -257,8 +253,9 @@
 				5D680A2223A9E06F004F42EC /* LaunchScreen.storyboard */,
 				D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */,
 				5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */,
-				5D12A6B323CBFFD60071F952 /* ScheduleLocationViewController.swift */,
 				5D12A6B623CC002C0071F952 /* ScheduleTimeViewController.swift */,
+				5D12A6B323CBFFD60071F952 /* ScheduleLocationViewController.swift */,
+				5D12A6B823CC0AA90071F952 /* LocationSearchTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -545,11 +542,10 @@
 				D7FFBCFF23C82113007597DB /* TruckCollectionViewCell.swift in Sources */,
 				955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */,
 				5D680A1823A9E06D004F42EC /* AppDelegate.swift in Sources */,
-				5D63445F23C7FB66000D7A42 /* ScheduledLocationRepresentation.swift in Sources */,
 				D7FFBD0623C82EB0007597DB /* TruckLocation.swift in Sources */,
 				9534169223AC8135001728CF /* MenuController.swift in Sources */,
+				5D12A6B923CC0AA90071F952 /* LocationSearchTableViewController.swift in Sources */,
 				D76A013623C58E6B00981E64 /* User.swift in Sources */,
-				5D63445D23C7FB4C000D7A42 /* ScheduledLocation+Convenience.swift in Sources */,
 				955A7D9523AB389300310EBC /* MenuItemTableViewCell.swift in Sources */,
 				5D680A1A23A9E06D004F42EC /* SceneDelegate.swift in Sources */,
 				9534169023AC7670001728CF /* MenuItemViewController.swift in Sources */,
