@@ -22,7 +22,17 @@ struct FoodTruckRepresentation: Codable {
     var location: String?
     var departureTime: String?
     
-    init(name: String, imgUrl: String?, cuisineType: String, id: Int32, customerRating: Int32?, customerRatingAvg: Double?, currentLocation: String?, currentDepartureTime: String?, arrivalTime: String?, location: String?, departureTime: String?) {
+    init(name: String,
+         imgUrl: String?,
+         cuisineType: String,
+         id: Int32,
+         customerRating: Int32?,
+         customerRatingAvg: Double?,
+         currentLocation: String?,
+         currentDepartureTime: String?,
+         arrivalTime: String?,
+         location: String?,
+         departureTime: String?) {
         self.name = name
         self.imgUrl = imgUrl
         self.cuisineType = cuisineType

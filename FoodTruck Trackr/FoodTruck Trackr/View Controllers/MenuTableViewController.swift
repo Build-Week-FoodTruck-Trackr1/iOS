@@ -25,9 +25,12 @@ class MenuTableViewController: UITableViewController {
                                              sectionNameKeyPath: "itemName",
                                              cacheName: nil)
         frc.delegate = self
-        try! frc.performFetch()
+        do {
+            try frc.performFetch()
+        } catch {
+            print("Error fetching menu: \(error)")
+        }
         return frc
-        
     }()
 
     override func viewWillAppear(_ animated: Bool) {
