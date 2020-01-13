@@ -33,6 +33,8 @@
 		955A7D9723AC645400310EBC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A7D9623AC645400310EBC /* CoreDataStack.swift */; };
 		9579894723B05C1800414C22 /* FoodTruckRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */; };
 		9579894923B0619300414C22 /* MenuItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579894823B0619300414C22 /* MenuItemRepresentation.swift */; };
+		95F3470C23CBF09900829065 /* ScheduleTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3470B23CBF09800829065 /* ScheduleTimeViewController.swift */; };
+		95F3470E23CBF0A600829065 /* ScheduleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3470D23CBF0A600829065 /* ScheduleLocationViewController.swift */; };
 		D768EAB623C6DE6900DC4F06 /* TruckDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D768EAB523C6DE6900DC4F06 /* TruckDetail.storyboard */; };
 		D76A012F23C58E4200981E64 /* TruckCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A012D23C58E4200981E64 /* TruckCollectionViewController.swift */; };
 		D76A013023C58E4200981E64 /* TruckLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A012E23C58E4200981E64 /* TruckLoginViewController.swift */; };
@@ -112,6 +114,8 @@
 		9579894523B05A8100414C22 /* FoodTruck 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FoodTruck 2.xcdatamodel"; sourceTree = "<group>"; };
 		9579894623B05C1800414C22 /* FoodTruckRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckRepresentation.swift; sourceTree = "<group>"; };
 		9579894823B0619300414C22 /* MenuItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRepresentation.swift; sourceTree = "<group>"; };
+		95F3470B23CBF09800829065 /* ScheduleTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTimeViewController.swift; sourceTree = "<group>"; };
+		95F3470D23CBF0A600829065 /* ScheduleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleLocationViewController.swift; sourceTree = "<group>"; };
 		D768EAB523C6DE6900DC4F06 /* TruckDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TruckDetail.storyboard; sourceTree = "<group>"; };
 		D76A012D23C58E4200981E64 /* TruckCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckCollectionViewController.swift; sourceTree = "<group>"; };
 		D76A012E23C58E4200981E64 /* TruckLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckLoginViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 				D76A012E23C58E4200981E64 /* TruckLoginViewController.swift */,
 				955A7D9223AB37FF00310EBC /* MenuTableViewController.swift */,
 				9534168F23AC7670001728CF /* MenuItemViewController.swift */,
+				95F3470D23CBF0A600829065 /* ScheduleLocationViewController.swift */,
+				95F3470B23CBF09800829065 /* ScheduleTimeViewController.swift */,
 				5D63447D23CA3978000D7A42 /* ScheduleViewController.swift */,
 				D7FFBD0023C8223D007597DB /* TruckDetailViewController.swift */,
 			);
@@ -524,10 +530,12 @@
 				955A7D9323AB37FF00310EBC /* MenuTableViewController.swift in Sources */,
 				D76A012F23C58E4200981E64 /* TruckCollectionViewController.swift in Sources */,
 				5D63447E23CA3978000D7A42 /* ScheduleViewController.swift in Sources */,
+				95F3470E23CBF0A600829065 /* ScheduleLocationViewController.swift in Sources */,
 				9534169423AC81CE001728CF /* FoodTruck+Convenience.swift in Sources */,
 				951AFCFF23AC666E00A06F13 /* FoodTruck.xcdatamodeld in Sources */,
 				9534169623AC81F6001728CF /* MenuItem+Convenience.swift in Sources */,
 				D76A013223C58E5300981E64 /* APIController.swift in Sources */,
+				95F3470C23CBF09900829065 /* ScheduleTimeViewController.swift in Sources */,
 				D7FFBD0123C8223D007597DB /* TruckDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
