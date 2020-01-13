@@ -53,7 +53,6 @@ class TruckLoginViewController: UIViewController {
                     if error != nil {
                         DispatchQueue.main.async {
                             self.alertMessage(title: "There's a problem", message: "Your username or password aren't valid. Please try again.")
-                                print(error)
                                     return
                         }
                     } else {
