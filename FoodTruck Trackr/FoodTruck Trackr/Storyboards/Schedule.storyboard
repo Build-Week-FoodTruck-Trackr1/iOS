@@ -54,25 +54,47 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w4W-Di-Ztz">
-                                                        <rect key="frame" x="128" y="0.0" width="246" height="76"/>
+                                                        <rect key="frame" x="128" y="0.0" width="216" height="76"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iM8-zd-Ttq" userLabel="Current Address">
-                                                                <rect key="frame" x="0.0" y="0.0" width="246" height="34"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Not currently operating" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iM8-zd-Ttq" userLabel="Current Address">
+                                                                <rect key="frame" x="0.0" y="0.0" width="216" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="addressFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="dfP-Nm-Vs6"/>
+                                                                    <action selector="addressManuallyChanged:" destination="X26-DS-Fhn" eventType="editingDidEnd" id="KO6-bF-Q7g"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5q-zc-iZ5" userLabel="Current Departure Time">
-                                                                <rect key="frame" x="0.0" y="42" width="246" height="34"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Not currently operating" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5q-zc-iZ5" userLabel="Current Departure Time">
+                                                                <rect key="frame" x="0.0" y="42" width="216" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="timeFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="jp4-Ls-TWp"/>
+                                                                    <action selector="timeManuallyChanged:" destination="X26-DS-Fhn" eventType="editingDidEnd" id="dHa-nl-YCq"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sxx-rS-psC">
+                                                        <rect key="frame" x="352" y="0.0" width="22" height="76"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRN-Xd-I9F">
+                                                                <rect key="frame" x="0.0" y="0.0" width="22" height="38"/>
+                                                                <state key="normal" image="map" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="addressFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="zwo-Rn-8CT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqP-Ww-bCU">
+                                                                <rect key="frame" x="0.0" y="38" width="22" height="38"/>
+                                                                <state key="normal" image="calendar" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="timeFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="WIq-qT-3o2"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="22" id="oL8-FJ-86M"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
@@ -118,33 +140,62 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="by0-iq-3Db">
-                                                        <rect key="frame" x="128" y="0.0" width="246" height="118"/>
+                                                        <rect key="frame" x="128" y="0.0" width="216" height="118"/>
                                                         <subviews>
-                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHt-2k-ddA" userLabel="Next Address">
-                                                                <rect key="frame" x="0.0" y="0.0" width="246" height="34"/>
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="No scheduled location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHt-2k-ddA" userLabel="Next Address">
+                                                                <rect key="frame" x="0.0" y="0.0" width="216" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="addressFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="8tz-Gb-QoK"/>
+                                                                    <action selector="addressManuallyChanged:" destination="X26-DS-Fhn" eventType="editingDidEnd" id="rnV-U5-VGa"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nr8-e1-hgi" userLabel="Next Arrival Time">
-                                                                <rect key="frame" x="0.0" y="42" width="246" height="34"/>
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="No scheduled time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nr8-e1-hgi" userLabel="Next Arrival Time">
+                                                                <rect key="frame" x="0.0" y="42" width="216" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="timeFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="HBV-Ky-Aem"/>
+                                                                    <action selector="timeManuallyChanged:" destination="X26-DS-Fhn" eventType="editingDidEnd" id="kU1-qi-DA6"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ9-T0-Aux" userLabel="Next Departure Time">
-                                                                <rect key="frame" x="0.0" y="84" width="246" height="34"/>
+                                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="No scheduled time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ9-T0-Aux" userLabel="Next Departure Time">
+                                                                <rect key="frame" x="0.0" y="84" width="216" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="timeFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="Z3o-jh-NOP"/>
+                                                                    <action selector="timeManuallyChanged:" destination="X26-DS-Fhn" eventType="editingDidEnd" id="ySr-Kj-zAe"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qGI-Dp-2OF">
+                                                        <rect key="frame" x="352" y="0.0" width="22" height="118"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4O-yp-SAK">
+                                                                <rect key="frame" x="0.0" y="0.0" width="22" height="39.5"/>
+                                                                <state key="normal" image="map" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="addressFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="Jbs-IU-Ih6"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEC-qU-Mze">
+                                                                <rect key="frame" x="0.0" y="39.5" width="22" height="39"/>
+                                                                <state key="normal" image="calendar" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="timeFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="aY3-QB-AgY"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tin-sI-z2R">
+                                                                <rect key="frame" x="0.0" y="78.5" width="22" height="39.5"/>
+                                                                <state key="normal" image="calendar" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="timeFieldTapped:" destination="X26-DS-Fhn" eventType="touchUpInside" id="Tje-FX-ZGa"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="22" id="Ctl-Yt-jTJ"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
@@ -169,12 +220,14 @@
                         <viewLayoutGuide key="safeArea" id="Gt4-hw-Ubb"/>
                     </view>
                     <connections>
+                        <outlet property="btnCancelCurrent" destination="lof-zQ-wxJ" id="vet-4y-9bs"/>
+                        <outlet property="btnCancelNext" destination="hfD-e2-RGd" id="v1T-YD-RPw"/>
                         <outlet property="txtCurrentAddress" destination="iM8-zd-Ttq" id="phq-UA-qH0"/>
                         <outlet property="txtCurrentDepartureTime" destination="l5q-zc-iZ5" id="O0F-cW-2Jj"/>
                         <outlet property="txtNextAddress" destination="kHt-2k-ddA" id="8sc-df-rFX"/>
                         <outlet property="txtNextArrivalTime" destination="nr8-e1-hgi" id="St6-bg-cFz"/>
                         <outlet property="txtNextDepartureTime" destination="BJ9-T0-Aux" id="NLQ-QH-gPx"/>
-                        <segue destination="vp7-v4-B4H" kind="presentation" identifier="SegueChooseLocation" id="MNN-kr-BkE"/>
+                        <segue destination="SOm-5Z-9Za" kind="presentation" identifier="SegueChooseLocation" id="MNN-kr-BkE"/>
                         <segue destination="r0X-dT-O2r" kind="presentation" identifier="SegueChooseTime" id="Ow7-3P-PB4"/>
                     </connections>
                 </viewController>
@@ -197,7 +250,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VDF-7u-bdw">
-                                <rect key="frame" x="0.0" y="61" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="61.5" width="414" height="216"/>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gek-Do-3n6">
                                 <rect key="frame" x="20" y="297.5" width="374" height="30"/>
@@ -243,7 +296,7 @@
             </objects>
             <point key="canvasLocation" x="912" y="231"/>
         </scene>
-        <!--Schedule Location View Controller-->
+        <!--Choose a Location-->
         <scene sceneID="fdl-Lq-rCf">
             <objects>
                 <viewController id="vp7-v4-B4H" customClass="ScheduleLocationViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
@@ -251,14 +304,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnN-k2-dPc">
-                                <rect key="frame" x="20" y="20" width="374" height="33.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ay4-09-tBO" customClass="MapViewPlus" customModule="MapViewPlus">
-                                <rect key="frame" x="0.0" y="73.5" width="414" height="684.5"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="702"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VGZ-1A-unO">
                                 <rect key="frame" x="20" y="778" width="374" height="30"/>
@@ -286,37 +333,35 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ZvV-eM-hyF" firstAttribute="trailing" secondItem="nnN-k2-dPc" secondAttribute="trailing" constant="20" id="6Tm-ug-kS5"/>
                             <constraint firstItem="VGZ-1A-unO" firstAttribute="leading" secondItem="ZvV-eM-hyF" secondAttribute="leading" constant="20" id="6Ux-mt-aY1"/>
                             <constraint firstItem="ZvV-eM-hyF" firstAttribute="trailing" secondItem="VGZ-1A-unO" secondAttribute="trailing" constant="20" id="7E9-3H-ecG"/>
                             <constraint firstItem="ZvV-eM-hyF" firstAttribute="trailing" secondItem="Ay4-09-tBO" secondAttribute="trailing" id="RmS-T2-koY"/>
                             <constraint firstItem="Ay4-09-tBO" firstAttribute="leading" secondItem="ZvV-eM-hyF" secondAttribute="leading" id="Wol-h9-YI0"/>
-                            <constraint firstItem="nnN-k2-dPc" firstAttribute="leading" secondItem="ZvV-eM-hyF" secondAttribute="leading" constant="20" id="YQv-Bd-3YJ"/>
                             <constraint firstItem="VGZ-1A-unO" firstAttribute="bottom" secondItem="ZvV-eM-hyF" secondAttribute="bottom" id="YUv-Rn-ZDh"/>
-                            <constraint firstItem="Ay4-09-tBO" firstAttribute="top" secondItem="nnN-k2-dPc" secondAttribute="bottom" constant="20" id="hNJ-K8-S1G"/>
+                            <constraint firstItem="Ay4-09-tBO" firstAttribute="top" secondItem="ZvV-eM-hyF" secondAttribute="top" id="bQm-H2-mpP"/>
                             <constraint firstItem="VGZ-1A-unO" firstAttribute="top" secondItem="Ay4-09-tBO" secondAttribute="bottom" constant="20" id="liY-te-lYF"/>
-                            <constraint firstItem="nnN-k2-dPc" firstAttribute="top" secondItem="ZvV-eM-hyF" secondAttribute="top" constant="20" id="o4g-eJ-08J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZvV-eM-hyF"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Choose a Location" id="zKK-zI-6v4"/>
                     <connections>
                         <outlet property="mapView" destination="Ay4-09-tBO" id="4ah-ur-DBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxB-FY-87h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="-481"/>
+            <point key="canvasLocation" x="1821.7391304347827" y="-481.47321428571428"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Location Search Table View Controller-->
         <scene sceneID="Vxy-ks-fVo">
             <objects>
-                <tableViewController storyboardIdentifier="locationTVC" id="RdD-5W-vok" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="locationTVC" id="RdD-5W-vok" customClass="LocationSearchTableViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="o4i-FQ-ep0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" textLabel="6fW-Gf-Wwp" detailTextLabel="CNS-85-siF" style="IBUITableViewCellStyleSubtitle" id="D2G-23-OY3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationSearchCell" textLabel="6fW-Gf-Wwp" detailTextLabel="CNS-85-siF" style="IBUITableViewCellStyleSubtitle" id="D2G-23-OY3">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D2G-23-OY3" id="P2M-QS-C8g">
@@ -349,7 +394,29 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlK-gS-idu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="-481"/>
+            <point key="canvasLocation" x="2552.1739130434785" y="-481.47321428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ab6-i1-Pk6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SOm-5Z-9Za" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oCO-PV-uA7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vp7-v4-B4H" kind="relationship" relationship="rootViewController" id="Bsx-UY-39w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bC4-iG-F6Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.59420289855075" y="-481.47321428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="map" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

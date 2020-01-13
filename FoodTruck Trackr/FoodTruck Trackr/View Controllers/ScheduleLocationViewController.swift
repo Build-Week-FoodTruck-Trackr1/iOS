@@ -49,9 +49,12 @@ class ScheduleLocationViewController: UIViewController {
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable as UISearchResultsUpdating
         
-        let searchBar = resultSearchController?.searchBar
-        searchBar?.sizeToFit()
-        searchBar?.placeholder = "Search for places"
+        guard let searchBar = resultSearchController?.searchBar else {
+            print("*************\nNO SEARCH BAR\n*************")
+            return
+        }
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
         navigationItem.searchController = resultSearchController
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
