@@ -7,35 +7,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Truck Detail View Controller-->
+        <!--Truck Detail-->
         <scene sceneID="U2E-XV-qjp">
             <objects>
-                <viewController id="dFh-je-b9e" customClass="TruckDetailViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="dFh-je-b9e" customClass="TruckDetailViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHc-Rx-LvW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qSI-T1-SxD">
-                                <rect key="frame" x="87" y="288" width="240" height="200"/>
+                                <rect key="frame" x="87" y="340" width="240" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="8K3-ex-kT6"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMd-C3-wHD">
-                                <rect key="frame" x="198.5" y="609" width="17" height="21"/>
+                                <rect key="frame" x="184.5" y="661" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cuisine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRx-je-PAF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="cuisine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRx-je-PAF">
                                 <rect key="frame" x="186" y="619" width="54" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiV-Vl-4a0">
-                                <rect key="frame" x="198.5" y="538" width="45" height="21"/>
+                                <rect key="frame" x="184.5" y="590" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -52,9 +51,11 @@
                         <constraints>
                             <constraint firstItem="kMd-C3-wHD" firstAttribute="leading" secondItem="IiV-Vl-4a0" secondAttribute="leading" id="1dG-aO-Nqo"/>
                             <constraint firstItem="qSI-T1-SxD" firstAttribute="top" secondItem="s3r-eF-Yvy" secondAttribute="top" constant="200" id="6aB-P0-2aA"/>
-                            <constraint firstItem="s3r-eF-Yvy" firstAttribute="bottom" secondItem="CA8-UK-efq" secondAttribute="bottom" constant="102" id="HI6-JR-jMv"/>
+                            <constraint firstItem="kMd-C3-wHD" firstAttribute="centerX" secondItem="s3r-eF-Yvy" secondAttribute="centerX" id="GWS-LM-f1o"/>
+                            <constraint firstItem="IiV-Vl-4a0" firstAttribute="centerX" secondItem="s3r-eF-Yvy" secondAttribute="centerX" id="PeC-VF-KtY"/>
                             <constraint firstItem="IiV-Vl-4a0" firstAttribute="top" secondItem="qSI-T1-SxD" secondAttribute="bottom" constant="50" id="XwF-fZ-Otu"/>
-                            <constraint firstItem="CA8-UK-efq" firstAttribute="centerX" secondItem="iHc-Rx-LvW" secondAttribute="centerX" id="gP0-GZ-YG0"/>
+                            <constraint firstItem="VRx-je-PAF" firstAttribute="centerX" secondItem="s3r-eF-Yvy" secondAttribute="centerX" id="aPO-J9-HBd"/>
+                            <constraint firstItem="VRx-je-PAF" firstAttribute="top" secondItem="IiV-Vl-4a0" secondAttribute="bottom" constant="8" id="gCL-io-MoT"/>
                             <constraint firstItem="kMd-C3-wHD" firstAttribute="centerX" secondItem="qSI-T1-SxD" secondAttribute="centerX" id="k3n-Jg-T43"/>
                             <constraint firstItem="kMd-C3-wHD" firstAttribute="top" secondItem="IiV-Vl-4a0" secondAttribute="bottom" constant="50" id="se5-EG-6lb"/>
                             <constraint firstItem="qSI-T1-SxD" firstAttribute="centerX" secondItem="iHc-Rx-LvW" secondAttribute="centerX" id="sw7-6l-AEE"/>
@@ -64,6 +65,10 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Truck Detail" id="Ozz-h7-vDX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QDZ-PD-F3g"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Lu7-wv-kpe"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="cuisineLabel" destination="VRx-je-PAF" id="5aC-di-tAj"/>
                         <outlet property="idLabel" destination="kMd-C3-wHD" id="bJc-kw-kP4"/>

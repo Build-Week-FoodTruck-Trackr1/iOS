@@ -10,10 +10,10 @@ import Foundation
 
 struct FoodTruckRepresentation: Codable {
     
-    var truckTitle: String
-    var imageOfTruck: String?
+    var name: String
+    var imgUrl: String?
     var cuisineType: String
-    var truckID: Int32
+    var id: Int32
     var customerRating: Int32?
     var customerRatingAvg: Double?
     var currentLocation: String?
@@ -22,11 +22,26 @@ struct FoodTruckRepresentation: Codable {
     var location: String?
     var departureTime: String?
     
+    init(name: String, imgUrl: String?, cuisineType: String, id: Int32, customerRating: Int32?, customerRatingAvg: Double?, currentLocation: String?, currentDepartureTime: String?, arrivalTime: String?, location: String?, departureTime: String?) {
+        self.name = name
+        self.imgUrl = imgUrl
+        self.cuisineType = cuisineType
+        self.id = id
+        self.customerRating = customerRating
+        self.customerRatingAvg = customerRatingAvg
+        self.currentLocation = currentLocation
+        self.currentDepartureTime = currentDepartureTime
+        self.arrivalTime = arrivalTime
+        self.location = location
+        self.departureTime = departureTime
+        
+    }
+    
     init(from foodTruck: FoodTruck) {
-        self.truckTitle = foodTruck.truckTitle ?? ""
-        self.imageOfTruck = foodTruck.imageOfTruck
+        self.name = foodTruck.name ?? ""
+        self.imgUrl = foodTruck.imgUrl
         self.cuisineType = foodTruck.cuisineType ?? ""
-        self.truckID = foodTruck.truckID
+        self.id = foodTruck.id
         self.customerRating = foodTruck.customerRating
         self.customerRatingAvg = foodTruck.customerRatingAvg
         self.currentLocation = foodTruck.currentLocation
@@ -44,6 +59,17 @@ struct FoodTruckRepresentation: Codable {
         if let departureTime = foodTruck.departureTime {
             self.departureTime = dateFormatter.string(from: departureTime)
         }
+
     }
     
+
+
+}
+
+struct TruckLocation: Codable {
+    var currentLocation: String
+    var currentDepartureTime: String
+    var arrivalTime: String
+    var location: String
+    var departureTime: String
 }
