@@ -376,12 +376,14 @@ class APIController {
             let signInURL = baseURL.appendingPathComponent("api/login")
             var request = URLRequest(url: signInURL)
             request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json", forHTTPHeaderField: "content-type")
             
             let jsonEncoder = JSONEncoder()
             do {
                 let jsonData = try jsonEncoder.encode(user)
                 request.httpBody = jsonData
+                let jsonString = String(data: jsonData, encoding: .utf8)!
+                print(jsonString)
                
             } catch {
                 print("Error encoding user object: \(error)")
