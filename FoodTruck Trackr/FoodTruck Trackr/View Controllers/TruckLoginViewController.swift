@@ -19,6 +19,7 @@ class TruckLoginViewController: UIViewController {
     @IBOutlet weak var currentLocationTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var isOperatorSwitch: UISwitch!
+    @IBOutlet weak var truckLabel: UILabel!
     
     var apiController: APIController?
     var user: User?
@@ -27,8 +28,9 @@ class TruckLoginViewController: UIViewController {
     var type = "diner"
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameStackView.isHidden = false
-        
+        nameStackView.isHidden = true
+        truckNameTextField.isHidden = true
+        truckLabel.isHidden = true
     }
     
     
@@ -38,7 +40,7 @@ class TruckLoginViewController: UIViewController {
             let pass = passwordTextField.text,
             let location = currentLocationTextField.text,
             let email = emailTextField.text else { return }
-        if user.isEmpty || pass.isEmpty || location.isEmpty {
+        if user.isEmpty || pass.isEmpty || email.isEmpty {
             self.alertMessage(title: "Problem Signing In", message: "A field was left blank or the username or password doesn't match up. Please correct and try again.")
             return
         }
@@ -89,6 +91,8 @@ class TruckLoginViewController: UIViewController {
         if modeSegControl.selectedSegmentIndex == 0 {
             signUpLogInButton.titleLabel?.text = "Sign In"
             nameStackView.isHidden = true
+            truckNameTextField.isHidden = true
+            truckLabel.isHidden = true
             
         } else if modeSegControl.selectedSegmentIndex == 1 {
             signUpLogInButton.titleLabel?.text = "Sign Up"
