@@ -27,11 +27,11 @@ class ScheduleLocationViewController: UIViewController {
     var address: String?
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
+
         if CLLocationManager.locationServicesEnabled() {
             startLocationServices()
             if let location = locationManager.location {
@@ -60,7 +60,21 @@ class ScheduleLocationViewController: UIViewController {
         locationSearchTable.mapView = mapView
         locationSearchTable.handleMapSearchDelegate = self
     }
+
+    @IBAction func saveTapped(_ sender: Any) {
+        if let address = address,
+            let selectedFieldTag = selectedFieldTag {
+            delegate?.saveLocation(loc: address, tag: selectedFieldTag)
+        }
+        dismiss(animated: true, completion: nil)
+    }
     
+    @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ScheduleLocationViewController: CLLocationManagerDelegate {
     func startLocationServices() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         let locationAuthorizationStatus = CLLocationManager.authorizationStatus()
@@ -81,21 +95,10 @@ class ScheduleLocationViewController: UIViewController {
             locationServiceAuthorized = false
         }
     }
-
-    @IBAction func saveTapped(_ sender: Any) {
-        if let address = address,
-            let selectedFieldTag = selectedFieldTag {
-            delegate?.saveLocation(loc: address, tag: selectedFieldTag)
-        }
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func cancelTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
 }
 
 extension ScheduleLocationViewController: CLLocationManagerDelegate {
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:

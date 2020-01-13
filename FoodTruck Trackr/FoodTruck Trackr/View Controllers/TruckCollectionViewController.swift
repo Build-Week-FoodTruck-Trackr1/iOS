@@ -63,6 +63,9 @@ class TruckCollectionViewController: UICollectionViewController {
             if let detailVC = segue.destination as? TruckLoginViewController {
                 detailVC.apiController = self.apiController
             }
+        } else if segue.identifier == "AddTruck" {
+            if let detailVC = segue.destination as? TruckLoginViewController {
+            }
         }
     }
     
@@ -75,7 +78,7 @@ class TruckCollectionViewController: UICollectionViewController {
 //    }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return apiController.foodTruck.count
     }

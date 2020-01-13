@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dFh-je-b9e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8FH-9d-rGs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,6 +39,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CA8-UK-efq">
+                                <rect key="frame" x="172" y="681" width="70" height="30"/>
+                                <state key="normal" title="Add Menu"/>
+                                <connections>
+                                    <segue destination="Jwj-2h-HOt" kind="showDetail" identifier="AddMenuItems" id="vc0-Sj-wks"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -57,11 +64,11 @@
                         <viewLayoutGuide key="safeArea" id="s3r-eF-Yvy"/>
                     </view>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationItem key="navigationItem" title="Truck Detail" id="Ozz-h7-vDX">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QDZ-PD-F3g"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Lu7-wv-kpe"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cuisineLabel" destination="VRx-je-PAF" id="5aC-di-tAj"/>
                         <outlet property="idLabel" destination="kMd-C3-wHD" id="bJc-kw-kP4"/>
@@ -84,21 +91,31 @@
             </objects>
             <point key="canvasLocation" x="1739.8550724637682" y="98.4375"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gj0-r9-AyK">
+        <!--Menu-->
+        <scene sceneID="JBA-mx-zWG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XuS-Uh-gNG" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Menu" id="Jwj-2h-HOt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QZL-kj-8EW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zRG-pT-jan" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1539.1304347826087" y="240.40178571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mFU-F0-mtt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8FH-9d-rGs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ObD-Ci-SRg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vPi-zl-4sB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="dFh-je-b9e" kind="relationship" relationship="rootViewController" id="c0b-Zb-V7d"/>
+                        <segue destination="dFh-je-b9e" kind="relationship" relationship="rootViewController" id="lVH-ri-a0D"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NbA-Ju-moT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXm-lU-4qm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="76.811594202898561" y="91.741071428571431"/>
         </scene>

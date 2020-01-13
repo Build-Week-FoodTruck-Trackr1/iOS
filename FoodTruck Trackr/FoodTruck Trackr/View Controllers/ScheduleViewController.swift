@@ -26,7 +26,7 @@ class ScheduleViewController: UIViewController {
     @IBOutlet private weak var txtNextAddress: UITextField!
     @IBOutlet private weak var txtNextArrivalTime: UITextField!
     @IBOutlet private weak var txtNextDepartureTime: UITextField!
-    
+
     var foodTruck: FoodTruck?
 
     override func viewDidLoad() {
@@ -50,6 +50,7 @@ class ScheduleViewController: UIViewController {
     
     // MARK: Delegate methods
     public func saveLocation(loc: String, tag: Int) {
+
         guard let locTag = AddressTag(rawValue: tag) else {
             print("Bad tag when saving location selection: \(tag)")
             return
@@ -61,6 +62,7 @@ class ScheduleViewController: UIViewController {
         case .next:
             self.foodTruck?.location = loc
         }
+
     }
 
     public func saveTime(time: Date, tag: Int) {

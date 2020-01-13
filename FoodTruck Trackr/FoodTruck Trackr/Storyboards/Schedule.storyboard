@@ -197,7 +197,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VDF-7u-bdw">
-                                <rect key="frame" x="0.0" y="61.5" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="61" width="414" height="216"/>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gek-Do-3n6">
                                 <rect key="frame" x="20" y="297.5" width="374" height="30"/>
