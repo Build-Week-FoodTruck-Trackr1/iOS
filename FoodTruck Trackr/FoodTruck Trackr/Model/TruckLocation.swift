@@ -9,11 +9,5 @@
 import Foundation
 
 
-struct TruckLocation: Codable {
-        var currentLocation: String
-        var currentDepartureTime: String
-        var arrivalTime: String
-        var location: String
-        var departureTime: String
-    }
+
 

@@ -53,12 +53,14 @@ class APIController {
     typealias CompletionHandler = (Error?) -> Void
     
     init() {
-       fetchTrucksFromServer()
+     fetchTrucksFromServer()
     }
     
     var user: User?
     var bearer: Bearer?
     var foodTruck: [FoodTruckRepresentation] = []
+    var truck: FoodTruck?
+    
     
     let baseURL = URL(string: "https://build-foodtruck-trackr1.herokuapp.com/")!
     
@@ -78,9 +80,10 @@ class APIController {
             }
             
             do {
-                let foodTruckRepresentations = Array(try JSONDecoder().decode([String : FoodTruckRepresentation].self, from: data).values)
+                let foodTruckRepresentations = try JSONDecoder().decode([FoodTruckRepresentation].self, from: data)
                 // TODO: Update all of our tasks
                 try self.updateFoodTrucks(with: foodTruckRepresentations)
+                self.foodTruck = foodTruckRepresentations
                 completion(nil)
             } catch {
                 print("Error decoding task representations: \(error)")
@@ -126,7 +129,7 @@ class APIController {
     func performSearch(searchTerm: FoodType, resultType: FoodTruckRepresentation, completion: @escaping (Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm.rawValue)
-        let resultsTermQueryItem = URLQueryItem(name: "entity", value: resultType.truckTitle)
+        let resultsTermQueryItem = URLQueryItem(name: "entity", value: resultType.name)
         urlComponents?.queryItems = [searchTermQueryItem, resultsTermQueryItem]
         
         guard let requestURL = urlComponents?.url else {
@@ -193,56 +196,32 @@ class APIController {
 //            }
 //        }.resume()
 //    }
-    
-    // fetch tasks from Firebase
-      func fetchTrucksFromFirebase(completion: @escaping () -> Void = { }) {
-
-          let requestURL = baseURL.appendingPathExtension("json")
-          URLSession.shared.dataTask(with: requestURL)  { (data, _, error)  in
-              if let error = error {
-                  NSLog("Error with URL Request. \(error)")
-                  completion()
-                  return
-              }
-              guard let data = data else {
-                  NSLog("Error with returning data.")
-                  completion()
-                  return
-              }
-              
-              let decoder = JSONDecoder()
-              do {
-                  let foodTrucks = Array(try decoder.decode([String : FoodTruckRepresentation].self, from: data).values)
-                  try self.updateFoodTrucks(with: foodTrucks)
-              } catch {
-                  
-              }
-          }.resume()
-      }
+   
     
     private func updateFoodTrucks(with representations: [FoodTruckRepresentation]) throws {
-        let foodTrucksWithID = representations.filter {$0.truckID > 0 }
-        let identifiersToFetch = foodTrucksWithID.compactMap { $0.truckID }
+        let foodTrucksWithID = representations.filter {$0.id > 0 }
+        let identifiersToFetch = foodTrucksWithID.compactMap { $0.id }
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, foodTrucksWithID))
         var foodTrucksToCreate = representationsByID
         let fetchRequest: NSFetchRequest<FoodTruck> = FoodTruck.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "truckID IN %@", identifiersToFetch)
+        fetchRequest.predicate = NSPredicate(format: "id IN %@", identifiersToFetch)
         let context = CoreDataStack.shared.container.newBackgroundContext()
         
         context.perform {
             do {
                 let existingTasks = try context.fetch(fetchRequest)
                 for foodTruck in existingTasks {
-                    guard foodTruck.truckID > 0,
-                        let representation = representationsByID[foodTruck.truckID] else {
+                    guard foodTruck.id > 0,
+                        let representation = representationsByID[foodTruck.id] else {
                             context.delete(foodTruck)
                             continue
                     }
-//                    foodTruck.truckTitle = representation.truckTitle
+//                    foodTruck.name = representation.name
 //                    foodTruck.cuisineType = representation.cuisineType
 //                    foodTruck.customerRating = representation.customerRating!
-                    self.updateTruck(foodTruck, with: representation)
-                    foodTrucksToCreate.removeValue(forKey: foodTruck.truckID)
+                    guard let truck = self.truck else { return }
+                    self.updateTruck(truck, with: representation)
+                    foodTrucksToCreate.removeValue(forKey: foodTruck.id)
                 }
                 for representation in foodTrucksToCreate.values {
                     _ = FoodTruck(truckRepresentation: representation, context: context)
@@ -257,11 +236,12 @@ class APIController {
     private func updateTruck(_ truck: FoodTruck, with representation: FoodTruckRepresentation) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy hh:mm"
+    
         
-        truck.truckTitle = representation.truckTitle
+        truck.name = representation.name
         truck.cuisineType = representation.cuisineType
-        truck.imageOfTruck = representation.imageOfTruck
-        truck.truckID = representation.truckID
+        truck.imgUrl = representation.imgUrl
+        truck.id = representation.id
         truck.customerRating = representation.customerRating ?? 0
         truck.customerRatingAvg = representation.customerRatingAvg ?? 0
         truck.currentLocation = representation.currentLocation
@@ -276,6 +256,8 @@ class APIController {
         if let departureTime = formatter.date(from: representation.departureTime ?? "") {
             truck.departureTime = departureTime
         }
+        let moc = CoreDataStack.shared.mainContext
+        try? moc.save()
     }
     
     
