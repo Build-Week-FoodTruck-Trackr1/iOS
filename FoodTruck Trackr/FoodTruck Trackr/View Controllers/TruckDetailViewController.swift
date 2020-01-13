@@ -43,4 +43,18 @@ class TruckDetailViewController: UIViewController {
         cuisineLabel.text = "Serving fine \(foodTruck?.cuisineType ?? "") cuisine"
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToSchedule" {
+            guard let vc = segue.destination as? ScheduleViewController,
+                let apiController = apiController,
+                let foodTruck = foodTruck
+            else {
+                return
+            }
+            vc.apiController = apiController
+            vc.foodTruck = foodTruck
+        } else if segue.identifier == "ToMenu" {
+            
+        }
+    }
 }

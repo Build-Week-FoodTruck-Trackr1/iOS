@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StarRatingControl
 
 class MenuItemViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class MenuItemViewController: UIViewController {
     @IBOutlet private weak var decriptionTextView: UITextView!
     @IBOutlet private weak var addPhotoButton: UIButton!
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var itemRatingView: UIView!
+    @IBOutlet private weak var itemRatingView: StarRatingControl!
     
     var menuItem: MenuItem? {
         didSet {

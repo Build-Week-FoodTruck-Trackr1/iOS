@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StarRatingControl: UIControl {
+public class StarRatingControl: UIControl {
     var value: Int = 3 { didSet { updateLabels() } }
     var labels: [UILabel] = []
     
@@ -53,12 +53,12 @@ class StarRatingControl: UIControl {
 //        return CGSize(width: width, height: componentDimension)
 //    }
     
-    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    override public func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         updateValue(at: touch)
         return true
     }
     
-    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    override public func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
             updateValue(at: touch)
@@ -69,7 +69,7 @@ class StarRatingControl: UIControl {
         return true
     }
     
-    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+    override public func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         defer { super.endTracking(touch, with: event)}
         
         guard let touch = touch else { return }
@@ -84,7 +84,7 @@ class StarRatingControl: UIControl {
         }
     }
     
-    override func cancelTracking(with event: UIEvent?) {
+    override public func cancelTracking(with event: UIEvent?) {
         sendActions(for: .touchCancel)
     }
     
