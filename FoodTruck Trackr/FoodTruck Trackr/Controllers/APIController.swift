@@ -53,7 +53,7 @@ class APIController {
     typealias CompletionHandler = (Error?) -> Void
     
     init() {
- //       fetchTrucksFromServer() 
+       fetchTrucksFromServer()
     }
     
     var user: User?
