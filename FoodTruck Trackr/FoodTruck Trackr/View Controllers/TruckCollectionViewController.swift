@@ -57,11 +57,16 @@ class TruckCollectionViewController: UICollectionViewController {
                 loginVC.apiController = self.apiController
             }
         } else if segue.identifier == "ToTruckDetail" {
-            if let detailVC = segue.destination as? TruckLoginViewController {
-                detailVC.apiController = self.apiController
+            guard let detailVC = segue.destination as? TruckDetailViewController,
+                let indexPath = collectionView.indexPathsForSelectedItems?.first
+            else {
+                return
             }
+                detailVC.apiController = self.apiController
+                detailVC.foodTruck = apiController.foodTruck[indexPath.item]
+            
         } else if segue.identifier == "AddTruck" {
-            if let detailVC = segue.destination as? TruckLoginViewController {
+            if let detailVC = segue.destination as? TruckDetailViewController {
             }
         }
     }

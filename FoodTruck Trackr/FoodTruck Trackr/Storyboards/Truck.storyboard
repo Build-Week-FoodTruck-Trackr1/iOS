@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wPs-0d-JjB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wPs-0d-JjB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TruckDetail-->
+        <!--TruckDetailVC-->
         <scene sceneID="9ph-wA-sEL">
             <objects>
-                <viewControllerPlaceholder storyboardName="TruckDetail" id="bQ1-hI-ArY" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="TruckDetail" referencedIdentifier="TruckDetailVC" id="bQ1-hI-ArY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="P1V-Io-XLT"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5L-r6-NnO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="929" y="-263"/>
@@ -84,7 +86,7 @@
                                     <outlet property="truckID" destination="xtm-wE-NbE" id="64f-ar-650"/>
                                     <outlet property="truckImage" destination="dRm-9g-vNf" id="doK-c4-IFQ"/>
                                     <outlet property="truckTitle" destination="YSG-Pa-U8z" id="YRE-Um-Cgg"/>
-                                    <segue destination="bQ1-hI-ArY" kind="showDetail" identifier="ToTruckDetail" id="EC4-du-d1k"/>
+                                    <segue destination="bQ1-hI-ArY" kind="show" identifier="ToTruckDetail" id="kIk-vZ-P3E"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -94,11 +96,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="FoodTruck Trackr" id="Vhx-Js-boj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2UH-IR-bs9">
-                            <connections>
-                                <segue destination="bQ1-hI-ArY" kind="showDetail" identifier="AddTruck" id="BLd-bx-WKJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2UH-IR-bs9"/>
                     </navigationItem>
                     <connections>
                         <segue destination="dIW-J1-Kwp" kind="presentation" identifier="ToLogin" id="7e0-Gb-yL8"/>
@@ -127,7 +125,4 @@
             <point key="canvasLocation" x="-726.08695652173924" y="-80.357142857142847"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="BLd-bx-WKJ"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8FH-9d-rGs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dFh-je-b9e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -10,12 +10,12 @@
         <!--Truck Detail-->
         <scene sceneID="U2E-XV-qjp">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="dFh-je-b9e" customClass="TruckDetailViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TruckDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dFh-je-b9e" customClass="TruckDetailViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHc-Rx-LvW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qSI-T1-SxD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notAvailable" translatesAutoresizingMaskIntoConstraints="NO" id="qSI-T1-SxD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="517.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qSI-T1-SxD" secondAttribute="height" multiplier="2:2.5" id="w8Y-Qs-BmW"/>
@@ -116,31 +116,17 @@
                         <viewLayoutGuide key="safeArea" id="s3r-eF-Yvy"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Truck Detail" id="Ozz-h7-vDX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QDZ-PD-F3g"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Lu7-wv-kpe"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Truck Detail" id="Ozz-h7-vDX"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cuisineLabel" destination="VRx-je-PAF" id="5aC-di-tAj"/>
-                        <outlet property="imageView" destination="qSI-T1-SxD" id="OZy-hQ-IDe"/>
+                        <outlet property="imageView" destination="qSI-T1-SxD" id="8lJ-Dz-oOI"/>
                         <outlet property="truckNameLabel" destination="IiV-Vl-4a0" id="ukH-th-wzn"/>
-                        <segue destination="Bnt-H7-Eh7" kind="show" identifier="ToTrucks" id="Ycc-kc-bb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2F-j6-xzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="91.741071428571431"/>
-        </scene>
-        <!--Truck-->
-        <scene sceneID="8S0-iC-iP8">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Truck" id="Bnt-H7-Eh7" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="owT-iz-CYc"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="naI-tl-R9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1739.8550724637682" y="98.4375"/>
         </scene>
         <!--Menu-->
         <scene sceneID="JBA-mx-zWG">
@@ -152,28 +138,11 @@
             </objects>
             <point key="canvasLocation" x="1539.1304347826087" y="240.40178571428569"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mFU-F0-mtt">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8FH-9d-rGs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vPi-zl-4sB">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="dFh-je-b9e" kind="relationship" relationship="rootViewController" id="lVH-ri-a0D"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nXm-lU-4qm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="76.811594202898561" y="91.741071428571431"/>
-        </scene>
     </scenes>
     <resources>
         <image name="document" width="512" height="512"/>
         <image name="map" width="512" height="512"/>
         <image name="menu" width="512" height="512"/>
+        <image name="notAvailable" width="400" height="400"/>
     </resources>
 </document>
