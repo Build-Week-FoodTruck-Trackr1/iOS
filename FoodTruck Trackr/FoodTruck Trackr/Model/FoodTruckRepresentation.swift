@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct FoodTruckRepresentation: Codable {
+class FoodTruckRepresentation: Codable {
     
     var name: String
     var imgUrl: String?
@@ -72,12 +72,4 @@ struct FoodTruckRepresentation: Codable {
         }
 
     }
-}
-
-struct TruckLocation: Codable {
-    var currentLocation: String
-    var currentDepartureTime: String
-    var arrivalTime: String
-    var location: String
-    var departureTime: String
 }

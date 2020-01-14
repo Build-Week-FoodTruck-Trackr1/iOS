@@ -15,7 +15,7 @@ class TruckDetailViewController: UIViewController {
     @IBOutlet private weak var cuisineLabel: UILabel!
     
     var apiController: APIController?
-    var foodTruck: FoodTruckRepresentation? {
+    var foodTruck: FoodTruck? {
         didSet {
             updateView()
         }

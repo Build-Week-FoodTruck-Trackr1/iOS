@@ -14,7 +14,7 @@ class TruckCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var truckTitle: UILabel!
     @IBOutlet private weak var truckID: UILabel!
     
-    var truck: FoodTruckRepresentation? {
+    var truck: FoodTruck? {
         didSet {
             updateView()
         }

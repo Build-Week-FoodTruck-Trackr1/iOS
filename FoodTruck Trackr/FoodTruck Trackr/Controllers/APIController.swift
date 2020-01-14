@@ -18,12 +18,6 @@ enum NetworkError: Error {
     case noDecode
 }
 
-enum ResultType: String {
-    case software
-    case musicTrack
-    case movie
-}
-
 enum FoodType: String {
     case italian
     case american
@@ -51,12 +45,13 @@ class APIController {
     typealias CompletionHandler = (Error?) -> Void
     
     init() {
-     fetchTrucksFromServer()
+        fetchTrucksFromServer()
     }
     
     var user: User?
     var bearer: Bearer?
-    var foodTruck: [FoodTruckRepresentation] = []
+    var foodTrucks: [FoodTruck] = []
+    var foodTruckRepresentations: [FoodTruckRepresentation] = []
     var truck: FoodTruck?
     
     
@@ -81,7 +76,7 @@ class APIController {
                 let foodTruckRepresentations = try JSONDecoder().decode([FoodTruckRepresentation].self, from: data)
                 // TODO: Update all of our tasks
                 try self.updateFoodTrucks(with: foodTruckRepresentations)
-                self.foodTruck = foodTruckRepresentations
+                self.foodTruckRepresentations = foodTruckRepresentations
                 completion(nil)
             } catch {
                 print("Error decoding task representations: \(error)")
@@ -221,8 +216,12 @@ class APIController {
                     self.updateTruck(truck, with: representation)
                     foodTrucksToCreate.removeValue(forKey: foodTruck.id)
                 }
+                self.foodTrucks = []
                 for representation in foodTrucksToCreate.values {
-                    _ = FoodTruck(truckRepresentation: representation, context: context)
+                    let newTruck = FoodTruck(truckRepresentation: representation, context: context)
+                    if let newTruck = newTruck {
+                        self.foodTrucks.append(newTruck)
+                    }
                 }
             } catch {
                 print("Error Fetching tasks for UUIDs: \(error)")
@@ -231,7 +230,7 @@ class APIController {
         try CoreDataStack.shared.save(context: context)
     }
     
-    private func updateTruck(_ truck: FoodTruck, with representation: FoodTruckRepresentation) {
+    func updateTruck(_ truck: FoodTruck, with representation: FoodTruckRepresentation) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy hh:mm"
     
@@ -258,6 +257,10 @@ class APIController {
         try? moc.save()
     }
     
+    func findTruckAndUpdate(from: FoodTruckRepresentation) {
+        let fetchRequest: NSFetchRequest<FoodTruck> = FoodTruck.fetchRequest()
+        fetchRequest.predicate = NSPredicate()
+    }
     
     func fetchFoodTrucksFromServer(completion: @escaping (Result<[FoodTruckRepresentation], NetworkError>) -> Void) {
         guard let bearer = bearer else {

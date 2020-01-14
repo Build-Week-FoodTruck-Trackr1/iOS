@@ -15,7 +15,24 @@ class TruckCollectionViewController: UICollectionViewController {
 
     
     var apiController = APIController()
-  
+    lazy var fetchedResultsController: NSFetchedResultsController<FoodTruck> = {
+        let fetchRequest: NSFetchRequest<FoodTruck> = FoodTruck.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "id", ascending: true)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: moc,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        frc.delegate = self
+        do {
+            try frc.performFetch()
+        } catch {
+            print("FRC ERROR")
+        }
+        return frc
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +56,7 @@ class TruckCollectionViewController: UICollectionViewController {
         if apiController.bearer == nil {
             performSegue(withIdentifier: "ToLogin", sender: self)
         }
-        
+        collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,8 +79,8 @@ class TruckCollectionViewController: UICollectionViewController {
             else {
                 return
             }
-                detailVC.apiController = self.apiController
-                detailVC.foodTruck = apiController.foodTruck[indexPath.item]
+            detailVC.apiController = self.apiController
+            detailVC.foodTruck = fetchedResultsController.object(at: indexPath)
             
         } else if segue.identifier == "AddTruck" {
             if let detailVC = segue.destination as? TruckDetailViewController {
@@ -82,7 +99,7 @@ class TruckCollectionViewController: UICollectionViewController {
 
     override  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return apiController.foodTruck.count
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,10 +108,7 @@ class TruckCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
             
         }
-        let truck = apiController.foodTruck[indexPath.item]
-        cell.truck = truck
-        print("\(truck.name)")
-        print("\(truck.imgUrl ?? "")")
+        cell.truck = fetchedResultsController.object(at: indexPath)
         return cell
     }
 
@@ -124,4 +138,50 @@ class TruckCollectionViewController: UICollectionViewController {
     
     }
     */
+}
+
+extension TruckCollectionViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
+        
+        switch type {
+        case .insert:
+            collectionView.insertSections(IndexSet(integer: sectionIndex))
+        case .delete:
+            collectionView.deleteSections(IndexSet(integer: sectionIndex))
+        default:
+            break
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        // newIndexPath is option bc you'll only get it for insert and move
+        
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            collectionView.insertItems(at: [newIndexPath])
+        case .update:
+            guard let indexPath = indexPath else { return }
+            collectionView.reloadItems(at: [indexPath])
+        case .move:
+            guard let oldIndexPath = indexPath, let newIndexPath = newIndexPath else { return }
+            collectionView.moveItem(at: oldIndexPath, to: newIndexPath)
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            collectionView.deleteItems(at: [indexPath])
+        @unknown default:
+            break
+        }
+    }
 }
