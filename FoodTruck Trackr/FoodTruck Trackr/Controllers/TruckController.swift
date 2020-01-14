@@ -7,22 +7,34 @@
 //
 
 import Foundation
+import CoreData
 
 class TruckController {
     
+    let apiController = APIController()
     
     //CRUD
     
-    func create() {
-        
+    func create(truck: FoodTruck) {
+        let moc = CoreDataStack.shared.mainContext
+        try? moc.save()
+        apiController.addFoodTruckToServer(truck)
     }
     
-    func update() {
-        
+    func save() {
+        let moc = CoreDataStack.shared.mainContext
+        moc.save()
     }
     
-    func delete() {
-        
+    func update(truck: FoodTruck) {
+        let moc = CoreDataStack.shared.mainContext
+        try? moc.save()
+        apiController.updateFoodTrucks(with: )
+    }
+    
+    func delete(truck: FoodTruck) {
+        let moc = CoreDataStack.shared.mainContext
+        try? moc.save()
     }
     
     
