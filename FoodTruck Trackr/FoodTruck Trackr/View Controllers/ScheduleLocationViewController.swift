@@ -49,9 +49,12 @@ class ScheduleLocationViewController: UIViewController {
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable as UISearchResultsUpdating
         
-        let searchBar = resultSearchController?.searchBar
-        searchBar?.sizeToFit()
-        searchBar?.placeholder = "Search for places"
+        guard let searchBar = resultSearchController?.searchBar else {
+            print("*************\nNO SEARCH BAR\n*************")
+            return
+        }
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
         navigationItem.searchController = resultSearchController
         
         resultSearchController?.hidesNavigationBarDuringPresentation = false
@@ -62,15 +65,15 @@ class ScheduleLocationViewController: UIViewController {
     }
 
     @IBAction func saveTapped(_ sender: Any) {
-        if let address = address,
+        if let address = self.address,
             let selectedFieldTag = selectedFieldTag {
             delegate?.saveLocation(loc: address, tag: selectedFieldTag)
         }
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -144,6 +147,7 @@ extension ScheduleLocationViewController: HandleMapSearch {
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
         
-        address = "\(placemark.subThoroughfare ?? "") \(placemark.thoroughfare ?? ""), \(placemark.locality ?? ""), \(placemark.administrativeArea ?? ""), \(placemark.postalCode ?? "")"
+        self.address = "\(placemark.subThoroughfare ?? "") \(placemark.thoroughfare ?? ""), \(placemark.locality ?? ""), \(placemark.administrativeArea ?? ""), \(placemark.postalCode ?? "")"
+        print("Address: \(address ?? "")")
     }
 }
