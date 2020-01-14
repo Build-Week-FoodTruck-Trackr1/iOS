@@ -23,6 +23,9 @@ struct SearchResult: Codable {
     let locaiton: String
 }
 
+struct Bearer: Codable {
+    var token: String
+}
 
 
 class APIController {
@@ -34,6 +37,7 @@ class APIController {
     }
     
     var user: User?
+    var bearer: Bearer?
     var foodTruck: [FoodTruckRepresentation] = []
     var truck: FoodTruck?
     
@@ -73,69 +77,8 @@ class APIController {
     let moc = CoreDataStack.shared.mainContext
     try moc.save()
     }
-    
-    func performSearch(truck: [FoodTruckRepresentation], completion: @escaping (Error?) -> Void) {
-        // guard let baseURL = baseURL else { return }
-        let searchURL = baseURL.appendingPathComponent("json")
-        
-        let request = URLRequest(url: searchURL)
-        
-        URLSession.shared.dataTask(with: request) {data, _, error in
-            if let error = error {
-                print("Error Parsing Data: \(error)")
-                
-                return
-            }
-            
-            guard let data = data else {
-                print("No Data returned")
-                return
-            }
-            let decoder = JSONDecoder()
-            do {
-                let searchResults = try decoder.decode([FoodTruckRepresentation].self, from: data)
-                print(searchResults)
-            } catch {
-                print("Unable to decode data: \(error)")
-            }
-            completion(error)
-        }.resume()
-    }
-    
-    func performSearch(searchTerm: FoodType, resultType: FoodTruckRepresentation, completion: @escaping (Error?) -> Void) {
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm.rawValue)
-        let resultsTermQueryItem = URLQueryItem(name: "entity", value: resultType.name)
-        urlComponents?.queryItems = [searchTermQueryItem, resultsTermQueryItem]
-        
-        guard let requestURL = urlComponents?.url else {
-            print("Request URL is invalid")
-            return
-        }
-        
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = "GET"
-        
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            if let error = error {
-                print("Error parsing Data: \(error)")
-                return
-            }
-            guard let data = data else {
-                print("No data returned from data task.")
-                return
-            }
-            let jsonDecoder = JSONDecoder()
-            do {
-                let searchResults = try jsonDecoder.decode(FoodTruckRepresentation.self, from: data)
-            
-            } catch {
-                
-            }
-        }.resume()
-    }
-   
-    
+
+
     private func updateFoodTrucks(with representations: [FoodTruckRepresentation]) throws {
         let foodTrucksWithID = representations.filter { $0.id > 0 }
         let identifiersToFetch = foodTrucksWithID.compactMap { $0.id }
@@ -197,7 +140,7 @@ class APIController {
     
     
     func fetchFoodTrucksFromServer(completion: @escaping (Result<[FoodTruckRepresentation], NetworkError>) -> Void) {
-        guard let bearer = bearer else {
+        guard let bearer = self.bearer else {
             completion(.failure(.noAuth))
             return
         }
@@ -233,43 +176,43 @@ class APIController {
         }.resume()
     }
     
-           func addFoodTruckToServer(_ foodTruck: FoodTruck, completion: @escaping CompletionHandler = { _ in }) {
-
-            guard let bearer = bearer else {
-                    return
-                }
-            let baseURL = self.baseURL.appendingPathComponent("trucks")
-                var request = URLRequest(url: baseURL)
-                request.httpMethod = "POST"
-                request.setValue("Bearer \(user?.token)", forHTTPHeaderField: "Authorization")
-
-                URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    if let response = response as? HTTPURLResponse, response.statusCode == 401 {
-                        completion(error)
-                        return
-                    }
-                    if let error = error {
-                        print("There was a fetch Error: \(error)")
-                        completion(error)
-                    }
-                    guard let data = data else {
-                        completion(error)
-                        return
-                    }
-
-                    do {
-                        let newFoodTruck = try JSONDecoder().decode(FoodTruck.self, from: data)
-
-                    } catch {
-                        print("Error decoding data. \(error)")
-                        completion(error)
-                        return
-                    }
-                    completion(nil)
-                }.resume()
-            }
-
-       
+//           func addFoodTruckToServer(_ foodTruck: FoodTruck, completion: @escaping CompletionHandler = { _ in }) {
+//
+//            guard let bearer = bearer else {
+//                    return
+//                }
+//            let baseURL = self.baseURL.appendingPathComponent("trucks")
+//                var request = URLRequest(url: baseURL)
+//                request.httpMethod = "POST"
+//                request.setValue("Bearer \(user?.token)", forHTTPHeaderField: "Authorization")
+//
+//                URLSession.shared.dataTask(with: request) { (data, response, error) in
+//                    if let response = response as? HTTPURLResponse, response.statusCode == 401 {
+//                        completion(error)
+//                        return
+//                    }
+//                    if let error = error {
+//                        print("There was a fetch Error: \(error)")
+//                        completion(error)
+//                    }
+//                    guard let data = data else {
+//                        completion(error)
+//                        return
+//                    }
+//
+//                    do {
+//                        let newFoodTruck = try JSONDecoder().decode(FoodTruck.self, from: data)
+//
+//                    } catch {
+//                        print("Error decoding data. \(error)")
+//                        completion(error)
+//                        return
+//                    }
+//                    completion(nil)
+//                }.resume()
+//            }
+//
+//
        func deleteFoodTruckFromServer(_ foodTruck: FoodTruck, completion: @escaping CompletionHandler = { _ in }) {
 
         guard let bearer = bearer else {

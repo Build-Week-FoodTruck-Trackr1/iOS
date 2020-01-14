@@ -18,18 +18,18 @@ class TruckController {
     func create(truck: FoodTruck) {
         let moc = CoreDataStack.shared.mainContext
         try? moc.save()
-        apiController.addFoodTruckToServer(truck)
+//        apiController.addFoodTruckToServer(truck)
     }
     
     func save() {
         let moc = CoreDataStack.shared.mainContext
-        moc.save()
+        try? moc.save()
     }
     
     func update(truck: FoodTruck) {
         let moc = CoreDataStack.shared.mainContext
         try? moc.save()
-        apiController.updateFoodTrucks(with: )
+//        apiController.updateFoodTrucks(with: )
     }
     
     func delete(truck: FoodTruck) {
