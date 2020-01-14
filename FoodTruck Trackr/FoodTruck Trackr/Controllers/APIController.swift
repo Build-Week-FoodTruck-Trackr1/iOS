@@ -248,43 +248,66 @@ class APIController {
             }
         }.resume()
     }
+    
+//           func addFoodTruckToServer(_ foodTruck: FoodTruck, completion: @escaping CompletionHandler = { _ in }) {
+//    
+//            guard let bearer = bearer else {
+//                    return
+//                }
+//            let baseURL = self.baseURL.appendingPathComponent("trucks")
+//                var request = URLRequest(url: baseURL)
+//                request.httpMethod = "POST"
+//                request.setValue("Bearer \(user?.token)", forHTTPHeaderField: "Authorization")
+//    
+//                URLSession.shared.dataTask(with: request) { (data, response, error) in
+//                    if let response = response as? HTTPURLResponse, response.statusCode == 401 {
+//                        completion(error)
+//                        return
+//                    }
+//                    if let error = error {
+//                        print("There was a fetch Error: \(error)")
+//                        completion(error)
+//                    }
+//                    guard let data = data else {
+//                        completion(error)
+//                        return
+//                    }
+//    
+//                    do {
+//                        let newFoodTruck = try JSONDecoder().decode(FoodTruck.self, from: data)
+//    
+//                    } catch {
+//                        print("Error decoding data. \(error)")
+//                        completion(error)
+//                        return
+//                    }
+//                    completion(nil)
+//                }.resume()
+//            }
 
        
-//       func deleteFoodTruckFromServer(_ foodTruck: FoodTruck, completion: @escaping CompletionHandler = { _ in }) {
-//
-//        guard let bearer = bearer else {
-//                return
-//            }
-//            let gigsURL = baseURL.appendingPathComponent("trucks")
-//            var request = URLRequest(url: gigsURL)
-//            request.httpMethod = "DELETE"
-//            request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
-//
-//            URLSession.shared.dataTask(with: request) { (data, response, error) in
-//                if let response = response as? HTTPURLResponse, response.statusCode == 401 {
-//                    completion(error)
-//                    return
-//                }
-//                if let error = error {
-//                    print("There was a fetch Error: \(error)")
-//                    completion(error)
-//                }
-//                guard let data = data else {
-//                    completion(error)
-//                    return
-//                }
-//
-//                do {
-//                    let foodTrucks = try JSONDecoder().decode(FoodTruck.self, from: data)
-//
-//                } catch {
-//                    print("Error decoding data. \(error)")
-//                    completion(error)
-//                    return
-//                }
-//                completion(nil)
-//            }.resume()
-//        }
+       func deleteFoodTruckFromServer(_ foodTruck: FoodTruck, completion: @escaping CompletionHandler = { _ in }) {
+
+        guard let bearer = bearer else {
+                return
+            }
+            let baseURL = self.baseURL.appendingPathComponent("trucks")
+            var request = URLRequest(url: baseURL)
+            request.httpMethod = "DELETE"
+            request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
+
+            URLSession.shared.dataTask(with: request) { (_, response, error) in
+                if let response = response as? HTTPURLResponse, response.statusCode == 401 {
+                    completion(error)
+                    return
+                }
+                if let error = error {
+                    print("There was a fetch Error: \(error)")
+                    completion(error)
+                }
+                completion(nil)
+            }.resume()
+        }
 
     
       // MARK: - Sign up / Log In Methods
