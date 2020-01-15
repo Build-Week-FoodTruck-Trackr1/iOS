@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="91.741071428571431"/>
         </scene>
-        <!--Schedule-->
+        <!--ScheduleVC-->
         <scene sceneID="QHL-Mp-TrQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Schedule" id="jtj-TM-aUB" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="ScheduleVC" storyboardName="Schedule" referencedIdentifier="ScheduleVC" id="jtj-TM-aUB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Dns-st-UcK"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bl3-zc-vM8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

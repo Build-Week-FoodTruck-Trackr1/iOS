@@ -10,7 +10,7 @@
         <!--Schedule View Controller-->
         <scene sceneID="sff-BD-9XC">
             <objects>
-                <viewController id="X26-DS-Fhn" customClass="ScheduleViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScheduleVC" id="X26-DS-Fhn" customClass="ScheduleViewController" customModule="FoodTruck_Trackr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zSy-pe-Bxz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
