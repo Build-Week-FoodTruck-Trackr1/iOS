@@ -29,18 +29,21 @@ class TruckDetailViewController: UIViewController {
     
     func updateView() {
         guard isViewLoaded else { return }
-        var image: UIImage
-        if let foodTruck = foodTruck,
-            let imgURLString = foodTruck.imgUrl,
-            let imgURL = URL(string: imgURLString) {
-            let data = try? Data(contentsOf: imgURL)
-            image = UIImage(data: data!) ?? UIImage(named: "notAvailable.jpg")!
-        } else {
-            image = UIImage(named: "notAvailable.jpg")!
+        DispatchQueue.main.async {
+            var image: UIImage
+            if let foodTruck = self.foodTruck,
+                let imgURLString = foodTruck.imgUrl,
+                let imgURL = URL(string: imgURLString) {
+                let data = try? Data(contentsOf: imgURL)
+                image = UIImage(data: data!) ?? UIImage(named: "notAvailable.jpg")!
+            } else {
+                image = UIImage(named: "notAvailable.jpg")!
+            }
+            self.imageView.image = image
+            self.truckNameLabel.text = self.foodTruck?.name
+            self.cuisineLabel.text = "Serving fine \(self.foodTruck?.cuisineType ?? "") cuisine"
         }
-        imageView.image = image
-        truckNameLabel.text = foodTruck?.name
-        cuisineLabel.text = "Serving fine \(foodTruck?.cuisineType ?? "") cuisine"
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

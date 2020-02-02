@@ -53,7 +53,7 @@ class TruckCollectionViewController: UICollectionViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if apiController.bearer == nil {
+        if apiController.user?.token == nil {
             performSegue(withIdentifier: "ToLogin", sender: self)
         }
         collectionView.reloadData()
